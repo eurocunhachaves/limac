@@ -2,7 +2,7 @@
 
 SECTIONS = [
     ("1. O que cada onda representa", [
-        ("fig", "fig/c_ecg_normal.png", "fig_livro/g11_01.png", "ECG normal: ondas, intervalos e segmento ST.", 11),
+        ("fig", "fig/c_ecg_normal.png", "fig_livro/g11_01.png", "ECG normal: ondas, intervalos e segmento ST.", 16.5),
         ("table", [
             ["Onda", "Evento elétrico", "Detalhe que cai"],
             ["<b>P</b>", "Despolarização <b>atrial</b>", "0,1 a 0,3 mV; começa ≈ 0,16 s antes do QRS"],
@@ -18,7 +18,7 @@ SECTIONS = [
         ]),
     ]),
     ("2. Papel, calibração e intervalos", [
-        ("fig", "fig/c_papel.png", None, "O papel do ECG a 25 mm/s e 10 mm/mV.", 7.5),
+        ("fig", "fig/c_papel.png", None, "O papel do ECG a 25 mm/s e 10 mm/mV.", 8.5),
         ("table", [
             ["Medida", "Valor", "Como lembrar"],
             ["1 quadradinho (1 mm)", "0,04 s · 0,1 mV", "5 quadradinhos = 1 quadrado grande"],
@@ -36,7 +36,7 @@ SECTIONS = [
         ]),
     ]),
     ("3. As 12 derivações", [
-        ("fig", None, "fig_livro/g11_06.png", "Derivações bipolares dos membros e triângulo de Einthoven. Note: I + III = II.", 7),
+        ("fig", "fig/c_einthoven.png", "fig_livro/g11_06.png", "Derivações bipolares dos membros e triângulo de Einthoven. Note: I + III = II.", 9),
         ("table", [
             ["Derivação", "Polo negativo", "Polo positivo", "Eixo"],
             ["<b>I</b>", "Braço direito", "Braço esquerdo", "0°"],
@@ -52,7 +52,7 @@ SECTIONS = [
             "Como os eixos de I, II e III apontam para o lado positivo do vetor normal, o QRS é <b>positivo nas três</b>, maior em <b>II</b>.",
             "<b>Aumentadas (aV)</b>: um membro contra os outros dois unidos. <b>aVR sai invertida</b> (QRS negativo); aVL e aVF parecem com as bipolares.",
         ]),
-        ("fig", "fig/c_precordiais.png", "fig_livro/g11_08.png", "Derivações precordiais: eletrodo explorador no tórax contra o terminal central (Wilson), 5.000 Ω em cada membro.", 7.5),
+        ("fig", "fig/c_precordiais.png", "fig_livro/g11_08.png", "Derivações precordiais: eletrodo explorador no tórax contra o terminal central (Wilson), 5.000 Ω em cada membro.", 11),
         ("fig", None, "fig_livro/g11_09.png", "Precordiais normais: V1 e V2 negativas, V4 a V6 positivas.", 8),
         ("ul", [
             "Eletrodo no tórax (+) contra o <b>terminal central de Wilson</b> (−: braços e perna esquerda ligados por resistências).",
@@ -64,7 +64,7 @@ SECTIONS = [
         ("fig", None, "fig_livro/g11_11.png", "Registro normal de 12 derivações.", 15),
     ]),
     ("4. Vetores e eixo elétrico", [
-        ("fig", "fig/c_hexaxial.png", "fig_livro/g12_03.png", "Sistema hexaxial: eixos das seis derivações dos membros.", 7),
+        ("fig", "fig/c_hexaxial.png", "fig_livro/g12_03.png", "Sistema hexaxial: eixos das seis derivações dos membros.", 8),
         ("ul", [
             "Durante quase toda a despolarização a corrente vai da <b>base para o ápice</b> (base negativa, ápice positivo). Nos últimos 0,01 s ela se inverte.",
             "Sequência: o <b>septo despolariza da esquerda para a direita</b> primeiro (pequena <b>Q</b>), depois as paredes a partir do endocárdio (<b>R</b>), e por fim a base do VE (<b>S</b>). A despolarização ventricular leva ≈ 0,06 s.",
@@ -73,7 +73,7 @@ SECTIONS = [
             "<b>Eixo médio do QRS normal: +59°</b>; varia de ≈ <b>20° a 100°</b> em corações normais (Guyton). Na clínica, normal = <b>−30° a +90°</b>.",
         ]),
         ("fig", None, "fig_livro/g12_11.png", "Cálculo do eixo: voltagem líquida do QRS em I e III projetada nos eixos → +59°.", 7),
-        ("fig", "fig/c_quadrantes.png", None, "Regra rápida do eixo com I e aVF (complemento clínico).", 6.5),
+        ("fig", "fig/c_quadrantes.png", None, "Regra rápida do eixo com I e aVF (complemento clínico).", 7),
         ("box", "O que desvia o eixo em corações normais", [
             "<b>Para a esquerda</b>: expiração, deitar, obesidade (coração mais horizontal).",
             "<b>Para a direita</b>: inspiração, ficar em pé, biotipo alto e magro (coração mais vertical).",
@@ -318,5 +318,5 @@ OCC_IMG = [
 TOPIC = dict(
     code="c", slug="c-ecg-normal", title="O eletrocardiograma normal",
     source="Guyton & Hall, Tratado de Fisiologia Médica, caps. 11 e 12",
-    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="fig_tema_c", occ_img=OCC_IMG,
+    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="dia_c", occ_img=OCC_IMG,
 )
