@@ -18,7 +18,7 @@ PLANO = [
     ("b", "Excitação rítmica do coração", "Guyton cap. 10"),
     ("c", "O eletrocardiograma normal", "Guyton caps. 11 e 12"),
     ("d", "Biofísica da circulação", "Guyton caps. 14 e 15"),
-    ("e", "Fisiologia vascular e da microcirculação", "Guyton caps. 15 e 16"),
+    ("e", "Fisiologia vascular e da microcirculação", "Guyton cap. 16"),
     ("f", "Controle local, humoral e nervoso da circulação", "Guyton caps. 17 e 18"),
     ("g", "Débito cardíaco e retorno venoso", "Guyton cap. 20"),
     ("h", "Regulação da pressão arterial pelo sistema renal", "Guyton cap. 19"),
