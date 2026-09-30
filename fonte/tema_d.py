@@ -2,7 +2,7 @@
 
 SECTIONS = [
     ("1. Visão geral: onde está o sangue e onde está a pressão", [
-        ("fig", None, "fig_livro/g14_01.png", "Distribuição do volume sanguíneo nas partes da circulação.", 5.5),
+        ("fig", "fig/d_volumes.png", "fig_livro/g14_01.png", "Distribuição do volume sanguíneo nas partes da circulação.", 8),
         ("table", [
             ["Segmento", "Função", "Detalhe que cai"],
             ["<b>Artérias</b>", "Levar sangue sob alta pressão", "Paredes fortes, fluxo rápido"],
@@ -16,7 +16,7 @@ SECTIONS = [
             "O sangue fica só <b>1 a 3 s</b> no capilar.",
             "Área das veias ≈ 4× a das artérias: explica a grande capacidade de armazenamento venoso.",
         ]),
-        ("fig", "fig/d_pressoes.png", "fig_livro/g14_02.png", "Pressões ao longo das circulações sistêmica e pulmonar (decúbito).", 12),
+        ("fig", "fig/d_pressoes.png", "fig_livro/g14_02.png", "Pressões ao longo das circulações sistêmica e pulmonar (decúbito).", 16),
         ("table", [
             ["Local", "Pressão (mmHg)"],
             ["Aorta", "120/80, média <b>100</b>"],
@@ -32,7 +32,7 @@ SECTIONS = [
         ]),
     ]),
     ("2. Pressão, fluxo e resistência", [
-        ("fig", "fig/d_poiseuille.png", "fig_livro/g14_08.png", "Efeito do raio sobre o fluxo (lei da quarta potência).", 9),
+        ("fig", "fig/d_poiseuille.png", "fig_livro/g14_08.png", "Efeito do raio sobre o fluxo (lei da quarta potência).", 10),
         ("ul", [
             "<b>Lei de Ohm: F = ΔP / R</b>. O que move o sangue é a <b>diferença</b> de pressão, não a pressão absoluta.",
             "DC de repouso ≈ <b>5.000 mℓ/min</b> (≈ 100 mℓ/s). Resistência periférica total ≈ 100 mmHg / 100 mℓ/s = <b>1 URP</b> "
@@ -43,7 +43,7 @@ SECTIONS = [
             "<b>Série</b>: R total = R1 + R2 + ... (mesmo fluxo em cada um). <b>Paralelo</b>: 1/R total = 1/R1 + 1/R2 + ...; C total = C1 + C2 + ... "
             "A resistência total em paralelo é <b>menor que a de qualquer ramo</b>. Tirar um rim ou amputar um membro <b>aumenta a RPT</b>.",
         ]),
-        ("fig", "fig/d_fluxo.png", None, "Fluxo laminar (parabólico) e turbulento.", 9),
+        ("fig", "fig/d_fluxo.png", None, "Fluxo laminar (parabólico) e turbulento.", 10),
         ("table", [
             ["Conceito", "O que saber"],
             ["<b>Fluxo laminar</b>", "Camadas concêntricas; perfil <b>parabólico</b>: centro rápido, junto à parede quase parado"],
@@ -69,7 +69,7 @@ SECTIONS = [
         ]),
     ]),
     ("3. Distensibilidade e complacência", [
-        ("fig", "fig/d_complacencia.png", "fig_livro/g15_01.png", "Curvas volume-pressão dos sistemas arterial e venoso.", 7.5),
+        ("fig", "fig/d_complacencia.png", "fig_livro/g15_01.png", "Curvas volume-pressão dos sistemas arterial e venoso.", 9),
         ("table", [
             ["", "Fórmula", "Artéria × veia"],
             ["<b>Distensibilidade</b>", "ΔV / (ΔP × V inicial)", "Veias ≈ <b>8×</b> mais distensíveis"],
@@ -83,7 +83,7 @@ SECTIONS = [
         ]),
     ]),
     ("4. Pulso arterial e medida da PA", [
-        ("fig", "fig/d_pulso.png", "fig_livro/g15_03.png", "Pulso de pressão na aorta ascendente.", 8),
+        ("fig", "fig/d_pulso.png", "fig_livro/g15_03.png", "Pulso de pressão na aorta ascendente.", 9),
         ("box", "Pressão de pulso (PP = PAS − PAD ≈ 40 mmHg)", [
             "<b>PP ≈ volume sistólico / complacência arterial</b>. ↑ VS ou ↓ complacência (artéria rígida) → ↑ PP.",
             "Idoso com <b>arteriosclerose</b>: PP pode <b>dobrar</b> (sistólica alta).",
@@ -100,7 +100,7 @@ SECTIONS = [
             "<b>Transmissão do pulso</b>: 3 a 5 m/s na aorta, 7 a 10 m/s nos grandes ramos, 15 a 35 m/s nas pequenas artérias. Quanto <b>mais complacente, mais lenta</b>. É ≈ 15× a velocidade do sangue.",
             "<b>Amortecimento</b> do pulso (quase some nos capilares) ∝ <b>resistência × complacência</b>.",
         ]),
-        ("fig", "fig/d_korotkoff.png", "fig_livro/g15_07.png", "Método auscultatório: sons de Korotkoff.", 4.2),
+        ("fig", "fig/d_korotkoff.png", "fig_livro/g15_07.png", "Método auscultatório: sons de Korotkoff.", 10),
         ("ul", [
             "<b>Korotkoff</b>: jato turbulento pela artéria parcialmente ocluída + vibração da parede. <b>1º som = sistólica</b>; "
             "som <b>abafado</b> (ou desaparecimento, preferido por muitos) = <b>diastólica</b>. Erro ≈ 10% vs cateter.",
@@ -120,7 +120,7 @@ SECTIONS = [
             "Pressão intra-abdominal (normal ≈ +6; gravidez, obesidade, ascite +15 a +30) eleva a pressão das veias das pernas ao mesmo nível.",
             "<b>Jugulares</b>: sentado normal, nunca distendidas; começam a distender com PAD ≈ <b>+10</b> e ficam todas cheias com <b>+15 mmHg</b>.",
         ]),
-        ("fig", "fig/d_gravidade.png", "fig_livro/g15_10.png", "Efeito da gravidade sobre as pressões venosas (em pé, imóvel).", 6),
+        ("fig", "fig/d_gravidade.png", "fig_livro/g15_10.png", "Efeito da gravidade sobre as pressões venosas (em pé, imóvel).", 7),
         ("ul", [
             "Pressão hidrostática: <b>+1 mmHg a cada 13,6 mm</b> abaixo do coração. Em pé e imóvel: pés <b>+90</b>; mão +35; pescoço 0 (colapsa); "
             "seio sagital <b>−10</b> (risco de <b>embolia gasosa</b> se aberto). Artérias: PAM 100 no coração → ≈ 190 nos pés.",
@@ -381,5 +381,5 @@ OCC_IMG = [
 TOPIC = dict(
     code="d", slug="d-biofisica-circulacao", title="Biofísica da circulação",
     source="Guyton & Hall, Tratado de Fisiologia Médica, caps. 14 e 15",
-    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="fig_tema_d", occ_img=OCC_IMG,
+    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="dia_d", occ_img=OCC_IMG,
 )

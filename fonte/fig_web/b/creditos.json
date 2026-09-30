@@ -25,5 +25,14 @@
     "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "url": "https://commons.wikimedia.org/wiki/File:Sinoatrial_action_potential.jpg",
     "legenda": "Potencial do nó SA: fase 4 com despolarização lenta (corrente funny If, Na+), fase 0 lenta por Ca2+ (tipo L) e fase 3 por K+. Não há platô e o repouso é ~-55 a -60 mV."
+  },
+  {
+    "arquivo": "b4_comparacao_ventriculo_nodo.jpg",
+    "titulo": "File:CAP Waveform.jpg",
+    "autor": "JIvory96",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:CAP_Waveform.jpg",
+    "legenda": "Comparação lado a lado: miócito ventricular (fase 0 rápida por Na+, platô) versus nó SA (automatismo, fase 0 lenta por Ca2+)."
   }
 ]
