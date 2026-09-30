@@ -2,7 +2,7 @@
 
 SECTIONS = [
     ("1. O sistema excitocondutor", [
-        ("fig", "fig/b_conducao.png", "fig_livro/g10_01.png", "Nó sinusal, vias internodais, nó AV, feixe AV e ramos (sistema de Purkinje).", 9),
+        ("fig", "fig/b_conducao.png", "fig_livro/g10_01.png", "Nó sinusal, vias internodais, nó AV, feixe AV e ramos (sistema de Purkinje).", 16),
         ("p", "Duas funções: <b>gerar</b> o impulso rítmico e <b>conduzi-lo</b> rápido. Resultado: os átrios contraem ≈ 1/6 s antes dos "
               "ventrículos, e todas as partes dos ventrículos contraem <b>quase ao mesmo tempo</b>. É um sistema sensível à isquemia."),
         ("table", [
@@ -18,7 +18,7 @@ SECTIONS = [
         ], [3.2, 7.4, 6.8]),
     ]),
     ("2. Por que o nó sinusal dispara sozinho", [
-        ("fig", "fig/b_potencial_sa.png", "fig_livro/g10_02.png", "Potencial do nó sinusal comparado com o da fibra ventricular.", 10),
+        ("fig", "fig/b_potencial_sa.png", "fig_livro/g10_02.png", "Potencial do nó sinusal comparado com o da fibra ventricular.", 15),
         ("ul", [
             "\"Repouso\" de <b>−55 a −60 mV</b> (ventrículo: −85 a −90), porque a membrana é naturalmente permeável a <b>Na⁺ e Ca²⁺</b>.",
             "A −55 mV os <b>canais rápidos de Na⁺ estão inativados</b>: quem faz o potencial são os <b>canais de Ca²⁺ tipo L (lentos)</b>. "
@@ -49,7 +49,7 @@ SECTIONS = [
         ]),
     ]),
     ("4. Hierarquia dos marca-passos", [
-        ("fig", "fig/b_marcapassos.png", None, "Frequências intrínsecas de disparo.", 9),
+        ("fig", "fig/b_marcapassos.png", None, "Frequências intrínsecas de disparo.", 12),
         ("ul", [
             "Nó sinusal <b>70 a 80</b>/min · nó AV <b>40 a 60</b>/min · Purkinje <b>15 a 40</b>/min.",
             "O nó sinusal comanda porque é o <b>mais rápido</b>: descarrega o nó AV e o Purkinje antes que eles atinjam o próprio limiar.",
@@ -61,7 +61,7 @@ SECTIONS = [
                "<b>5 a 20 s</b>. Sem bombeamento, a pessoa <b>desmaia após 4 a 5 s</b>. Se a pausa for longa, pode morrer."),
     ]),
     ("5. Controle autonômico do ritmo e da condução", [
-        ("fig", "fig/b_autonomo.png", None, "Efeito do simpático e do vago no potencial do nó sinusal.", 9.5),
+        ("fig", "fig/b_autonomo.png", None, "Efeito do simpático e do vago no potencial do nó sinusal.", 15),
         ("table", [
             ["", "Parassimpático (vago)", "Simpático"],
             ["Distribuição", "<b>Nós SA e AV</b>; pouco músculo atrial; quase nada no ventrículo", "Todo o coração, forte no <b>ventrículo</b>"],
@@ -322,5 +322,5 @@ OCC_IMG = [
 TOPIC = dict(
     code="b", slug="b-excitacao-ritmica", title="Excitação rítmica do coração",
     source="Guyton & Hall, Tratado de Fisiologia Médica, cap. 10",
-    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="fig_tema_b", occ_img=OCC_IMG,
+    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="dia_b", occ_img=OCC_IMG,
 )

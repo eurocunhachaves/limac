@@ -10,7 +10,7 @@ SECTIONS = [
             "São <b>dois sincícios</b> (atrial e ventricular) separados pelo <b>esqueleto fibroso</b>. A única ponte elétrica é o <b>feixe AV</b>, o que permite ao átrio contrair antes.",
             "<b>Torção do VE</b>: na sístole o ápice gira no sentido horário e a base no anti-horário; na diástole a \"destorção\" ajuda a sugar sangue.",
         ]),
-        ("fig", None, "fig_livro/g9_02.png", "Discos intercalares e o sincício do músculo cardíaco.", 9),
+        ("fig", "fig_web/a/a5_discos_intercalares.jpg", "fig_livro/g9_02.png", "Discos intercalares e o sincício do músculo cardíaco.", 9),
     ]),
     ("2. Potencial de ação ventricular", [
         ("table", [

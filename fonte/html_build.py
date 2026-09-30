@@ -162,6 +162,9 @@ def block(b, publico, used_web):
         if not rel:
             return ""
         cred = f"Fonte: {book_source(rel)}." if is_book(rel) else ""
+        if is_web(rel):
+            used_web.append(rel)
+            cred = f"Imagem: {esc(credit_text(rel))}."
         return figure(rel, caption, width, cred)
     if kind == "web":
         rel, width = b[1], b[2]
