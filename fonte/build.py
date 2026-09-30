@@ -15,6 +15,7 @@ Cartões (cards):
   ("c", texto_com_{{c1::lacuna}}[, extra[, imagem]])     cloze
   Na versão pública, cartões com imagem de fig_livro/ saem sem a imagem.
   occ = nome do módulo de figuras com OCLUSOES -> cartões de oclusão de imagem.
+  occ_img = [(figura_livro, (x0, y0, x1, y1), pergunta, resposta)] -> oclusão sobre figura do livro (só versão pessoal).
 Texto aceita a marcação inline do reportlab (<b>, <i>, <sub>, <sup>).
 """
 import hashlib
@@ -315,6 +316,20 @@ def build_anki(T, publico):
                 model=OCC,
                 fields=[pergunta, img_html(f"fig/{fig}__occ_{key}.png"), img_html(f"fig/{fig}.png"), resposta, tema],
                 guid=genanki.guid_for(T["slug"], "occ", fig, key), tags=tags + ["oclusao"]))
+    if not publico:  # oclusão sobre figuras dos livros (só na versão pessoal)
+        from PIL import Image as PImage, ImageDraw, ImageFont
+        os.makedirs(os.path.join(HERE, "fig_livro", "occ"), exist_ok=True)
+        for i, (rel, bx, pergunta, resposta) in enumerate(T.get("occ_img", [])):
+            im = PImage.open(os.path.join(HERE, rel)).convert("RGB")
+            dr = ImageDraw.Draw(im)
+            dr.rounded_rectangle(bx, radius=5, fill="#e8590c")
+            font = ImageFont.truetype(FD + "DejaVuSans-Bold.ttf", max(12, int((bx[3] - bx[1]) * 0.7)))
+            dr.text(((bx[0] + bx[2]) / 2, (bx[1] + bx[3]) / 2), "?", fill="white", font=font, anchor="mm")
+            occ_rel = f"fig_livro/occ/{os.path.splitext(os.path.basename(rel))[0]}_{i}.png"
+            im.save(os.path.join(HERE, occ_rel))
+            deck.add_note(genanki.Note(
+                model=OCC, fields=[pergunta, img_html(occ_rel), img_html(rel), resposta, tema],
+                guid=genanki.guid_for(T["slug"], "occimg", rel, str(bx)), tags=tags + ["oclusao"]))
     path = paths(T, publico)[2]
     # o genanki usa o nome do arquivo como nome da mídia: copia com o prefixo do tema para uma pasta temporária
     tmp = os.path.join(os.path.dirname(path), ".media")
