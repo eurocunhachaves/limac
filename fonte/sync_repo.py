@@ -16,7 +16,7 @@ sys.path.insert(0, HERE)
 PLANO = [
     ("a", "O músculo cardíaco e as valvas cardíacas", "Guyton cap. 9 (e 23)"),
     ("b", "Excitação rítmica do coração", "Guyton cap. 10"),
-    ("c", "O eletrocardiograma normal", "Guyton cap. 11"),
+    ("c", "O eletrocardiograma normal", "Guyton caps. 11 e 12"),
     ("d", "Biofísica da circulação", "Guyton caps. 14 e 15"),
     ("e", "Fisiologia vascular e da microcirculação", "Guyton caps. 15 e 16"),
     ("f", "Controle local, humoral e nervoso da circulação", "Guyton caps. 17 e 18"),
