@@ -1,7 +1,9 @@
 # LIMAC · Estudos para a Liga Acadêmica de Cardiologia
 
 Material de estudo que montei para a prova de seleção da Liga Acadêmica de Cardiologia: resumões em PDF,
-listas de questões com gabarito comentado e baralhos do Anki, organizados por tema.
+listas de questões com gabarito comentado, baralhos do Anki e um quiz on-line, organizados por tema.
+
+**▶ Quiz on-line: [https://eurocunhachaves.github.io/limac/](https://eurocunhachaves.github.io/limac/)** (correção na hora, modo prova com cronômetro e simulados)
 
 ## Temas
 
@@ -20,6 +22,8 @@ listas de questões com gabarito comentado e baralhos do Anki, organizados por t
 ## Como usar
 
 - **Resumão**: leitura rápida do tema, com esquemas e uma tabela final de números para decorar.
+- **Quiz on-line**: as mesmas questões objetivas no navegador, com correção e comentário na hora (modo estudo)
+  ou com cronômetro e correção no fim (modo prova). Guarda o seu melhor resultado por tema no próprio navegador.
 - **Questões**: múltipla escolha no formato da prova e casos clínicos abertos. O gabarito comentado fica no final do PDF.
 - **Anki**: no Anki, `Arquivo → Importar` e escolha o `.apkg`. Cada tema entra como subbaralho de
   *Liga de Cardiologia*, com cartões de pergunta e resposta, de lacuna (cloze) e de oclusão de imagem.
@@ -31,11 +35,12 @@ listas de questões com gabarito comentado e baralhos do Anki, organizados por t
 temas/<tema>/resumao.pdf      resumo do tema
 temas/<tema>/questoes.pdf     questões + gabarito comentado
 temas/<tema>/flashcards.apkg  baralho do Anki
-fonte/                        scripts que geram tudo (Python)
+docs/                         quiz on-line (GitHub Pages)
+fonte/                        scripts que geram tudo (Python + HTML/CSS)
 ```
 
-Para regerar um tema: `pip install -r fonte/requirements.txt` e `python3 fonte/build.py tema_a`
-(os arquivos saem na pasta acima de `fonte/`).
+Para regerar um tema: `pip install -r fonte/requirements.txt`, `npm install playwright` (o resumão é diagramado em
+HTML/CSS e impresso em PDF pelo Chromium) e `python3 fonte/build.py tema_a` (os arquivos saem na pasta acima de `fonte/`).
 
 ## Referências
 
@@ -43,5 +48,7 @@ Para regerar um tema: `pip install -r fonte/requirements.txt` e `python3 fonte/b
 - Porto CC, Porto AL. *Semiologia Médica*. 8ª ed. Rio de Janeiro: Guanabara Koogan; 2019.
 
 Os livros não estão neste repositório, e esta versão pública não inclui figuras deles: os esquemas foram
-desenhados a partir dos valores descritos no texto. (Os scripts referenciam uma pasta `fig_livro/` que só existe na
+desenhados a partir dos valores descritos no texto, e as demais imagens são de licença aberta (Wikimedia Commons),
+com autor e licença indicados na legenda e em `fonte/fig_web/*/creditos.json`. A fonte Inter é distribuída sob a
+SIL Open Font License. (Os scripts referenciam uma pasta `fig_livro/` que só existe na
 minha cópia pessoal.) Material de estudo pessoal, sem fins comerciais.

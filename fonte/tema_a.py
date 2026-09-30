@@ -56,12 +56,15 @@ SECTIONS = [
             ["Ejeção", "semilunares abertas", "≈ 70% do volume sai no 1º terço (ejeção rápida)"],
             ["Relaxamento isovolumétrico", "<b>todas fechadas</b>", "0,03 a 0,06 s; termina quando as AV abrem"],
         ], [4.2, 3.4, 9.8]),
+        ("web", "fig_web/a/a1_diagrama_wiggers.png", 13),
         ("table", [
             ["Onda atrial", "Causa"],
             ["<b>a</b>", "Contração atrial (AD +4 a 6 mmHg; AE +7 a 8 mmHg)"],
             ["<b>c</b>", "Início da sístole ventricular: <b>abaulamento das valvas AV</b> para o átrio"],
             ["<b>v</b>", "Fim da sístole: átrio enchendo pelas veias com as AV fechadas"],
         ], [2.6, 14.8]),
+        ("web", "fig_web/a/a2_wiggers_pulso_venoso.png", 7.5,
+         "Pulso venoso (embaixo): onda a (contração atrial), c (abaulamento da tricúspide) e v (enchimento atrial com a tricúspide fechada)."),
         ("box", "Volumes normais (decorar)",
                "<b>VDF 110 a 120 mℓ</b> · <b>VS ≈ 70 mℓ</b> · <b>VSF 40 a 50 mℓ</b> · <b>FE = VS/VDF ≈ 60%</b>. "
                "ECG: P precede a contração atrial; QRS começa pouco antes da sístole; T ocorre pouco antes do fim da contração."),
@@ -479,6 +482,10 @@ OPEN_EXTRA = [
 
 G = "fig_livro/"
 CARDS = [
+    ("b", "No diagrama de Wiggers, onde caem B1 e B2?", "<b>B1</b>: início da sístole (fecham mitral e tricúspide). "
+          "<b>B2</b>: início da diástole (fecham aórtica e pulmonar).", "fig_web/a/a1_diagrama_wiggers.png"),
+    ("c", "Pulso venoso: onda {{c1::a}} = contração atrial; onda {{c2::c}} = abaulamento da tricúspide; onda {{c3::v}} = enchimento atrial "
+          "com a tricúspide fechada.", "", "fig_web/a/a2_wiggers_pulso_venoso.png"),
     # ---------- lacunas (cloze)
     ("c", "O miocárdio funciona como {{c1::sincício}} porque os {{c2::discos intercalares}} têm {{c3::junções comunicantes (gap junctions)}}."),
     ("c", "Átrios e ventrículos são separados pelo {{c1::esqueleto fibroso}}; o impulso só passa pelo {{c2::feixe AV}}."),

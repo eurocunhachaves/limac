@@ -100,7 +100,7 @@ SECTIONS = [
             "<b>Transmissão do pulso</b>: 3 a 5 m/s na aorta, 7 a 10 m/s nos grandes ramos, 15 a 35 m/s nas pequenas artérias. Quanto <b>mais complacente, mais lenta</b>. É ≈ 15× a velocidade do sangue.",
             "<b>Amortecimento</b> do pulso (quase some nos capilares) ∝ <b>resistência × complacência</b>.",
         ]),
-        ("fig", "fig/d_korotkoff.png", "fig_livro/g15_07.png", "Método auscultatório: sons de Korotkoff.", 5),
+        ("fig", "fig/d_korotkoff.png", "fig_livro/g15_07.png", "Método auscultatório: sons de Korotkoff.", 4.2),
         ("ul", [
             "<b>Korotkoff</b>: jato turbulento pela artéria parcialmente ocluída + vibração da parede. <b>1º som = sistólica</b>; "
             "som <b>abafado</b> (ou desaparecimento, preferido por muitos) = <b>diastólica</b>. Erro ≈ 10% vs cateter.",

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIMAC · Quiz de Cardiologia</title>
+<meta name="description" content="Questões de fisiologia e semiologia cardiovascular para a prova da Liga Acadêmica de Cardiologia, com correção na hora.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}
+:root{--red:#9b1c2c;--red2:#c2415a;--redl:#fbeaec;--ok:#1e7b3a;--okl:#e3f4e8;--bad:#b3261e;--badl:#fde7e6;
+      --bg:#f4f1ee;--card:#fff;--ink:#1f2328;--mute:#5f6670;--line:#e3e5e8;--sel:#eaf1fb}
+@media (prefers-color-scheme:dark){:root{--bg:#161616;--card:#232323;--ink:#ececec;--mute:#a8adb4;--line:#383838;
+      --redl:#3a2328;--okl:#1d3324;--badl:#3b2020;--sel:#243248;--red:#e0566e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+header{background:linear-gradient(120deg,#9b1c2c,#c2415a);color:#fff;padding:18px 16px}
+header .in{max-width:780px;margin:0 auto;display:flex;align-items:center;gap:12px}
+header h1{margin:0;font-size:1.25rem;font-weight:800}
+header p{margin:2px 0 0;font-size:.85rem;opacity:.9}
+main{max-width:780px;margin:0 auto;padding:16px}
+.card{background:var(--card);border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:16px 18px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.topic{cursor:pointer;border:1px solid var(--line);transition:transform .08s}
+.topic:hover{transform:translateY(-2px)}
+.topic .code{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;
+      align-items:center;justify-content:center;margin-right:8px}
+.topic h3{margin:0 0 6px;font-size:1rem;display:flex;align-items:center}
+.topic small{color:var(--mute)}
+.bar{height:6px;background:var(--line);border-radius:4px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+h2{font-size:1.05rem;margin:18px 0 10px}
+.btn{font:inherit;border:0;border-radius:10px;padding:9px 14px;cursor:pointer;background:var(--red);color:#fff;font-weight:600}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.modes label{border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.q{font-weight:600;font-size:1.02rem;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:transparent;border:1px solid var(--line);
+      border-radius:10px;padding:9px 12px;margin:6px 0;cursor:pointer}
+.opt:hover{background:var(--sel)}
+.opt.chosen{background:var(--sel);border-color:#2a5ca8}
+.opt.right{background:var(--okl);border-color:var(--ok)}
+.opt.wrong{background:var(--badl);border-color:var(--bad)}
+.opt b.l{display:inline-block;width:22px;color:var(--mute)}
+.com{margin-top:10px;padding:10px 12px;border-left:4px solid var(--red);background:var(--redl);border-radius:8px;font-size:.93rem}
+.meta{display:flex;justify-content:space-between;color:var(--mute);font-size:.85rem;margin-bottom:8px}
+.timer{font-variant-numeric:tabular-nums;font-weight:600}
+.dots{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+.dots span{width:24px;height:24px;border-radius:6px;border:1px solid var(--line);font-size:.72rem;display:flex;align-items:center;
+      justify-content:center;cursor:pointer}
+.dots span.a{background:var(--sel)}.dots span.ok{background:var(--okl);border-color:var(--ok)}.dots span.no{background:var(--badl);border-color:var(--bad)}
+.dots span.cur{outline:2px solid var(--red)}
+.score{font-size:2.2rem;font-weight:800;color:var(--red)}
+details{border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0}
+summary{cursor:pointer;font-weight:500}
+details ul{margin:8px 0 0;padding-left:18px}
+.foot{color:var(--mute);font-size:.8rem;text-align:center;margin:24px 0}
+.foot a{color:var(--mute)}
+b{color:var(--red)}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header><div class="in"><div style="font-size:1.8rem">❤️</div><div><h1>LIMAC · Quiz de Cardiologia</h1>
+<p>Questões por tema e simulados para a prova da Liga Acadêmica de Cardiologia</p></div></div></header>
+<main id="app"></main>
+<div class="foot">Conteúdo baseado em Guyton &amp; Hall e Porto · <a href="https://github.com/eurocunhachaves/limac">github.com/eurocunhachaves/limac</a></div>
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const app = $("#app");
+const L = "ABCDE";
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem("limac:" + k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("limac:" + k, JSON.stringify(v)); } catch {} },
+};
+let INDEX = [];
+let S = null; // sessão atual
+
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function fmt(s) { const m = Math.floor(s / 60), r = s % 60; return `${m}:${String(r).padStart(2, "0")}`; }
+
+async function home() {
+  if (S && S.tick) clearInterval(S.tick);
+  S = null;
+  if (!INDEX.length) INDEX = await (await fetch("data/index.json")).json();
+  const card = (t) => {
+    const best = store.get("best:" + t.code, null);
+    const pct = best ? Math.round(100 * best.ok / best.n) : 0;
+    return `<div class="card topic" data-code="${t.code}"><h3><span class="code">${t.code}</span>${t.title}</h3>
+      <small>${t.n} objetivas${t.open ? ` · ${t.open} abertas` : ""}${t.minutes ? ` · ${t.minutes} min` : ""}</small>
+      <div class="bar"><i style="width:${pct}%"></i></div>
+      <small>${best ? `Melhor resultado: ${best.ok}/${best.n} (${pct}%)` : "Ainda não feito"}</small></div>`;
+  };
+  const temas = INDEX.filter((t) => t.kind !== "simulado"), sims = INDEX.filter((t) => t.kind === "simulado");
+  app.innerHTML = `<h2>Temas</h2><div class="grid">${temas.map(card).join("")}</div>
+    ${sims.length ? `<h2>Simulados</h2><div class="grid">${sims.map(card).join("")}</div>` : ""}`;
+  app.querySelectorAll(".topic").forEach((el) => el.onclick = () => setup(el.dataset.code));
+}
+
+async function setup(code) {
+  const meta = INDEX.find((t) => t.code === code);
+  const data = await (await fetch(`data/${code}.json`)).json();
+  const sim = meta.kind === "simulado";
+  app.innerHTML = `<div class="card"><h2 style="margin-top:0">${sim ? "" : `Tema ${code}. `}${data.title}</h2>
+    <p style="color:var(--mute);margin-top:0">${data.mcq.length} questões objetivas${data.open.length ? ` e ${data.open.length} abertas com resposta-modelo` : ""}. Fonte: ${data.source}.</p>
+    <div class="row modes" style="margin:12px 0">
+      <label><input type="radio" name="m" value="estudo" ${sim ? "" : "checked"}> Estudo: correção a cada questão</label>
+      <label><input type="radio" name="m" value="prova" ${sim ? "checked" : ""}> Prova: cronômetro e correção no fim</label>
+    </div>
+    <div class="row" style="margin-bottom:12px"><label><input type="checkbox" id="shuf" ${sim ? "" : "checked"}> Embaralhar a ordem</label></div>
+    <div class="row"><button class="btn" id="go">Começar</button><button class="btn sec" id="back">Voltar</button></div></div>`;
+  $("#back").onclick = home;
+  $("#go").onclick = () => {
+    const mode = app.querySelector("input[name=m]:checked").value;
+    let order = data.mcq.map((_, i) => i);
+    if ($("#shuf").checked) shuffle(order);
+    start(code, data, mode, order, sim ? (meta.minutes || data.mcq.length * 2) : data.mcq.length * 2);
+  };
+}
+
+function start(code, data, mode, order, minutes) {
+  S = { code, data, mode, order, i: 0, ans: {}, t0: Date.now(), limit: mode === "prova" ? minutes * 60 : 0, tick: null, done: false };
+  if (S.limit) S.tick = setInterval(() => {
+    const left = S.limit - Math.floor((Date.now() - S.t0) / 1000);
+    const el = $(".timer"); if (el) el.textContent = "⏱ " + fmt(Math.max(0, left));
+    if (left <= 0) finish();
+  }, 1000);
+  render();
+}
+
+function render() {
+  const { data, order, i, mode } = S;
+  const q = data.mcq[order[i]], chosen = S.ans[order[i]];
+  const answered = chosen !== undefined, reveal = S.done || (mode === "estudo" && answered);
+  const dots = order.map((qi, k) => {
+    let c = "";
+    if (S.ans[qi] !== undefined) c = (S.done || mode === "estudo") ? (S.ans[qi] === data.mcq[qi].a ? "ok" : "no") : "a";
+    return `<span class="${c} ${k === i ? "cur" : ""}" data-k="${k}">${k + 1}</span>`;
+  }).join("");
+  const left = S.limit ? S.limit - Math.floor((Date.now() - S.t0) / 1000) : 0;
+  app.innerHTML = `<div class="card">
+    <div class="meta"><span>Questão ${i + 1} de ${order.length}</span>${S.limit && !S.done ? `<span class="timer">⏱ ${fmt(left)}</span>` : ""}</div>
+    <div class="q">${q.q}</div>
+    ${q.opts.map((o, j) => {
+      let c = "";
+      if (reveal) { if (j === q.a) c = "right"; else if (j === chosen) c = "wrong"; }
+      else if (j === chosen) c = "chosen";
+      return `<button class="opt ${c}" data-j="${j}" ${reveal ? "disabled" : ""}><b class="l">${L[j]})</b>${o}</button>`;
+    }).join("")}
+    ${reveal ? `<div class="com"><b>${chosen === q.a ? "Correto." : `Resposta: ${L[q.a]}.`}</b> ${q.c}</div>` : ""}
+    <div class="dots">${dots}</div>
+    <div class="row"><button class="btn sec" id="prev" ${i === 0 ? "disabled" : ""}>Anterior</button>
+      <button class="btn sec" id="next" ${i === order.length - 1 ? "disabled" : ""}>Próxima</button>
+      ${S.done ? `<button class="btn" id="res">Ver resultado</button>` : `<button class="btn" id="fin">Encerrar e corrigir</button>`}
+      <button class="btn sec" id="home">Temas</button></div></div>`;
+  app.querySelectorAll(".opt").forEach((b) => b.onclick = () => { S.ans[order[i]] = +b.dataset.j; render(); });
+  app.querySelectorAll(".dots span").forEach((d) => d.onclick = () => { S.i = +d.dataset.k; render(); });
+  $("#prev").onclick = () => { S.i--; render(); };
+  $("#next").onclick = () => { S.i++; render(); };
+  $("#home").onclick = home;
+  if ($("#fin")) $("#fin").onclick = () => {
+    const miss = order.length - Object.keys(S.ans).length;
+    if (!miss || confirm(`Faltam ${miss} questões. Encerrar mesmo assim?`)) finish();
+  };
+  if ($("#res")) $("#res").onclick = result;
+}
+
+function finish() {
+  if (S.tick) clearInterval(S.tick);
+  S.done = true;
+  S.secs = Math.floor((Date.now() - S.t0) / 1000);
+  const ok = S.order.filter((qi) => S.ans[qi] === S.data.mcq[qi].a).length;
+  S.ok = ok;
+  const best = store.get("best:" + S.code, null);
+  if (S.order.length === S.data.mcq.length && (!best || ok / S.order.length > best.ok / best.n)) store.set("best:" + S.code, { ok, n: S.order.length });
+  result();
+}
+
+function result() {
+  const { data, order, ok } = S;
+  const pct = Math.round(100 * ok / order.length);
+  const wrong = order.filter((qi) => S.ans[qi] !== data.mcq[qi].a);
+  app.innerHTML = `<div class="card"><div class="score">${ok}/${order.length} · ${pct}%</div>
+    <p style="color:var(--mute)">Tempo: ${fmt(S.secs)}. ${pct >= 70 ? "Bom resultado." : "Revise as questões erradas e o resumão do tema."}</p>
+    <div class="row"><button class="btn" id="rev">Revisar questões</button>
+    ${wrong.length ? `<button class="btn sec" id="redo">Refazer as ${wrong.length} erradas ou em branco</button>` : ""}
+    <button class="btn sec" id="home">Temas</button></div></div>
+    ${data.open.length ? `<h2>Questões abertas (tente responder antes de abrir)</h2>` +
+      data.open.map((q, k) => `<details><summary>${k + 1}. ${q.q}</summary><ul>${q.a.map((x) => `<li>${x}</li>`).join("")}</ul></details>`).join("") : ""}`;
+  $("#rev").onclick = () => { S.i = 0; render(); };
+  $("#home").onclick = home;
+  if ($("#redo")) $("#redo").onclick = () => start(S.code, data, "estudo", wrong, 0);
+}
+
+home().catch(() => { app.innerHTML = `<div class="card">Não foi possível carregar as questões. Abra esta página pelo GitHub Pages ou por um servidor local.</div>`; });
+</script>
+</body>
+</html>

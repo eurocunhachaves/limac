@@ -1,0 +1,29 @@
+[
+  {
+    "arquivo": "a1_diagrama_wiggers.png",
+    "titulo": "File:Wiggers Diagram 2-pt.svg",
+    "autor": "Matheus Trabuco Gonzalez",
+    "licenca": "CC BY 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Wiggers_Diagram_2-pt.svg",
+    "legenda": "Diagrama de Wiggers: pressões (aorta, VE, AE), volume do VE, ECG e bulhas ao longo do ciclo cardíaco. Sístole começa em B1 (fecham mitral/tricúspide) e diástole em B2 (fecham aórtica/pulmonar)."
+  },
+  {
+    "arquivo": "a2_wiggers_pulso_venoso.png",
+    "titulo": "File:Wiggers diagram with jugular venous waveform.png",
+    "autor": "Nootherone321",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Wiggers_diagram_with_jugular_venous_waveform.png",
+    "legenda": "Wiggers com o pulso venoso jugular: onda a (contração atrial), c (bulging da tricúspide na contração isovolumétrica) e v (enchimento atrial com a tricúspide fechada)."
+  },
+  {
+    "arquivo": "a3_potencial_acao_ventricular.png",
+    "titulo": "File:Cardiac ventricular myocyte action potential.png",
+    "autor": "Alan Sved",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Cardiac_ventricular_myocyte_action_potential.png",
+    "legenda": "Potencial de ação do miócito ventricular: fase 0 (entrada rápida de Na+), 1 (repolarização precoce), 2 (platô por Ca2+ lento), 3 (repolarização por K+), 4 (repouso ~-90 mV)."
+  }
+]

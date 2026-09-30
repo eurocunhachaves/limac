@@ -26,6 +26,8 @@ import shutil
 import sys
 
 import genanki
+
+import html_build
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
 from reportlab.lib.pagesizes import A4
@@ -302,7 +304,7 @@ def build_anki(T, publico):
         rel = card[3] if len(card) > 3 else None
         if publico and is_book(rel):
             rel = None  # versão pública: mantém o cartão, sem a figura do livro
-        src = book_source(rel) if is_book(rel) else ""
+        src = book_source(rel) if is_book(rel) else (html_build.credit_text(rel) if html_build.is_web(rel) else "")
         if kind == "b":
             deck.add_note(genanki.Note(model=BASIC, fields=[card[1], card[2], img_html(rel), tema, src],
                                        guid=genanki.guid_for(T["slug"], "b", card[1]), tags=tags))
@@ -363,8 +365,11 @@ if __name__ == "__main__":
     T = importlib.import_module(sys.argv[1]).TOPIC
     balance(T)
     for publico in (False, True):
-        print(build_resumao(T, publico))
+        print(html_build.build_resumao_pdf(T, publico, paths(T, publico)[0]))
         print(build_questoes(T, publico))
         print(build_anki(T, publico))
+    import json
+    with open(os.path.join(OUT_ROOT, "_publico", T["slug"], "quiz.json"), "w") as f:
+        json.dump(html_build.quiz_json(T), f, ensure_ascii=False)
     from collections import Counter
     print("gabarito:", dict(Counter("ABCDE"[q["a"]] for q in T["mcq"])), "MCQ:", len(T["mcq"]))
