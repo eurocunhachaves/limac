@@ -13,7 +13,7 @@ listas de questões com gabarito comentado, baralhos do Anki e um quiz on-line, 
 | b | Excitação rítmica do coração | Guyton cap. 10 | [resumão](temas/b-excitacao-ritmica/resumao.pdf) | [23 objetivas + 8 abertas](temas/b-excitacao-ritmica/questoes.pdf) | [baralho](temas/b-excitacao-ritmica/flashcards.apkg) |
 | c | O eletrocardiograma normal | Guyton caps. 11 e 12 | [resumão](temas/c-ecg-normal/resumao.pdf) | [25 objetivas + 9 abertas](temas/c-ecg-normal/questoes.pdf) | [baralho](temas/c-ecg-normal/flashcards.apkg) |
 | d | Biofísica da circulação | Guyton caps. 14 e 15 | [resumão](temas/d-biofisica-circulacao/resumao.pdf) | [28 objetivas + 9 abertas](temas/d-biofisica-circulacao/questoes.pdf) | [baralho](temas/d-biofisica-circulacao/flashcards.apkg) |
-| e | Fisiologia vascular e da microcirculação | Guyton cap. 16 | em preparação | | |
+| e | Fisiologia vascular e da microcirculação | Guyton cap. 16 | [resumão](temas/e-microcirculacao-linfatico/resumao.pdf) | [26 objetivas + 9 abertas](temas/e-microcirculacao-linfatico/questoes.pdf) | [baralho](temas/e-microcirculacao-linfatico/flashcards.apkg) |
 | f | Controle local, humoral e nervoso da circulação | Guyton caps. 17 e 18 | em preparação | | |
 | g | Débito cardíaco e retorno venoso | Guyton cap. 20 | em preparação | | |
 | h | Regulação da pressão arterial pelo sistema renal | Guyton cap. 19 | em preparação | | |
