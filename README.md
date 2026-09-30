@@ -14,7 +14,7 @@ listas de questões com gabarito comentado, baralhos do Anki e um quiz on-line, 
 | c | O eletrocardiograma normal | Guyton caps. 11 e 12 | [resumão](temas/c-ecg-normal/resumao.pdf) | [25 objetivas + 9 abertas](temas/c-ecg-normal/questoes.pdf) | [baralho](temas/c-ecg-normal/flashcards.apkg) |
 | d | Biofísica da circulação | Guyton caps. 14 e 15 | [resumão](temas/d-biofisica-circulacao/resumao.pdf) | [28 objetivas + 9 abertas](temas/d-biofisica-circulacao/questoes.pdf) | [baralho](temas/d-biofisica-circulacao/flashcards.apkg) |
 | e | Fisiologia vascular e da microcirculação | Guyton cap. 16 | [resumão](temas/e-microcirculacao-linfatico/resumao.pdf) | [26 objetivas + 9 abertas](temas/e-microcirculacao-linfatico/questoes.pdf) | [baralho](temas/e-microcirculacao-linfatico/flashcards.apkg) |
-| f | Controle local, humoral e nervoso da circulação | Guyton caps. 17 e 18 | em preparação | | |
+| f | Controle local, humoral e nervoso da circulação | Guyton caps. 17 e 18 | [resumão](temas/f-controle-circulacao/resumao.pdf) | [30 objetivas + 9 abertas](temas/f-controle-circulacao/questoes.pdf) | [baralho](temas/f-controle-circulacao/flashcards.apkg) |
 | g | Débito cardíaco e retorno venoso | Guyton cap. 20 | em preparação | | |
 | h | Regulação da pressão arterial pelo sistema renal | Guyton cap. 19 | em preparação | | |
 | s | Semiologia cardiovascular | Porto, Semiologia Médica | em preparação | | |
