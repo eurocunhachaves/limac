@@ -34,16 +34,15 @@ def main(repo):
             linhas.append(f"| {code} | {titulo} | {fonte} | em preparação | | |")
             continue
         T = importlib.import_module(mod).TOPIC
-        src = os.path.join(OUT_ROOT, T["slug"])
+        src = os.path.join(OUT_ROOT, "_publico", T["slug"])  # versão pública: sem figuras dos livros
         dst = os.path.join(repo, "temas", T["slug"])
         os.makedirs(dst, exist_ok=True)
-        shutil.copy(os.path.join(src, f"Resumao - {T['title']}.pdf"), os.path.join(dst, "resumao.pdf"))
-        shutil.copy(os.path.join(src, f"Questoes - {T['title']}.pdf"), os.path.join(dst, "questoes.pdf"))
-        shutil.copy(os.path.join(src, f"Anki - {T['title']}.apkg"), os.path.join(dst, "flashcards.apkg"))
+        for n in ("resumao.pdf", "questoes.pdf", "flashcards.apkg"):
+            shutil.copy(os.path.join(src, n), os.path.join(dst, n))
         d = f"temas/{T['slug']}"
         linhas.append(f"| {code} | {titulo} | {fonte} | [resumão]({d}/resumao.pdf) | "
-                      f"[{len(T['mcq'])} MCQ + {len(T['open'])} casos]({d}/questoes.pdf) | "
-                      f"[{len(T['cards'])} cartões]({d}/flashcards.apkg) |")
+                      f"[{len(T['mcq'])} objetivas + {len(T['open']) + len(T.get('open_extra', []))} abertas]({d}/questoes.pdf) | "
+                      f"[baralho]({d}/flashcards.apkg) |")
 
     fonte_dst = os.path.join(repo, "fonte")
     os.makedirs(os.path.join(fonte_dst, "fig"), exist_ok=True)
@@ -73,7 +72,8 @@ listas de questões com gabarito comentado e baralhos do Anki, organizados por t
 - **Resumão**: leitura rápida do tema, com esquemas e uma tabela final de números para decorar.
 - **Questões**: múltipla escolha no formato da prova e casos clínicos abertos. O gabarito comentado fica no final do PDF.
 - **Anki**: no Anki, `Arquivo → Importar` e escolha o `.apkg`. Cada tema entra como subbaralho de
-  *Liga de Cardiologia*. Reimportar uma versão nova atualiza os cartões sem duplicar.
+  *Liga de Cardiologia*, com cartões de pergunta e resposta, de lacuna (cloze) e de oclusão de imagem.
+  Reimportar uma versão nova atualiza os cartões sem duplicar.
 
 ## Estrutura
 
@@ -92,8 +92,9 @@ Para regerar um tema: `pip install -r fonte/requirements.txt` e `python3 fonte/b
 - Hall JE, Hall ME. *Guyton & Hall · Tratado de Fisiologia Médica*. 14ª ed. Rio de Janeiro: GEN Guanabara Koogan.
 - Porto CC, Porto AL. *Semiologia Médica*. 8ª ed. Rio de Janeiro: Guanabara Koogan; 2019.
 
-Os livros não estão neste repositório. Os esquemas foram desenhados a partir dos valores descritos no texto e
-não reproduzem figuras dos livros. Material de estudo pessoal, sem fins comerciais.
+Os livros não estão neste repositório, e esta versão pública não inclui figuras deles: os esquemas foram
+desenhados a partir dos valores descritos no texto. (Os scripts referenciam uma pasta `fig_livro/` que só existe na
+minha cópia pessoal.) Material de estudo pessoal, sem fins comerciais.
 """
     with open(os.path.join(repo, "README.md"), "w") as fh:
         fh.write(readme)

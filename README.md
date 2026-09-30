@@ -7,7 +7,7 @@ listas de questões com gabarito comentado e baralhos do Anki, organizados por t
 
 | | Tema | Base | Resumão | Questões | Anki |
 |---|---|---|---|---|---|
-| a | O músculo cardíaco e as valvas cardíacas | Guyton cap. 9 (e 23) | [resumão](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) | [37 MCQ + 3 casos](temas/a-musculo-cardiaco-e-valvas/questoes.pdf) | [86 cartões](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) |
+| a | O músculo cardíaco e as valvas cardíacas | Guyton cap. 9 (e 23) | [resumão](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) | [27 objetivas + 9 abertas](temas/a-musculo-cardiaco-e-valvas/questoes.pdf) | [baralho](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) |
 | b | Excitação rítmica do coração | Guyton cap. 10 | em preparação | | |
 | c | O eletrocardiograma normal | Guyton cap. 11 | em preparação | | |
 | d | Biofísica da circulação | Guyton caps. 14 e 15 | em preparação | | |
@@ -22,7 +22,8 @@ listas de questões com gabarito comentado e baralhos do Anki, organizados por t
 - **Resumão**: leitura rápida do tema, com esquemas e uma tabela final de números para decorar.
 - **Questões**: múltipla escolha no formato da prova e casos clínicos abertos. O gabarito comentado fica no final do PDF.
 - **Anki**: no Anki, `Arquivo → Importar` e escolha o `.apkg`. Cada tema entra como subbaralho de
-  *Liga de Cardiologia*. Reimportar uma versão nova atualiza os cartões sem duplicar.
+  *Liga de Cardiologia*, com cartões de pergunta e resposta, de lacuna (cloze) e de oclusão de imagem.
+  Reimportar uma versão nova atualiza os cartões sem duplicar.
 
 ## Estrutura
 
@@ -41,5 +42,6 @@ Para regerar um tema: `pip install -r fonte/requirements.txt` e `python3 fonte/b
 - Hall JE, Hall ME. *Guyton & Hall · Tratado de Fisiologia Médica*. 14ª ed. Rio de Janeiro: GEN Guanabara Koogan.
 - Porto CC, Porto AL. *Semiologia Médica*. 8ª ed. Rio de Janeiro: Guanabara Koogan; 2019.
 
-Os livros não estão neste repositório. Os esquemas foram desenhados a partir dos valores descritos no texto e
-não reproduzem figuras dos livros. Material de estudo pessoal, sem fins comerciais.
+Os livros não estão neste repositório, e esta versão pública não inclui figuras deles: os esquemas foram
+desenhados a partir dos valores descritos no texto. (Os scripts referenciam uma pasta `fig_livro/` que só existe na
+minha cópia pessoal.) Material de estudo pessoal, sem fins comerciais.

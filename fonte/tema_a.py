@@ -1,270 +1,122 @@
-"""Tema a: O músculo cardíaco e as valvas cardíacas (Guyton & Hall, cap. 9; bulhas do cap. 23)."""
+"""Tema a: O músculo cardíaco e as valvas cardíacas (Guyton & Hall, cap. 9; bulhas do cap. 23; focos: Porto)."""
 
 SECTIONS = [
-    ("1. Visão geral: o coração como duas bombas", [
-        ("p", "O coração são <b>duas bombas pulsáteis em série</b>: o coração direito leva sangue aos pulmões e o esquerdo à "
-              "circulação sistêmica. Cada lado tem um <b>átrio</b> (bomba fraca, câmara de entrada) e um <b>ventrículo</b> "
-              "(fonte principal de força). O pericárdio envolve e fixa o coração."),
-        ("p", "Existem três tipos de músculo cardíaco: <b>atrial</b>, <b>ventricular</b> (contraem como o esquelético, mas por "
-              "muito mais tempo) e <b>fibras excitatórias e condutoras especializadas</b> (quase sem miofibrilas; geram e "
-              "conduzem o impulso, assunto do tema b)."),
-    ]),
-    ("2. Anatomia funcional do miocárdio", [
+    ("1. O miocárdio em 5 linhas", [
         ("ul", [
-            "<b>Estriado</b>, com actina e miosina organizadas em sarcômeros, deslizando como no músculo esquelético.",
-            "<b>Discos intercalares</b>: membranas que separam as células; nelas há <b>junções comunicantes (gap junctions)</b> "
-            "de baixa resistência, por onde os íons passam livremente.",
-            "Resultado: o miocárdio funciona como um <b>sincício funcional</b>. Excitada uma célula, o potencial de ação se "
-            "espalha para todas.",
-            "São <b>dois sincícios</b>: <b>atrial</b> e <b>ventricular</b>, separados pelo <b>esqueleto fibroso</b> em torno dos "
-            "anéis valvares AV. O impulso só passa dos átrios aos ventrículos pelo <b>feixe AV</b>. Isso permite que os átrios "
-            "contraiam um pouco antes dos ventrículos.",
-            "<b>Torção do VE</b>: fibras subepicárdicas em hélice para a esquerda e subendocárdicas para a direita. Na sístole o "
-            "ápice gira em sentido horário e a base em anti-horário, puxando a base em direção ao ápice (\"torcer a toalha\"). "
-            "Na diástole a destorção funciona como mola que ajuda a sucção do sangue.",
+            "Coração = <b>duas bombas em série</b> (direita → pulmão; esquerda → corpo). Átrio é bomba fraca de escorva; ventrículo é a força principal.",
+            "Três tipos de músculo: <b>atrial</b>, <b>ventricular</b> (contraem como o esquelético, porém por mais tempo) e <b>fibras "
+            "condutoras especializadas</b> (quase não contraem; geram e conduzem o impulso, tema b).",
+            "<b>Discos intercalares</b> com <b>junções comunicantes (gap junctions)</b>: o potencial passa de célula a célula, então o miocárdio é um <b>sincício funcional</b>.",
+            "São <b>dois sincícios</b> (atrial e ventricular) separados pelo <b>esqueleto fibroso</b>. A única ponte elétrica é o <b>feixe AV</b>, o que permite ao átrio contrair antes.",
+            "<b>Torção do VE</b>: na sístole o ápice gira no sentido horário e a base no anti-horário; na diástole a \"destorção\" ajuda a sugar sangue.",
         ]),
+        ("fig", None, "fig_livro/g9_02.png", "Discos intercalares e o sincício do músculo cardíaco.", 9),
     ]),
-    ("3. Potencial de ação do músculo ventricular", [
-        ("fig", "fig/a_potencial_acao.png", "Figura 1. Potencial de ação da fibra ventricular e suas fases (esquema; valores do Guyton).", 14.5),
-        ("p", "Repouso ≈ <b>−85 mV</b>; pico ≈ <b>+20 mV</b> (amplitude ≈ 105 mV). Após o pico, a membrana fica despolarizada "
-              "por ≈ <b>0,2 s</b> no <b>platô</b>, e então repolariza abruptamente. Por causa do platô, a contração ventricular "
-              "dura até <b>15 vezes</b> mais que a do músculo esquelético."),
+    ("2. Potencial de ação ventricular", [
+        ("fig", "fig/a_potencial_acao.png", "fig_livro/g9_05.png", "Fases do potencial de ação da fibra ventricular e correntes iônicas.", 8),
         ("table", [
-            ["Fase", "O que acontece", "Corrente dominante"],
-            ["0 · despolarização", "Abrem os <b>canais rápidos de Na⁺</b> dependentes de voltagem; potencial vai a ≈ +20 mV", "Entrada de Na⁺"],
-            ["1 · repolarização inicial", "Canais de Na⁺ fecham; K⁺ sai por canais transitórios", "Saída de K⁺"],
-            ["2 · platô", "Abrem lentamente os <b>canais de Ca²⁺ tipo L</b> (lentos, \"cálcio-sódio\") e <b>cai ~5× a permeabilidade ao K⁺</b>", "Entrada de Ca²⁺ ≈ saída de K⁺"],
-            ["3 · repolarização rápida", "Canais de Ca²⁺ fecham; abrem canais lentos de K⁺ (retificador tardio)", "Saída de K⁺"],
-            ["4 · repouso", "Potencial estável em −80 a −90 mV (no ventrículo)", "K⁺ (canais de repouso)"],
-        ], [3.6, 9.4, 4.4]),
-        ("box", "Por que o potencial de ação cardíaco é longo? (duas diferenças em relação ao esquelético)", [
-            "Além dos canais rápidos de Na⁺, existem <b>canais lentos de Ca²⁺ tipo L</b> que ficam abertos por <b>décimos de segundo</b>, "
-            "mantendo a despolarização. O Ca²⁺ que entra também <b>ativa a contração</b>.",
-            "Logo após o início do potencial, a <b>permeabilidade ao K⁺ cai cerca de 5 vezes</b> (efeito que não existe no esquelético), "
-            "impedindo a repolarização precoce. Quando os canais de Ca²⁺ fecham (0,2 a 0,3 s), a permeabilidade ao K⁺ sobe e a fibra repolariza.",
-        ]),
-        ("h2", "Velocidade de condução e período refratário"),
-        ("table", [
-            ["Parâmetro", "Valor (Guyton)"],
-            ["Condução no músculo atrial e ventricular", "0,3 a 0,5 m/s (≈ 1/250 das fibras nervosas grandes, ≈ 1/10 do músculo esquelético)"],
-            ["Condução nas fibras de Purkinje", "até 4 m/s"],
-            ["Período refratário absoluto do ventrículo", "0,25 a 0,30 s (≈ duração do potencial com platô)"],
-            ["Período refratário relativo do ventrículo", "≈ 0,05 s adicional (só estímulo muito forte excita)"],
-            ["Período refratário do átrio", "≈ 0,15 s (bem mais curto que o ventricular)"],
-        ], [7.4, 10.0]),
-        ("box", "Consequência clínica importante", "Como o período refratário dura quase toda a contração, <b>o coração não entra em "
-               "tetania</b> e as extrassístoles <b>não somam</b> força como no músculo esquelético. O átrio, com refratário mais curto, "
-               "consegue sustentar frequências muito mais altas (base do flutter e da fibrilação atrial)."),
-    ]),
-    ("4. Acoplamento excitação-contração", [
-        ("ul", [
-            "O potencial de ação percorre o sarcolema e entra pelos <b>túbulos T</b>.",
-            "Nos túbulos T, abrem-se <b>canais de Ca²⁺ tipo L</b> (receptores de di-hidropiridina). O Ca²⁺ que entra do "
-            "<b>líquido extracelular</b> ativa os <b>receptores de rianodina (RyR2)</b> do retículo sarcoplasmático, que liberam "
-            "muito mais Ca²⁺: é a <b>liberação de cálcio induzida por cálcio</b>.",
-            "O Ca²⁺ citosólico liga-se à <b>troponina C</b>, a tropomiosina se desloca e formam-se as <b>pontes cruzadas</b> actina-miosina.",
-            "<b>Relaxamento</b>: fim do platô, o influxo de Ca²⁺ cessa. O Ca²⁺ é recaptado pela <b>SERCA2</b> (Ca²⁺-ATPase do RS) e "
-            "expulso da célula pelo <b>trocador Na⁺/Ca²⁺ (NCX)</b>; o Na⁺ que entrou sai pela <b>Na⁺/K⁺-ATPase</b>.",
-        ]),
-        ("box", "Diferenças do músculo cardíaco em relação ao esquelético (cai muito em prova)", [
-            "O <b>retículo sarcoplasmático é menos desenvolvido</b> e não armazena Ca²⁺ suficiente para uma contração completa.",
-            "Os <b>túbulos T são 5× mais largos</b> (volume <b>25× maior</b>) e contêm <b>mucopolissacarídeos com carga negativa</b> que "
-            "armazenam Ca²⁺ extracelular.",
-            "Por isso a <b>força de contração depende muito da [Ca²⁺] extracelular</b>: um coração em solução sem cálcio para de bater "
-            "rapidamente. Já o esquelético quase não é afetado por variações moderadas do Ca²⁺ extracelular.",
-            "A <b>duração da contração</b> acompanha a do potencial de ação: ≈ 0,2 s no átrio e ≈ 0,3 s no ventrículo.",
-        ]),
-        ("tip", "Para conectar com a clínica (conhecimento complementar, não está no cap. 9)",
-               "Bloqueadores dos canais de Ca²⁺ tipo L (verapamil, diltiazem) reduzem a força de contração; a digoxina inibe a "
-               "Na⁺/K⁺-ATPase, diminui a saída de Ca²⁺ pelo NCX e aumenta a força (efeito inotrópico positivo). A estimulação "
-               "β-adrenérgica fosforila canais L e fosfolambano, aumentando a força e acelerando o relaxamento."),
-    ]),
-    ("5. Ciclo cardíaco", [
-        ("p", "Ciclo cardíaco = eventos entre o início de um batimento e o início do seguinte. Começa com um potencial de ação "
-              "espontâneo no <b>nó sinusal</b> (parede superolateral do átrio direito, junto à veia cava superior). Há um "
-              "<b>atraso de mais de 0,1 s</b> na passagem do impulso dos átrios aos ventrículos (nó e feixe AV), o que permite "
-              "que os átrios contraiam antes e funcionem como <b>bombas de escorva</b>."),
-        ("p", "Duração do ciclo = 1/FC. Com FC de 72 bpm, cada ciclo dura ≈ <b>0,833 s</b>. Quando a FC sobe, <b>a diástole encurta "
-              "proporcionalmente mais que a sístole</b>: a sístole ocupa ≈ 0,4 do ciclo a 72 bpm e ≈ 0,65 com FC três vezes maior. "
-              "Em taquicardias muito altas o enchimento ventricular fica incompleto."),
-        ("fig", "fig/a_wiggers.png", "Figura 2. Diagrama de Wiggers do lado esquerdo (esquema com valores aproximados do Guyton). "
-                "Linhas tracejadas: fechamento e abertura das valvas mitral e aórtica.", 14.5),
-        ("h2", "ECG e ciclo mecânico"),
-        ("ul", [
-            "<b>Onda P</b>: despolarização atrial, seguida da contração atrial (onda <i>a</i> de pressão).",
-            "<b>QRS</b>: aparece ≈ 0,16 s após o início da P; despolarização ventricular; começa <b>um pouco antes</b> da sístole ventricular.",
-            "<b>Onda T</b>: repolarização ventricular; ocorre <b>um pouco antes do fim</b> da contração ventricular.",
-        ]),
-        ("h2", "Átrios como bombas de escorva e ondas de pressão atrial"),
-        ("p", "Cerca de <b>80%</b> do enchimento ventricular ocorre passivamente, antes da contração atrial; a <b>contração atrial "
-              "acrescenta ≈ 20%</b>. Como o coração pode bombear 300 a 400% mais do que o necessário em repouso, a perda da "
-              "contração atrial (p. ex., fibrilação atrial) costuma passar despercebida em repouso, mas pode causar dispneia no "
-              "esforço. Ventrículos rígidos (idade, hipertensão, diabetes, fibrose) dependem mais da contração atrial."),
-        ("table", [
-            ["Onda", "Momento", "Causa"],
-            ["<b>a</b>", "Fim da diástole", "<b>Contração atrial</b>. AD sobe 4 a 6 mmHg; AE sobe 7 a 8 mmHg"],
-            ["<b>c</b>", "Início da sístole ventricular", "Principalmente <b>abaulamento das valvas AV</b> para os átrios pela pressão ventricular (e leve refluxo)"],
-            ["<b>v</b>", "Fim da sístole ventricular", "<b>Enchimento atrial</b> pelas veias com as valvas AV fechadas; some quando as AV abrem"],
-        ], [1.6, 4.4, 11.4]),
-        ("h2", "As fases do ciclo (lado esquerdo)"),
-        ("table", [
-            ["Fase", "Valvas", "Duração / valores", "O que acontece"],
-            ["Enchimento rápido", "AV abertas; semilunares fechadas", "1º terço da diástole", "Sangue acumulado nos átrios durante a sístole entra rapidamente"],
-            ["Diástase", "AV abertas", "Terço médio", "Pouco fluxo: sangue que chega das veias passa direto"],
-            ["Sístole atrial", "AV abertas", "Último terço; ≈ 20% do enchimento", "Complementa o volume diastólico final"],
-            ["Contração isovolumétrica", "<b>Todas fechadas</b>", "0,02 a 0,03 s", "Tensão sobe, volume constante. Termina quando PVE &gt; ≈ 80 mmHg (PVD &gt; ≈ 8 mmHg)"],
-            ["Ejeção rápida", "Semilunares abertas", "1º terço da ejeção: ≈ 70% do volume ejetado", ""],
-            ["Ejeção lenta", "Semilunares abertas", "2/3 finais: ≈ 30%", ""],
-            ["Relaxamento isovolumétrico", "<b>Todas fechadas</b>", "0,03 a 0,06 s", "Pressão cai até abaixo da atrial; então abrem as AV"],
-        ], [3.6, 3.4, 4.2, 6.2]),
-        ("h2", "Volumes"),
-        ("table", [
-            ["Grandeza", "Normal", "Faixa possível"],
-            ["Volume diastólico final (VDF)", "110 a 120 mℓ", "até 150 a 180 mℓ"],
-            ["Volume sistólico (débito sistólico, VS)", "≈ 70 mℓ", "pode mais que dobrar"],
-            ["Volume sistólico final (VSF)", "40 a 50 mℓ", "até 10 a 20 mℓ com contração forte"],
-            ["Fração de ejeção (VS/VDF)", "≈ 0,6 (60%)", "índice clínico da função sistólica"],
-        ], [7.0, 4.2, 6.2]),
-    ]),
-    ("6. Valvas cardíacas", [
-        ("p", "As valvas <b>abrem e fecham passivamente</b>, conforme o gradiente de pressão: fecham com gradiente retrógrado e "
-              "abrem com gradiente anterógrado. As <b>AV</b> (tricúspide e mitral) impedem refluxo ventrículo → átrio na sístole; "
-              "as <b>semilunares</b> (aórtica e pulmonar) impedem refluxo artéria → ventrículo na diástole."),
-        ("table", [
-            ["", "Valvas AV (mitral, tricúspide)", "Valvas semilunares (aórtica, pulmonar)"],
-            ["Estrutura", "Finas, com <b>cordas tendíneas e músculos papilares</b>", "Tecido fibroso forte e flexível; <b>sem cordas</b>"],
-            ["Fechamento", "Suave, quase sem refluxo", "<b>Abrupto</b> (alta pressão arterial no fim da sístole), com pequeno refluxo de milissegundos"],
-            ["Velocidade do fluxo", "Menor (orifício grande)", "<b>Maior</b> (orifício menor)"],
-            ["Desgaste", "Menor", "<b>Maior abrasão mecânica</b> nas bordas"],
-            ["Som de fechamento", "<b>B1</b>: grave, mais longo (≈ 0,14 s)", "<b>B2</b>: agudo, estalido curto (≈ 0,11 s)"],
-        ], [3.0, 7.0, 7.4]),
-        ("box", "Músculos papilares: pegadinha clássica", [
-            "Contraem junto com a parede ventricular, mas <b>NÃO ajudam a fechar as valvas</b>.",
-            "Eles puxam as cúspides em direção ao ventrículo, <b>impedindo que abaulem demais (prolapsem) para o átrio</b> na sístole.",
-            "Ruptura de corda tendínea ou paralisia do músculo papilar (p. ex., isquemia no infarto) → a valva everte e vaza: "
-            "<b>insuficiência mitral aguda</b>, que pode causar insuficiência cardíaca grave ou letal.",
-        ]),
-        ("h2", "Curva de pressão aórtica"),
-        ("ul", [
-            "Após a abertura da valva aórtica, a pressão no VE sobe mais devagar porque o sangue já está saindo para a aorta.",
-            "A distensão das artérias elásticas leva a pressão a ≈ <b>120 mmHg</b> (sistólica).",
-            "<b>Incisura</b> (nó dicrótico): pequeno refluxo logo antes do fechamento aórtico, seguido da interrupção súbita desse refluxo.",
-            "Na diástole a pressão cai lentamente (as artérias elásticas continuam empurrando sangue para a periferia) até ≈ <b>80 mmHg</b> (diastólica).",
-            "No VD e na artéria pulmonar as curvas são semelhantes, mas as pressões são ≈ <b>1/6</b> das esquerdas.",
-        ]),
-        ("h2", "Bulhas cardíacas (Guyton, cap. 23)"),
-        ("table", [
-            ["Bulha", "Causa", "Quando / significado"],
-            ["<b>B1</b>", "Fechamento das AV e vibração de valvas tensas, cordas, sangue e paredes", "Início da sístole; grave e mais longa"],
-            ["<b>B2</b>", "Fechamento das semilunares e reverberação entre artéria, valva e ventrículo", "Fim da sístole; mais aguda (valvas mais retesadas, paredes arteriais mais elásticas)"],
-            ["<b>B3</b>", "Oscilação do sangue que entra no ventrículo no enchimento", "Início do terço médio da diástole; normal em crianças e jovens, em idosos sugere <b>IC sistólica</b>"],
-            ["<b>B4</b>", "Contração atrial empurrando sangue para ventrículo pouco complacente", "Fim da diástole; <b>hipertrofia do VE</b> em idosos, ventrículo rígido. Não existe em fibrilação atrial"],
-        ], [1.4, 8.0, 8.0]),
-        ("p", "A abertura das valvas normalmente <b>não produz som</b> (processo lento). Os focos de ausculta não ficam sobre as "
-              "valvas: o aórtico e o pulmonar ficam acima, ao longo das artérias; o tricúspide sobre o VD; o mitral no ápice do VE."),
-        ("tip", "Ponte com valvopatias (cap. 23)",
-               "Febre reumática lesa mais a <b>mitral</b> e depois a <b>aórtica</b> (valvas de alta pressão). A <b>estenose aórtica "
-               "calcificada senil</b> é hoje a valvopatia mais comum: causa hipertrofia concêntrica do VE, gradiente de 75 a 100 mmHg "
-               "nos casos graves, sopro sistólico áspero irradiado para o pescoço, e a tríade angina, síncope e dispneia aos esforços."),
-    ]),
-    ("7. Trabalho cardíaco e alça pressão-volume", [
-        ("p", "<b>Trabalho sistólico</b> = energia convertida em trabalho a cada batimento. Tem duas partes: (1) <b>trabalho "
-              "pressão-volume (externo)</b>, a maior parte, para levar sangue das veias de baixa pressão para as artérias de alta "
-              "pressão; (2) <b>energia cinética</b>, ≈ 1% do total no VE normal, proporcional a massa × velocidade². Na "
-              "<b>estenose aórtica</b> a energia cinética pode passar de <b>50%</b> do trabalho total. O trabalho externo do VD é "
-              "≈ 1/6 do VE."),
-        ("fig", "fig/a_alca_pv.png", "Figura 3. Alça pressão-volume do VE. A área interna é o trabalho externo (TE).", 11.5),
-        ("table", [
-            ["Fase da alça", "Trecho", "Detalhe"],
-            ["I · enchimento", "A → B", "De ≈ 50 mℓ (VSF) e 2 a 3 mmHg até ≈ 120 mℓ (VDF) e 5 a 7 mmHg"],
-            ["II · contração isovolumétrica", "B → C", "Volume fixo; pressão sobe até ≈ 80 mmHg (pressão aórtica diastólica): abre a aórtica"],
-            ["III · ejeção", "C → D", "Volume cai 70 mℓ; pressão sobe ao pico e depois cai; em D fecha a aórtica"],
-            ["IV · relaxamento isovolumétrico", "D → A", "Volume fixo; pressão cai ao nível diastólico; abre a mitral"],
-        ], [5.0, 2.0, 10.4]),
-        ("ul", [
-            "Curva de <b>pressão diastólica</b>: quase plana até ≈ 150 mℓ; acima disso sobe muito (tecido fibroso e pericárdio no limite).",
-            "Curva de <b>pressão sistólica</b>: máxima com 150 a 170 mℓ; acima disso cai (sobreposição actina-miosina menos que ideal). "
-            "Pico isovolumétrico máximo: <b>250 a 300 mmHg no VE</b> e <b>60 a 80 mmHg no VD</b>.",
-            "Com mais retorno venoso e estímulo simpático, a alça fica mais larga (mais VDF), mais alta (mais pressão) e vai mais à esquerda (menor VSF).",
-        ]),
-        ("box", "Pré-carga e pós-carga (definições do Guyton)", [
-            "<b>Pré-carga</b>: tensão do músculo ao começar a contrair; para o ventrículo, a <b>pressão diastólica final</b> (ventrículo cheio).",
-            "<b>Pós-carga</b>: carga contra a qual o músculo contrai; para o ventrículo, a <b>pressão na artéria de saída</b> (aorta). "
-            "Às vezes, de forma menos precisa, fala-se da resistência vascular.",
-        ]),
-        ("h2", "Consumo de O₂ e eficiência"),
-        ("ul", [
-            "Combustível: <b>70 a 90% ácidos graxos</b> (metabolismo oxidativo); 10 a 30% glicose e lactato.",
-            "O consumo de O₂ é proporcional à área <b>TE + EP</b> (energia potencial) e ao <b>índice tensão-tempo</b>.",
-            "<b>Lei de Laplace</b>: T = P × r. Pressão sistólica alta → mais tensão → mais O₂. Sobrecarga de pressão crônica → "
-            "<b>hipertrofia concêntrica</b> (parede grossa, raio menor, alivia a tensão). Ventrículo <b>dilatado</b> (hipertrofia "
-            "excêntrica) gasta mais energia para a mesma pressão, porque o raio é maior; paradoxo da insuficiência cardíaca.",
-            "<b>Eficiência</b> máxima do coração normal: <b>20 a 25%</b> (resto vira calor); na insuficiência cardíaca pode cair a 5%.",
+            ["Fase", "O que acontece"],
+            ["0", "Abrem os <b>canais rápidos de Na⁺</b>: de −85 a ≈ +20 mV"],
+            ["1", "Canais de Na⁺ fecham; saída transitória de K⁺"],
+            ["2 · platô", "<b>Entra Ca²⁺ (canais tipo L, lentos)</b> e a <b>permeabilidade ao K⁺ cai ~5×</b>. Dura ≈ 0,2 s"],
+            ["3", "Canais de Ca²⁺ fecham; K⁺ sai rápido e a fibra repolariza"],
+            ["4", "Repouso ≈ −85 mV (−80 a −90)"],
+        ], [2.4, 15.0]),
+        ("box", "O que a prova cobra", [
+            "Platô = <b>Ca²⁺ entrando + K⁺ \"preso\"</b>. Por causa dele a contração dura até 15× a do músculo esquelético.",
+            "<b>Período refratário absoluto do ventrículo: 0,25 a 0,30 s</b> (quase toda a contração) + relativo de 0,05 s. "
+            "Resultado: <b>o coração não tetaniza</b> e as extrassístoles não somam força.",
+            "Átrio tem refratário mais curto (≈ 0,15 s), por isso aguenta frequências muito altas (flutter, fibrilação).",
+            "Condução: músculo <b>0,3 a 0,5 m/s</b>; Purkinje <b>até 4 m/s</b>.",
         ]),
     ]),
-    ("8. Regulação do bombeamento", [
-        ("p", "Débito cardíaco de repouso: <b>4 a 6 ℓ/min</b>; no exercício intenso, <b>4 a 7 vezes</b> mais. Dois mecanismos: "
-              "(1) <b>regulação intrínseca</b> (Frank-Starling) e (2) <b>controle autonômico</b> da frequência e da força."),
-        ("h2", "Mecanismo de Frank-Starling"),
-        ("box", "Frank-Starling em uma frase",
-               "Dentro dos limites fisiológicos, <b>o coração bombeia todo o sangue que volta a ele pelas veias</b>: quanto mais o "
-               "músculo é distendido no enchimento, maior a força de contração e o volume ejetado."),
+    ("3. Acoplamento excitação-contração", [
+        ("fig", None, "fig_livro/g9_07.png", "Entrada de Ca²⁺ pelo túbulo T, liberação pelo RyR e recaptação pela SERCA2.", 12),
         ("ul", [
-            "Mecanismo: o estiramento leva actina e miosina a um grau de <b>sobreposição mais próximo do ideal</b>. É propriedade de todo músculo estriado.",
-            "O débito cardíaco é determinado principalmente pelo <b>retorno venoso</b>, que é a soma dos fluxos locais dos tecidos (tema g).",
-            "Estiramento do átrio direito também <b>aumenta a FC em 10 a 20%</b> diretamente (nó sinusal) e ativa o <b>reflexo de Bainbridge</b> "
-            "(via vago), que pode aumentar a FC em mais 40 a 60%.",
-            "<b>Curvas de função ventricular</b> (trabalho sistólico ou débito ventricular × pressão atrial) são a expressão gráfica de Frank-Starling.",
+            "Potencial desce pelos <b>túbulos T</b> → abre <b>canais de Ca²⁺ tipo L</b> → o Ca²⁺ extracelular ativa os <b>receptores de "
+            "rianodina (RyR2)</b> do retículo sarcoplasmático → liberação de muito mais Ca²⁺ (<b>liberação de Ca²⁺ induzida por Ca²⁺</b>).",
+            "Ca²⁺ + <b>troponina C</b> → pontes cruzadas actina-miosina → contração.",
+            "Relaxamento: <b>SERCA2</b> devolve Ca²⁺ ao retículo; o <b>trocador Na⁺/Ca²⁺</b> expulsa Ca²⁺ da célula; a <b>Na⁺/K⁺-ATPase</b> tira o Na⁺.",
         ]),
-        ("h2", "Controle autonômico"),
+        ("box", "Diferenças em relação ao músculo esquelético",
+               "O retículo sarcoplasmático cardíaco é <b>pouco desenvolvido</b>; os túbulos T são <b>5× mais largos (25× o volume)</b> e "
+               "guardam Ca²⁺ em mucopolissacarídeos. Por isso a <b>força depende do Ca²⁺ extracelular</b>: sem Ca²⁺ no meio, o coração para."),
+    ]),
+    ("4. Ciclo cardíaco", [
+        ("fig", "fig/a_wiggers.png", "fig_livro/g9_08.png", "Eventos do ciclo cardíaco do lado esquerdo (diagrama de Wiggers).", 14),
+        ("p", "O ciclo começa no <b>nó sinusal</b>. Há um <b>atraso &gt; 0,1 s</b> no nó AV, então o átrio contrai antes do ventrículo. "
+              "Duração = 1/FC (72 bpm → 0,83 s). Quando a FC sobe, <b>a diástole encurta mais que a sístole</b> "
+              "(sístole ≈ 40% do ciclo a 72 bpm e ≈ 65% com FC 3×), e o enchimento pode ficar incompleto."),
         ("table", [
-            ["", "Simpático", "Parassimpático (vago)"],
-            ["Frequência cardíaca", "De ≈ 70 para 180 a 200 bpm (raramente 250)", "Estímulo forte pode parar o coração por segundos; depois \"escapa\" a 20 a 40 bpm"],
-            ["Força de contração", "Pode <b>dobrar</b>", "Reduz 20 a 30% (fibras vagais vão sobretudo aos <b>átrios</b>)"],
-            ["Débito cardíaco", "Aumenta 2 a 3 vezes (além do Frank-Starling); &gt; 100% a uma mesma pressão atrial", "Pode cair 50% ou mais; quase a zero com estímulo máximo"],
-            ["Tônus basal", "Mantém o bombeamento ≈ 30% acima do que seria sem simpático; inibição reduz até 30%", "Predomina no repouso sobre a FC"],
-        ], [3.6, 6.8, 7.0]),
-        ("h2", "Íons e temperatura"),
+            ["Fase", "Valvas", "Detalhe que cai"],
+            ["Enchimento rápido", "AV abertas", "1º terço da diástole; o sangue acumulado no átrio entra de uma vez"],
+            ["Diástase", "AV abertas", "Terço médio; pouco fluxo"],
+            ["Sístole atrial", "AV abertas", "Último terço; <b>≈ 20% do enchimento</b> (80% é passivo)"],
+            ["Contração isovolumétrica", "<b>todas fechadas</b>", "0,02 a 0,03 s; termina quando PVE &gt; ≈ 80 mmHg (PVD &gt; ≈ 8)"],
+            ["Ejeção", "semilunares abertas", "≈ 70% do volume sai no 1º terço (ejeção rápida)"],
+            ["Relaxamento isovolumétrico", "<b>todas fechadas</b>", "0,03 a 0,06 s; termina quando as AV abrem"],
+        ], [4.2, 3.4, 9.8]),
+        ("table", [
+            ["Onda atrial", "Causa"],
+            ["<b>a</b>", "Contração atrial (AD +4 a 6 mmHg; AE +7 a 8 mmHg)"],
+            ["<b>c</b>", "Início da sístole ventricular: <b>abaulamento das valvas AV</b> para o átrio"],
+            ["<b>v</b>", "Fim da sístole: átrio enchendo pelas veias com as AV fechadas"],
+        ], [2.6, 14.8]),
+        ("box", "Volumes normais (decorar)",
+               "<b>VDF 110 a 120 mℓ</b> · <b>VS ≈ 70 mℓ</b> · <b>VSF 40 a 50 mℓ</b> · <b>FE = VS/VDF ≈ 60%</b>. "
+               "ECG: P precede a contração atrial; QRS começa pouco antes da sístole; T ocorre pouco antes do fim da contração."),
+    ]),
+    ("5. Valvas e bulhas", [
+        ("fig", None, "fig_livro/g9_09.png", "Valvas mitral e aórtica: cúspides, cordas tendíneas e músculos papilares.", 8),
+        ("table", [
+            ["", "AV (mitral, tricúspide)", "Semilunares (aórtica, pulmonar)"],
+            ["Estrutura", "Finas, com <b>cordas tendíneas e papilares</b>", "Fibrosas e resistentes, <b>sem cordas</b>"],
+            ["Fechamento", "Suave", "<b>Abrupto</b> (alta pressão arterial)"],
+            ["Fluxo e desgaste", "Orifício grande, fluxo lento", "Orifício menor: <b>fluxo rápido e mais abrasão</b>"],
+            ["Som", "<b>B1</b>: grave e mais longo", "<b>B2</b>: agudo e curto"],
+        ], [3.2, 7.0, 7.2]),
+        ("box", "Pegadinha clássica: músculos papilares",
+               "As valvas abrem e fecham <b>passivamente</b> pelo gradiente de pressão. Os papilares <b>não fecham a valva</b>: puxam as "
+               "cúspides para o ventrículo e <b>impedem o prolapso</b> para o átrio. Isquemia do papilar ou ruptura de corda no infarto → "
+               "<b>insuficiência mitral aguda</b>."),
+        ("ul", [
+            "<b>Curva aórtica</b>: sobe a ≈ 120 mmHg; a <b>incisura</b> marca o fechamento da aórtica (breve refluxo); cai lentamente até ≈ 80 mmHg. "
+            "Pressões do lado direito ≈ 1/6 das esquerdas.",
+            "<b>B3</b>: início do terço médio da diástole (enchimento rápido). Normal em crianças e jovens; em idosos sugere <b>IC sistólica</b>.",
+            "<b>B4</b>: sístole atrial contra <b>ventrículo rígido</b> (HVE do idoso, hipertensão). <b>Some na fibrilação atrial</b>.",
+            "Abertura das valvas normalmente não faz som.",
+        ]),
+        ("fig", "fig/a_focos.png", "fig_livro/g23_02.png", "Focos de ausculta. Pelo Porto: aórtico 2º EIC D; pulmonar 2º EIC E; "
+                "aórtico acessório 3º-4º EIC E; tricúspide na base do apêndice xifoide; mitral no 5º EIC E na linha hemiclavicular (ictus).", 8),
+    ]),
+    ("6. Alça pressão-volume, pré e pós-carga", [
+        ("fig", "fig/a_alca_pv.png", "fig_livro/g9_11.png", "Alça pressão-volume do VE. A área é o trabalho externo (TE).", 9.5),
+        ("ul", [
+            "<b>I</b> enchimento (50 → 120 mℓ) · <b>II</b> contração isovolumétrica (até ≈ 80 mmHg) · <b>III</b> ejeção (sai ≈ 70 mℓ) · "
+            "<b>IV</b> relaxamento isovolumétrico.",
+            "<b>Pré-carga</b> = <b>pressão diastólica final</b>. <b>Pós-carga</b> = <b>pressão na aorta</b> (artéria de saída).",
+            "Trabalho: quase todo é pressão-volume; energia cinética é ≈ 1%, mas passa de <b>50% na estenose aórtica</b>.",
+            "Energia: <b>70 a 90% de ácidos graxos</b>; eficiência de <b>20 a 25%</b> (na IC, até 5%).",
+            "<b>Laplace: T = P × r</b>. Pressão alta crônica → <b>hipertrofia concêntrica</b> (reduz o raio e a tensão). "
+            "Ventrículo dilatado gasta mais O₂ para a mesma pressão.",
+        ]),
+    ]),
+    ("7. Regulação do bombeamento", [
+        ("box", "Frank-Starling",
+               "Quanto mais o músculo é distendido no enchimento, maior a força: <b>o coração bombeia todo o sangue que volta a ele</b>. "
+               "Motivo: sobreposição actina-miosina mais próxima do ideal. O débito é determinado pelo <b>retorno venoso</b>."),
+        ("ul", [
+            "Estiramento do AD: FC ↑ 10 a 20% (direto no nó sinusal) + <b>reflexo de Bainbridge</b> (via vagal) FC ↑ 40 a 60%.",
+            "<b>Simpático</b>: FC até 180 a 200 bpm, força até <b>dobra</b>, débito 2 a 3×. O tônus basal mantém o bombeamento 30% acima.",
+            "<b>Vago</b>: age sobretudo nos <b>átrios</b> → reduz muito a FC (pode parar e depois \"escapar\" a 20 a 40 bpm) e pouco a força (20 a 30%).",
+            "Débito de repouso 4 a 6 ℓ/min; no exercício, 4 a 7×. A pós-carga só reduz o débito com pressão média &gt; ≈ <b>160 mmHg</b>.",
+        ]),
         ("table", [
             ["Situação", "Efeito no coração"],
-            ["<b>Hiperpotassemia</b>", "Coração <b>dilatado e flácido</b>, FC ↓, bloqueio AV. 8 a 12 mEq/ℓ (2 a 3× o normal) pode matar. "
-                                      "Mecanismo: despolariza parcialmente o repouso → potencial de ação menor → contração mais fraca"],
-            ["<b>Hipercalcemia</b>", "Tendência à <b>contração espástica</b> (efeito oposto ao K⁺)"],
-            ["<b>Hipocalcemia</b>", "Fraqueza cardíaca (semelhante ao K⁺ alto). Clinicamente raro, pois o Ca²⁺ é muito bem regulado"],
-            ["<b>Febre</b>", "FC ↑ (até o dobro): calor aumenta a permeabilidade iônica e acelera a autoexcitação. Elevação moderada "
-                             "aumenta a força; elevação prolongada esgota o metabolismo e enfraquece"],
-            ["<b>Hipotermia</b>", "FC ↓ muito; poucos batimentos/min com 15,5 a 21 °C"],
+            ["<b>K⁺ alto</b>", "Coração <b>dilatado e flácido</b>, FC ↓, <b>bloqueio AV</b>; 8 a 12 mEq/ℓ pode matar (despolariza o repouso → potencial menor)"],
+            ["<b>Ca²⁺ alto / baixo</b>", "Alto: contração <b>espástica</b>. Baixo: fraqueza"],
+            ["<b>Febre / hipotermia</b>", "Febre ↑ FC (até o dobro). Hipotermia ↓ muito a FC"],
         ], [3.6, 13.8]),
-        ("box", "Pós-carga e débito cardíaco",
-               "Aumentar a pressão arterial <b>não reduz o débito cardíaco</b> até a pressão arterial média passar de ≈ <b>160 mmHg</b>. "
-               "Na faixa normal, quem determina o débito é a facilidade do fluxo pelos tecidos, ou seja, o <b>retorno venoso</b>."),
-    ]),
-    ("9. Números para decorar", [
-        ("table", [
-            ["Item", "Valor"],
-            ["Potencial de repouso ventricular / pico", "−85 mV / +20 mV (amplitude 105 mV)"],
-            ["Duração do platô", "≈ 0,2 s (canais de Ca²⁺ fecham em 0,2 a 0,3 s)"],
-            ["Refratário absoluto ventricular / relativo / atrial", "0,25 a 0,30 s / +0,05 s / 0,15 s"],
-            ["Condução muscular / Purkinje", "0,3 a 0,5 m/s / até 4 m/s"],
-            ["Atraso AV", "&gt; 0,1 s; QRS ≈ 0,16 s após o início da P"],
-            ["Ciclo a 72 bpm", "0,833 s; sístole ≈ 40% do ciclo (≈ 65% com FC 3×)"],
-            ["Contribuição atrial ao enchimento", "≈ 20% (80% passivo)"],
-            ["Onda a: AD / AE", "+4 a 6 / +7 a 8 mmHg"],
-            ["Contração isovolumétrica / relaxamento isovolumétrico", "0,02 a 0,03 s / 0,03 a 0,06 s"],
-            ["Abertura semilunar: VE / VD", "&gt; 80 mmHg / &gt; 8 mmHg"],
-            ["VDF / VS / VSF / FE", "110 a 120 / 70 / 40 a 50 mℓ / 60%"],
-            ["Ejeção rápida", "70% do volume no 1º terço da ejeção"],
-            ["Aorta", "120/80 mmHg; pulmonar ≈ 1/6"],
-            ["Energia cinética no trabalho do VE", "≈ 1% (normal); &gt; 50% (estenose aórtica)"],
-            ["Pico sistólico isovolumétrico: VE / VD", "250 a 300 / 60 a 80 mmHg"],
-            ["Substrato energético", "70 a 90% ácidos graxos"],
-            ["Eficiência cardíaca", "20 a 25% (IC: até 5%)"],
-            ["Débito cardíaco repouso / exercício", "4 a 6 ℓ/min / 4 a 7×"],
-            ["Bainbridge / estiramento direto do nó SA", "FC +40 a 60% / +10 a 20%"],
-            ["Simpático máximo / escape vagal", "180 a 200 bpm / 20 a 40 bpm"],
-            ["K⁺ letal", "8 a 12 mEq/ℓ"],
-            ["Pressão média a partir da qual o DC cai", "&gt; 160 mmHg"],
-        ], [8.4, 9.0]),
     ]),
 ]
 
@@ -583,97 +435,124 @@ OPEN = [
             "clínico complementar ao cap. 9.)"]),
 ]
 
+
+# versão enxuta: mantém 26 das 37 questões originais e acrescenta uma de focos de ausculta
+_FORA = {3, 5, 10, 13, 22, 27, 28, 30, 31, 32, 35}
+MCQ = [q for i, q in enumerate(MCQ) if i not in _FORA] + [
+    dict(q="Segundo o Porto, o foco tricúspide de ausculta localiza-se:",
+         opts=["No 2º espaço intercostal direito, junto ao esterno",
+               "No 2º espaço intercostal esquerdo, junto ao esterno",
+               "Na base do apêndice xifoide, ligeiramente à esquerda",
+               "No 5º espaço intercostal esquerdo, na linha hemiclavicular",
+               "No 3º-4º espaço intercostal esquerdo, junto ao esterno"],
+         a=2, c="Aórtico: 2º EIC direito justaesternal. Pulmonar: 2º EIC esquerdo. Aórtico acessório: 3º-4º EIC esquerdo. "
+                "Tricúspide: base do apêndice xifoide, ligeiramente à esquerda. Mitral: 5º EIC esquerdo na linha hemiclavicular (ictus). "
+                "Os focos não correspondem à projeção anatômica das valvas."),
+]
+
+OPEN_EXTRA = [
+    ("Explique por que o músculo cardíaco não pode ser tetanizado.",
+     "O potencial de ação ventricular tem um platô longo (entrada de Ca²⁺ por canais tipo L e redução da permeabilidade ao K⁺). "
+     "O período refratário absoluto (0,25 a 0,30 s) cobre quase toda a contração, então um novo estímulo não consegue somar "
+     "contrações. Isso garante relaxamento e enchimento entre os batimentos."),
+    ("Descreva o acoplamento excitação-contração no músculo cardíaco e diga por que ele depende do cálcio extracelular.",
+     "O potencial entra pelos túbulos T e abre canais de Ca²⁺ tipo L; esse Ca²⁺ ativa os receptores de rianodina do retículo "
+     "sarcoplasmático, que liberam mais Ca²⁺ (liberação induzida por Ca²⁺). O Ca²⁺ liga-se à troponina C e forma pontes "
+     "cruzadas. No relaxamento, SERCA2 recapta e o trocador Na⁺/Ca²⁺ expulsa o Ca²⁺. Como o retículo cardíaco é pouco "
+     "desenvolvido e os túbulos T são largos e abertos ao interstício, a força depende do Ca²⁺ extracelular."),
+    ("Descreva as fases do ciclo cardíaco do ventrículo esquerdo, dizendo o estado das valvas em cada uma.",
+     ["Enchimento (rápido, diástase, sístole atrial): mitral aberta, aórtica fechada; a sístole atrial acrescenta ≈ 20%.",
+      "Contração isovolumétrica: todas fechadas; pressão sobe até ≈ 80 mmHg.",
+      "Ejeção (rápida e lenta): aórtica aberta, mitral fechada; saem ≈ 70 mℓ (FE ≈ 60%).",
+      "Relaxamento isovolumétrico: todas fechadas; pressão cai até abrir a mitral."]),
+    ("Enuncie o mecanismo de Frank-Starling e explique sua base celular.",
+     "Dentro dos limites fisiológicos, quanto maior o enchimento (estiramento das fibras), maior a força de contração e o "
+     "volume ejetado: o coração bombeia o que recebe. O estiramento leva actina e miosina a um grau de sobreposição mais "
+     "próximo do ideal. Assim o débito acompanha o retorno venoso."),
+    ("Diferencie B3 e B4 quanto ao momento no ciclo, mecanismo e significado clínico.",
+     "B3: início do terço médio da diástole, pelo sangue do enchimento rápido; normal em jovens, em idosos indica IC sistólica. "
+     "B4: fim da diástole, pela contração atrial contra ventrículo pouco complacente (HVE, hipertensão, idoso); desaparece na FA."),
+    ("Defina pré-carga e pós-carga e dê um exemplo clínico de aumento de cada uma.",
+     "Pré-carga: pressão diastólica final (grau de estiramento antes da contração); aumenta na hipervolemia ou na insuficiência "
+     "aórtica. Pós-carga: pressão arterial contra a qual o ventrículo ejeta; aumenta na hipertensão e na estenose aórtica."),
+]
+
+G = "fig_livro/"
 CARDS = [
-    ("Por que o miocárdio funciona como um sincício?", "Os <b>discos intercalares</b> têm <b>junções comunicantes (gap junctions)</b> de baixa resistência; o potencial de ação passa livremente de célula a célula."),
-    ("Quantos sincícios funcionais tem o coração e o que os separa?", "Dois: <b>atrial</b> e <b>ventricular</b>, separados pelo <b>tecido fibroso</b> dos anéis AV. A conexão é só pelo <b>feixe AV</b>."),
-    ("Potencial de repouso e pico do potencial de ação ventricular", "Repouso ≈ <b>−85 mV</b>; pico ≈ <b>+20 mV</b> (amplitude ≈ 105 mV)."),
-    ("Duração do platô do potencial de ação ventricular", "≈ <b>0,2 s</b> (canais de Ca²⁺ fecham em 0,2 a 0,3 s)."),
-    ("Quais os dois fatores que causam o platô cardíaco?", "1) <b>Canais lentos de Ca²⁺ tipo L</b> (cálcio-sódio) abertos por décimos de segundo; 2) <b>queda de ~5× da permeabilidade ao K⁺</b>."),
-    ("Fase 0 do potencial ventricular", "Despolarização: abertura dos <b>canais rápidos de Na⁺</b>."),
-    ("Fase 1 do potencial ventricular", "Repolarização inicial: <b>fecham os canais de Na⁺</b>, sai K⁺ (canais transitórios)."),
-    ("Fase 2 do potencial ventricular", "<b>Platô</b>: entrada de Ca²⁺ (canais L) e redução da saída de K⁺."),
-    ("Fase 3 do potencial ventricular", "Repolarização rápida: <b>fecham canais de Ca²⁺</b>, abrem canais lentos de K⁺."),
-    ("Fase 4 do potencial ventricular", "Repouso: −80 a −90 mV."),
-    ("Quanto tempo a contração cardíaca dura em relação à esquelética?", "Até <b>15 vezes</b> mais (por causa do platô)."),
-    ("Velocidade de condução no músculo atrial/ventricular", "<b>0,3 a 0,5 m/s</b> (≈ 1/250 dos nervos grandes; ≈ 1/10 do músculo esquelético)."),
-    ("Velocidade de condução nas fibras de Purkinje", "Até <b>4 m/s</b>."),
-    ("Período refratário absoluto do ventrículo", "<b>0,25 a 0,30 s</b> (≈ duração do potencial com platô)."),
-    ("Período refratário relativo do ventrículo", "≈ <b>0,05 s</b> adicional."),
-    ("Período refratário do átrio", "≈ <b>0,15 s</b> (mais curto que o ventricular)."),
-    ("Por que o coração não entra em tetania?", "Porque o <b>período refratário</b> dura quase toda a contração; extrassístoles não somam força."),
-    ("Acoplamento excitação-contração cardíaco: qual o gatilho da liberação de Ca²⁺ do RS?", "O <b>Ca²⁺ que entra pelos canais tipo L do túbulo T</b> ativa os <b>receptores de rianodina (RyR2)</b>: liberação de cálcio induzida por cálcio."),
-    ("Túbulos T cardíacos × esqueléticos", "Diâmetro <b>5× maior</b>, volume <b>25× maior</b>; contêm <b>mucopolissacarídeos negativos</b> que armazenam Ca²⁺."),
-    ("Por que a força cardíaca depende do Ca²⁺ extracelular?", "O <b>RS cardíaco é pouco desenvolvido</b>; os túbulos T abertos ao interstício trazem o Ca²⁺ extracelular que dispara e complementa a contração."),
-    ("O que acontece com um coração em solução sem Ca²⁺?", "<b>Para de bater</b> rapidamente."),
-    ("Mecanismos de remoção de Ca²⁺ no relaxamento cardíaco", "<b>SERCA2</b> (recaptação para o RS) e <b>trocador Na⁺/Ca²⁺</b> (saída da célula); o Na⁺ sai pela <b>Na⁺/K⁺-ATPase</b>."),
-    ("Duração da contração atrial e ventricular", "≈ <b>0,2 s</b> (átrio) e ≈ <b>0,3 s</b> (ventrículo)."),
-    ("Torção do VE: sentido na sístole", "Ápice gira em sentido <b>horário</b> e base em <b>anti-horário</b>; na diástole destorce como mola."),
-    ("Onde fica o nó sinusal?", "Parede <b>superolateral do átrio direito</b>, perto da abertura da veia cava superior."),
-    ("Atraso na passagem átrio → ventrículo e sua função", "&gt; <b>0,1 s</b>; permite que os átrios contraiam antes (bombas de escorva)."),
-    ("Duração do ciclo cardíaco a 72 bpm", "1/72 min ≈ <b>0,833 s</b>."),
-    ("Fração do ciclo ocupada pela sístole a 72 bpm e com FC 3×", "≈ <b>0,4</b> a 72 bpm; ≈ <b>0,65</b> com FC triplicada (a diástole encurta mais)."),
-    ("Intervalo entre o início da P e o QRS (Guyton, cap. 9)", "≈ <b>0,16 s</b>."),
-    ("QRS e onda T em relação à contração ventricular", "QRS começa <b>um pouco antes</b> da sístole; T ocorre <b>um pouco antes do fim</b> da contração."),
-    ("Contribuição da contração atrial ao enchimento ventricular", "≈ <b>20%</b> (80% é passivo)."),
-    ("Onda a de pressão atrial", "Causada pela <b>contração atrial</b>: AD +4 a 6 mmHg; AE +7 a 8 mmHg."),
-    ("Onda c de pressão atrial", "Início da sístole ventricular: <b>abaulamento das valvas AV</b> para os átrios (e leve refluxo)."),
-    ("Onda v de pressão atrial", "Fim da sístole: <b>enchimento atrial</b> pelas veias com as valvas AV fechadas."),
-    ("Divisão da diástole em terços", "1º terço: <b>enchimento rápido</b>; terço médio: <b>diástase</b>; último terço: <b>sístole atrial</b>."),
-    ("Duração da contração isovolumétrica", "<b>0,02 a 0,03 s</b> (todas as valvas fechadas)."),
-    ("Pressão que abre as semilunares (VE e VD)", "VE &gt; ≈ <b>80 mmHg</b>; VD &gt; ≈ <b>8 mmHg</b>."),
-    ("Ejeção rápida × lenta", "1º terço da ejeção: ≈ <b>70%</b> do volume; 2/3 finais: ≈ <b>30%</b>."),
-    ("Duração do relaxamento isovolumétrico", "<b>0,03 a 0,06 s</b>."),
-    ("VDF, VS, VSF e FE normais", "VDF 110 a 120 mℓ; VS ≈ 70 mℓ; VSF 40 a 50 mℓ; FE ≈ 60%."),
-    ("Fórmula da fração de ejeção", "FE = <b>VS / VDF</b> = (VDF − VSF)/VDF."),
-    ("Limites de VDF e VSF em situações extremas", "VDF até 150 a 180 mℓ; VSF até 10 a 20 mℓ."),
-    ("Como as valvas cardíacas abrem e fecham?", "<b>Passivamente</b>, pelo gradiente de pressão."),
-    ("Função dos músculos papilares", "<b>Não fecham as valvas</b>; puxam as cúspides para o ventrículo, <b>impedindo o prolapso</b> para os átrios na sístole."),
-    ("Consequência de ruptura de corda tendínea / disfunção de papilar", "<b>Insuficiência mitral aguda</b>, podendo causar IC grave ou letal."),
-    ("4 diferenças das valvas semilunares em relação às AV", "Fechamento <b>abrupto</b>; maior <b>velocidade</b> de fluxo; maior <b>abrasão</b>; <b>sem cordas tendíneas</b>."),
-    ("Incisura da curva aórtica", "Breve <b>refluxo</b> antes do fechamento da valva aórtica, interrompido bruscamente."),
-    ("Pressões na aorta e na artéria pulmonar", "Aorta ≈ <b>120/80</b> mmHg; lado direito ≈ <b>1/6</b> disso."),
-    ("Causa e características de B1", "<b>Fechamento das AV</b>; grave, mais longa (≈ 0,14 s)."),
-    ("Causa e características de B2", "<b>Fechamento das semilunares</b>; mais aguda e curta (≈ 0,11 s)."),
-    ("B3: momento e significado", "Início do <b>terço médio da diástole</b>; normal em jovens; em idosos sugere <b>IC sistólica</b>."),
-    ("B4: momento e significado", "<b>Sístole atrial</b> (fim da diástole) contra ventrículo pouco complacente, p. ex., <b>HVE</b> do idoso. Some na FA."),
-    ("A abertura das valvas produz som?", "Normalmente <b>não</b> (processo lento)."),
-    ("Valvas mais lesadas na febre reumática", "<b>Mitral</b>, depois <b>aórtica</b> (valvas de alta pressão)."),
-    ("Valvopatia mais comum hoje (Guyton)", "<b>Estenose aórtica calcificada senil</b>."),
-    ("Componentes do trabalho sistólico", "<b>Trabalho pressão-volume (externo)</b> e <b>energia cinética</b> (≈ 1%)."),
-    ("Quando a energia cinética passa de 50% do trabalho do VE?", "Na <b>estenose aórtica</b> (alta velocidade pelo orifício estreito)."),
-    ("Trabalho externo do VD em relação ao VE", "≈ <b>1/6</b>."),
-    ("Alça PV: fase I", "<b>Enchimento</b> (A→B): 50 → 120 mℓ; pressão 2 a 3 → 5 a 7 mmHg."),
-    ("Alça PV: fase II", "<b>Contração isovolumétrica</b> (B→C): pressão sobe a ≈ 80 mmHg, volume fixo."),
-    ("Alça PV: fase III", "<b>Ejeção</b> (C→D): volume cai ≈ 70 mℓ."),
-    ("Alça PV: fase IV", "<b>Relaxamento isovolumétrico</b> (D→A): pressão cai, volume fixo."),
-    ("O que representa a área da alça PV?", "O <b>trabalho sistólico externo</b> (TE)."),
-    ("Pico de pressão sistólica isovolumétrica máxima: VE e VD", "VE <b>250 a 300 mmHg</b>; VD <b>60 a 80 mmHg</b>."),
-    ("Por que a curva de pressão diastólica sobe muito acima de 150 mℓ?", "O <b>tecido fibroso</b> não estica mais e o <b>pericárdio</b> chega ao limite."),
-    ("Pré-carga (Guyton)", "<b>Pressão diastólica final</b> do ventrículo."),
-    ("Pós-carga (Guyton)", "<b>Pressão na artéria</b> que sai do ventrículo (aorta)."),
-    ("Principal substrato energético do miocárdio", "<b>Ácidos graxos</b> (70 a 90%)."),
-    ("Consumo de O₂ miocárdico é proporcional a...", "Área <b>TE + EP</b> da alça e ao <b>índice tensão-tempo</b>."),
-    ("Lei de Laplace no ventrículo", "<b>T = P × r</b>."),
-    ("Hipertrofia concêntrica × excêntrica (energia)", "Concêntrica: parede grossa, raio menor, <b>alivia tensão</b>. Excêntrica (dilatada): raio maior, <b>mais tensão e mais O₂</b> para a mesma pressão."),
-    ("Eficiência cardíaca", "<b>20 a 25%</b> no normal; até 5% na IC."),
-    ("Débito cardíaco em repouso e no exercício", "<b>4 a 6 ℓ/min</b>; até <b>4 a 7×</b> no exercício intenso."),
-    ("Mecanismo de Frank-Starling", "Quanto mais o músculo é distendido no enchimento, <b>maior a força</b>: o coração bombeia todo o sangue que retorna."),
-    ("Base molecular do Frank-Starling", "Sobreposição <b>actina-miosina mais próxima do ideal</b> com o estiramento."),
-    ("Efeito direto do estiramento do AD na FC", "Aumenta a FC em <b>10 a 20%</b>."),
-    ("Reflexo de Bainbridge", "Estiramento atrial → via <b>vagal</b> → FC ↑ <b>40 a 60%</b>."),
-    ("Efeitos máximos do simpático no coração", "FC até <b>180 a 200 bpm</b> (raro 250); força <b>dobra</b>; DC 2 a 3×."),
-    ("Tônus simpático basal", "Mantém o bombeamento ≈ <b>30%</b> acima do que seria sem simpático."),
-    ("Estimulação vagal intensa", "Pode parar o coração por segundos; <b>escape</b> a 20 a 40 bpm; força ↓ 20 a 30%."),
-    ("Por que o vago reduz mais a FC que a força?", "As fibras vagais vão principalmente aos <b>átrios</b>."),
-    ("Efeitos da hiperpotassemia no coração", "Coração <b>dilatado e flácido</b>, FC ↓, <b>bloqueio AV</b>; 8 a 12 mEq/ℓ pode matar."),
-    ("Mecanismo da fraqueza na hiperpotassemia", "Despolarização parcial do repouso → <b>potencial de ação menor</b> → contração fraca."),
-    ("Efeito do excesso de Ca²⁺ extracelular", "<b>Contração espástica</b>."),
-    ("Efeito da febre no coração", "FC ↑ (até o dobro); força ↑ transitoriamente, depois fraqueza se prolongada."),
-    ("Até que pressão média a pós-carga não reduz o DC?", "≈ <b>160 mmHg</b>."),
+    # ---------- lacunas (cloze)
+    ("c", "O miocárdio funciona como {{c1::sincício}} porque os {{c2::discos intercalares}} têm {{c3::junções comunicantes (gap junctions)}}."),
+    ("c", "Átrios e ventrículos são separados pelo {{c1::esqueleto fibroso}}; o impulso só passa pelo {{c2::feixe AV}}."),
+    ("c", "Potencial ventricular: repouso ≈ {{c1::−85 mV}}, pico ≈ {{c2::+20 mV}}, platô de ≈ {{c3::0,2 s}}."),
+    ("c", "Fase 0 = entrada de {{c1::Na⁺}} pelos canais {{c2::rápidos}}."),
+    ("c", "O platô (fase 2) resulta da entrada de {{c1::Ca²⁺ por canais tipo L}} e da {{c2::queda (~5×) da permeabilidade ao K⁺}}.",
+     "", "fig/a_potencial_acao.png"),
+    ("c", "Fase 3: canais de {{c1::Ca²⁺}} fecham e sai {{c2::K⁺}}."),
+    ("c", "Período refratário absoluto ventricular: {{c1::0,25 a 0,30 s}}; relativo: {{c2::0,05 s}}; atrial: {{c3::0,15 s}}."),
+    ("c", "Como o refratário cobre a contração, o coração {{c1::não entra em tetania}}."),
+    ("c", "Velocidade de condução: músculo {{c1::0,3 a 0,5 m/s}}; Purkinje {{c2::até 4 m/s}}."),
+    ("c", "O Ca²⁺ que entra pelo túbulo T ativa os {{c1::receptores de rianodina (RyR2)}}: é a {{c2::liberação de Ca²⁺ induzida por Ca²⁺}}.",
+     "", G + "g9_07.png"),
+    ("c", "No relaxamento, o Ca²⁺ volta ao retículo pela {{c1::SERCA2}} e sai da célula pelo {{c2::trocador Na⁺/Ca²⁺}}."),
+    ("c", "Túbulos T cardíacos: diâmetro {{c1::5×}} e volume {{c2::25×}} maiores que os do esquelético."),
+    ("c", "Atraso AV: {{c1::&gt; 0,1 s}}, para que os átrios contraiam antes dos ventrículos."),
+    ("c", "Com FC alta, encurta mais a {{c1::diástole}}; a sístole passa de ≈ 40% para ≈ {{c2::65%}} do ciclo (FC 3×)."),
+    ("c", "A contração atrial contribui com ≈ {{c1::20%}} do enchimento ventricular."),
+    ("c", "Onda {{c1::a}} = contração atrial; onda {{c2::c}} = abaulamento das AV; onda {{c3::v}} = enchimento atrial com AV fechadas."),
+    ("c", "Diástole: 1º terço {{c1::enchimento rápido}}; terço médio {{c2::diástase}}; último terço {{c3::sístole atrial}}."),
+    ("c", "Contração isovolumétrica dura {{c1::0,02 a 0,03 s}}; a aórtica abre com PVE &gt; {{c2::80 mmHg}} e a pulmonar com PVD &gt; {{c3::8 mmHg}}."),
+    ("c", "Na ejeção rápida (1º terço) sai ≈ {{c1::70%}} do volume sistólico."),
+    ("c", "VDF {{c1::110 a 120 mℓ}}, VS {{c2::70 mℓ}}, VSF {{c3::40 a 50 mℓ}}, FE {{c4::≈ 60%}}.", "", "fig/a_wiggers.png"),
+    ("c", "Fração de ejeção = {{c1::VS / VDF}}."),
+    ("c", "Os músculos papilares {{c1::não fecham}} as valvas; eles {{c2::impedem o prolapso das cúspides para o átrio}}.",
+     "", G + "g9_09.png"),
+    ("c", "Ruptura de corda tendínea ou isquemia do papilar causa {{c1::insuficiência mitral aguda}}."),
+    ("c", "A {{c1::incisura}} da curva aórtica marca o {{c2::fechamento da valva aórtica}}."),
+    ("c", "Pressão aórtica ≈ {{c1::120/80 mmHg}}; lado direito ≈ {{c2::1/6}} disso."),
+    ("c", "B1 = fechamento das {{c1::valvas AV}}; B2 = fechamento das {{c2::semilunares}}."),
+    ("c", "B3 ocorre no {{c1::início do terço médio da diástole}}; em idosos indica {{c2::insuficiência cardíaca sistólica}}."),
+    ("c", "B4 ocorre na {{c1::sístole atrial}} contra ventrículo {{c2::pouco complacente}} e {{c3::some na fibrilação atrial}}."),
+    ("c", "Pré-carga = {{c1::pressão diastólica final}}; pós-carga = {{c2::pressão na aorta}}.", "", "fig/a_alca_pv.png"),
+    ("c", "Energia cinética é ≈ {{c1::1%}} do trabalho do VE, mas pode passar de {{c2::50%}} na {{c3::estenose aórtica}}."),
+    ("c", "O miocárdio usa {{c1::ácidos graxos}} (70 a 90%) e tem eficiência de {{c2::20 a 25%}}."),
+    ("c", "Lei de Laplace: {{c1::T = P × r}}. Pressão alta crônica → hipertrofia {{c2::concêntrica}}."),
+    ("c", "Frank-Starling: quanto maior o {{c1::estiramento no enchimento}}, maior a {{c2::força de contração}}."),
+    ("c", "Reflexo de {{c1::Bainbridge}}: estiramento atrial → FC ↑ {{c2::40 a 60%}}."),
+    ("c", "Simpático: FC até {{c1::180 a 200 bpm}} e força até {{c2::o dobro}}."),
+    ("c", "O vago inerva sobretudo os {{c1::átrios}}, por isso reduz mais a {{c2::FC}} que a força."),
+    ("c", "Hiperpotassemia deixa o coração {{c1::dilatado e flácido}}, com {{c2::bradicardia e bloqueio AV}}."),
+    ("c", "O excesso de Ca²⁺ leva à contração {{c1::espástica}}."),
+    ("c", "A pós-carga só reduz o débito cardíaco com pressão média acima de ≈ {{c1::160 mmHg}}."),
+    ("c", "Foco mitral: {{c1::5º EIC esquerdo na linha hemiclavicular}} (ictus cordis).", "", "fig/a_focos.png"),
+    ("c", "Foco tricúspide: {{c1::base do apêndice xifoide, ligeiramente à esquerda}}.", "", "fig/a_focos.png"),
+    # ---------- pergunta e resposta
+    ("b", "Por que o potencial de ação cardíaco é longo? (2 motivos)",
+     "1) <b>Canais lentos de Ca²⁺ tipo L</b> abertos por décimos de segundo; 2) <b>queda da permeabilidade ao K⁺</b>."),
+    ("b", "Por que a força do coração depende do Ca²⁺ extracelular, e a do esquelético não?",
+     "Retículo sarcoplasmático cardíaco <b>pouco desenvolvido</b>; o Ca²⁺ dos <b>túbulos T</b> (vem do meio extracelular) dispara e complementa a contração."),
+    ("b", "O que acontece com um coração em solução sem Ca²⁺?", "<b>Para de bater</b> rapidamente."),
+    ("b", "Quais valvas estão abertas na contração isovolumétrica?", "<b>Nenhuma</b>: todas fechadas."),
+    ("b", "Por que a perda da contração atrial (FA) costuma dar sintomas só no esforço?",
+     "Ela contribui só com ≈ 20% do enchimento e o coração tem reserva de 300 a 400%. Ventrículos rígidos dependem mais dela."),
+    ("b", "Diferenças das semilunares em relação às AV (4)",
+     "Fechamento <b>abrupto</b>; fluxo mais <b>rápido</b>; mais <b>abrasão</b>; <b>sem cordas tendíneas</b>."),
+    ("b", "Qual a valvopatia mais comum hoje e sua tríade clínica?",
+     "<b>Estenose aórtica calcificada senil</b>: angina, síncope e dispneia aos esforços."),
+    ("b", "Valvas mais lesadas na febre reumática", "<b>Mitral</b>, depois <b>aórtica</b> (alta pressão)."),
+    ("b", "O que representa a área da alça pressão-volume?", "O <b>trabalho sistólico externo</b>.", G + "g9_11.png"),
+    ("b", "Ventrículo dilatado × hipertrofia concêntrica: qual gasta mais O₂ para a mesma pressão?",
+     "O <b>dilatado</b> (raio maior → mais tensão pela lei de Laplace)."),
+    ("b", "Efeito do vago muito forte no coração", "Para por segundos e <b>escapa</b> a 20 a 40 bpm; força cai 20 a 30%."),
+    ("b", "Por que a hiperpotassemia enfraquece o coração?",
+     "Despolariza parcialmente o repouso → <b>potencial de ação menor</b> → contração fraca; também bloqueia a condução AV."),
+    ("b", "Quem determina o débito cardíaco em condições normais?", "O <b>retorno venoso</b> (soma dos fluxos locais dos tecidos)."),
+    ("b", "Onde auscultar cada foco (Porto)?",
+     "Aórtico 2º EIC D · Pulmonar 2º EIC E · Aórtico acessório 3º-4º EIC E · Tricúspide base do xifoide · Mitral 5º EIC E LHC.",
+     G + "g23_02.png"),
+    ("b", "Fonocardiograma: qual sopro é sistólico em diamante no foco aórtico?", "<b>Estenose aórtica</b>.", G + "g23_03.png"),
 ]
 
 TOPIC = dict(
     code="a", slug="a-musculo-cardiaco-e-valvas", title="Músculo cardíaco e valvas cardíacas",
-    source="Guyton & Hall, Tratado de Fisiologia Médica, cap. 9 (bulhas e valvopatias: cap. 23)",
-    sections=SECTIONS, mcq=MCQ, open=OPEN, cards=CARDS,
+    source="Guyton & Hall, Tratado de Fisiologia Médica, cap. 9 (bulhas: cap. 23; focos: Porto)",
+    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="fig_tema_a",
 )
