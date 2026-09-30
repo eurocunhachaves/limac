@@ -88,6 +88,9 @@ def main(repo):
         shutil.copy(os.path.join(HERE, "fig", f), os.path.join(fonte_dst, "fig", f))
     os.makedirs(os.path.join(fonte_dst, "web"), exist_ok=True)
     shutil.copy(os.path.join(HERE, "web", "pdf.js"), os.path.join(fonte_dst, "web", "pdf.js"))
+    shutil.copy(os.path.join(HERE, "web", "render_svg.js"), os.path.join(fonte_dst, "web", "render_svg.js"))
+    if os.path.isdir(os.path.join(HERE, "svg")):  # diagramas vetoriais próprios (svgkit.py + dia_X.py)
+        shutil.copytree(os.path.join(HERE, "svg"), os.path.join(fonte_dst, "svg"), dirs_exist_ok=True)
     shutil.copytree(os.path.join(HERE, "web", "fonts"), os.path.join(fonte_dst, "web", "fonts"), dirs_exist_ok=True)
     if os.path.isdir(os.path.join(HERE, "fig_web")):  # imagens de licença aberta (Wikimedia Commons), com créditos
         shutil.copytree(os.path.join(HERE, "fig_web"), os.path.join(fonte_dst, "fig_web"), dirs_exist_ok=True)

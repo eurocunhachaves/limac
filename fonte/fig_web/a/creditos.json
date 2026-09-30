@@ -25,5 +25,50 @@
     "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
     "url": "https://commons.wikimedia.org/wiki/File:Cardiac_ventricular_myocyte_action_potential.png",
     "legenda": "Potencial de ação do miócito ventricular: fase 0 (entrada rápida de Na+), 1 (repolarização precoce), 2 (platô por Ca2+ lento), 3 (repolarização por K+), 4 (repouso ~-90 mV)."
+  },
+  {
+    "arquivo": "a4_camaras_e_valvas.png",
+    "titulo": "File:Heart chambers and valves schematic.svg",
+    "autor": "Laurens R. Krol based on an earlier file by Sam-kendrick",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Heart_chambers_and_valves_schematic.svg",
+    "legenda": "Câmaras e valvas: atrioventriculares (tricúspide e mitral) entre átrios e ventrículos; semilunares (pulmonar e aórtica) na saída dos ventrículos."
+  },
+  {
+    "arquivo": "a5_discos_intercalares.jpg",
+    "titulo": "File:Muscle Tissue Intercalated Discs in Cardiac Muscle (27061943807).jpg",
+    "autor": "Berkshire Community College  Bioscience Image Library",
+    "licenca": "CC0",
+    "licenca_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "url": "https://commons.wikimedia.org/wiki/File:Muscle_Tissue_Intercalated_Discs_in_Cardiac_Muscle_(27061943807).jpg",
+    "legenda": "Músculo cardíaco ao microscópio: fibras ramificadas unidas por discos intercalares (junções comunicantes), que fazem o coração funcionar como sincício."
+  },
+  {
+    "arquivo": "a6_sarcomero_cardiaco.png",
+    "titulo": "File:Cardiac sarcomere structure.png",
+    "autor": "Mohamed Elshennawy, M.D.",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Cardiac_sarcomere_structure.png",
+    "legenda": "Sarcômero cardíaco: filamentos finos (actina, tropomiosina, troponina) e grossos (miosina) entre as linhas Z; o Ca2+ liga-se à troponina C e libera a interação actina-miosina."
+  },
+  {
+    "arquivo": "a7_alca_pressao_volume.png",
+    "titulo": "File:PV loop example of left ventricle.svg",
+    "autor": "Dhollm",
+    "licenca": "CC BY-SA 3.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:PV_loop_example_of_left_ventricle.svg",
+    "legenda": "Alça pressão-volume do VE: enchimento, contração isovolumétrica, ejeção e relaxamento isovolumétrico. A largura da alça é o volume sistólico; a área é o trabalho sistólico."
+  },
+  {
+    "arquivo": "a8_curva_frank_starling.png",
+    "titulo": "File:Frank Starling’s curve.png",
+    "autor": "Patricia.Pineda.Vidal",
+    "licenca": "CC BY-SA 4.0",
+    "licenca_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Frank_Starling%E2%80%99s_curve.png",
+    "legenda": "Curva de Frank-Starling: quanto maior o estiramento da fibra (pré-carga) dentro do limite fisiológico, maior a força de contração e o volume sistólico."
   }
 ]

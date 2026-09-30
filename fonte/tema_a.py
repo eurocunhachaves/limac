@@ -13,7 +13,6 @@ SECTIONS = [
         ("fig", None, "fig_livro/g9_02.png", "Discos intercalares e o sincício do músculo cardíaco.", 9),
     ]),
     ("2. Potencial de ação ventricular", [
-        ("fig", "fig/a_potencial_acao.png", "fig_livro/g9_05.png", "Fases do potencial de ação da fibra ventricular e correntes iônicas.", 8),
         ("table", [
             ["Fase", "O que acontece"],
             ["0", "Abrem os <b>canais rápidos de Na⁺</b>: de −85 a ≈ +20 mV"],
@@ -22,6 +21,7 @@ SECTIONS = [
             ["3", "Canais de Ca²⁺ fecham; K⁺ sai rápido e a fibra repolariza"],
             ["4", "Repouso ≈ −85 mV (−80 a −90)"],
         ], [2.4, 15.0]),
+        ("fig", "fig/a_potencial_acao.png", "fig_livro/g9_05.png", "Fases do potencial de ação da fibra ventricular e correntes iônicas.", 14.5),
         ("box", "O que a prova cobra", [
             "Platô = <b>Ca²⁺ entrando + K⁺ \"preso\"</b>. Por causa dele a contração dura até 15× a do músculo esquelético.",
             "<b>Período refratário absoluto do ventrículo: 0,25 a 0,30 s</b> (quase toda a contração) + relativo de 0,05 s. "
@@ -31,7 +31,7 @@ SECTIONS = [
         ]),
     ]),
     ("3. Acoplamento excitação-contração", [
-        ("fig", None, "fig_livro/g9_07.png", "Entrada de Ca²⁺ pelo túbulo T, liberação pelo RyR e recaptação pela SERCA2.", 12),
+        ("fig", "fig/a_acoplamento.png", "fig_livro/g9_07.png", "Entrada de Ca²⁺ pelo túbulo T, liberação pelo RyR e recaptação pela SERCA2.", 15.5),
         ("ul", [
             "Potencial desce pelos <b>túbulos T</b> → abre <b>canais de Ca²⁺ tipo L</b> → o Ca²⁺ extracelular ativa os <b>receptores de "
             "rianodina (RyR2)</b> do retículo sarcoplasmático → liberação de muito mais Ca²⁺ (<b>liberação de Ca²⁺ induzida por Ca²⁺</b>).",
@@ -43,7 +43,7 @@ SECTIONS = [
                "guardam Ca²⁺ em mucopolissacarídeos. Por isso a <b>força depende do Ca²⁺ extracelular</b>: sem Ca²⁺ no meio, o coração para."),
     ]),
     ("4. Ciclo cardíaco", [
-        ("fig", "fig/a_wiggers.png", "fig_livro/g9_08.png", "Eventos do ciclo cardíaco do lado esquerdo (diagrama de Wiggers).", 14),
+        ("fig", "fig/a_wiggers.png", "fig_livro/g9_08.png", "Eventos do ciclo cardíaco do lado esquerdo (diagrama de Wiggers).", 16.5),
         ("p", "O ciclo começa no <b>nó sinusal</b>. Há um <b>atraso &gt; 0,1 s</b> no nó AV, então o átrio contrai antes do ventrículo. "
               "Duração = 1/FC (72 bpm → 0,83 s). Quando a FC sobe, <b>a diástole encurta mais que a sístole</b> "
               "(sístole ≈ 40% do ciclo a 72 bpm e ≈ 65% com FC 3×), e o enchimento pode ficar incompleto."),
@@ -56,7 +56,6 @@ SECTIONS = [
             ["Ejeção", "semilunares abertas", "≈ 70% do volume sai no 1º terço (ejeção rápida)"],
             ["Relaxamento isovolumétrico", "<b>todas fechadas</b>", "0,03 a 0,06 s; termina quando as AV abrem"],
         ], [4.2, 3.4, 9.8]),
-        ("web", "fig_web/a/a1_diagrama_wiggers.png", 13),
         ("table", [
             ["Onda atrial", "Causa"],
             ["<b>a</b>", "Contração atrial (AD +4 a 6 mmHg; AE +7 a 8 mmHg)"],
@@ -82,6 +81,8 @@ SECTIONS = [
                "As valvas abrem e fecham <b>passivamente</b> pelo gradiente de pressão. Os papilares <b>não fecham a valva</b>: puxam as "
                "cúspides para o ventrículo e <b>impedem o prolapso</b> para o átrio. Isquemia do papilar ou ruptura de corda no infarto → "
                "<b>insuficiência mitral aguda</b>."),
+        ("fig", "fig/a_focos.png", "fig_livro/g23_02.png", "Focos de ausculta. Pelo Porto: aórtico 2º EIC D; pulmonar 2º EIC E; "
+                "aórtico acessório 3º-4º EIC E; tricúspide na base do apêndice xifoide; mitral no 5º EIC E na linha hemiclavicular (ictus).", 9),
         ("ul", [
             "<b>Curva aórtica</b>: sobe a ≈ 120 mmHg; a <b>incisura</b> marca o fechamento da aórtica (breve refluxo); cai lentamente até ≈ 80 mmHg. "
             "Pressões do lado direito ≈ 1/6 das esquerdas.",
@@ -89,11 +90,9 @@ SECTIONS = [
             "<b>B4</b>: sístole atrial contra <b>ventrículo rígido</b> (HVE do idoso, hipertensão). <b>Some na fibrilação atrial</b>.",
             "Abertura das valvas normalmente não faz som.",
         ]),
-        ("fig", "fig/a_focos.png", "fig_livro/g23_02.png", "Focos de ausculta. Pelo Porto: aórtico 2º EIC D; pulmonar 2º EIC E; "
-                "aórtico acessório 3º-4º EIC E; tricúspide na base do apêndice xifoide; mitral no 5º EIC E na linha hemiclavicular (ictus).", 8),
     ]),
     ("6. Alça pressão-volume, pré e pós-carga", [
-        ("fig", "fig/a_alca_pv.png", "fig_livro/g9_11.png", "Alça pressão-volume do VE. A área é o trabalho externo (TE).", 9.5),
+        ("fig", "fig/a_alca_pv.png", "fig_livro/g9_11.png", "Alça pressão-volume do VE. A área é o trabalho externo (TE).", 14),
         ("ul", [
             "<b>I</b> enchimento (50 → 120 mℓ) · <b>II</b> contração isovolumétrica (até ≈ 80 mmHg) · <b>III</b> ejeção (sai ≈ 70 mℓ) · "
             "<b>IV</b> relaxamento isovolumétrico.",
@@ -483,7 +482,7 @@ OPEN_EXTRA = [
 G = "fig_livro/"
 CARDS = [
     ("b", "No diagrama de Wiggers, onde caem B1 e B2?", "<b>B1</b>: início da sístole (fecham mitral e tricúspide). "
-          "<b>B2</b>: início da diástole (fecham aórtica e pulmonar).", "fig_web/a/a1_diagrama_wiggers.png"),
+          "<b>B2</b>: início da diástole (fecham aórtica e pulmonar).", "fig/a_wiggers.png"),
     ("c", "Pulso venoso: onda {{c1::a}} = contração atrial; onda {{c2::c}} = abaulamento da tricúspide; onda {{c3::v}} = enchimento atrial "
           "com a tricúspide fechada.", "", "fig_web/a/a2_wiggers_pulso_venoso.png"),
     # ---------- lacunas (cloze)
@@ -561,5 +560,5 @@ CARDS = [
 TOPIC = dict(
     code="a", slug="a-musculo-cardiaco-e-valvas", title="Músculo cardíaco e valvas cardíacas",
     source="Guyton & Hall, Tratado de Fisiologia Médica, cap. 9 (bulhas: cap. 23; focos: Porto)",
-    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="fig_tema_a",
+    sections=SECTIONS, mcq=MCQ, open=OPEN, open_extra=OPEN_EXTRA, cards=CARDS, occ="dia_a",
 )

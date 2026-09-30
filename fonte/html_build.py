@@ -7,6 +7,7 @@ Figuras com largura até FLOAT_MAX cm ficam à direita do texto; as maiores ocup
 import html
 import json
 import os
+import re
 import subprocess
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -95,6 +96,7 @@ figure{margin:4px 0 8px;break-inside:avoid;text-align:center}
 .pair .txt{flex:1;min-width:0}
 .pair figure{flex:0 0 auto;margin-top:2px}
 figure img{max-width:100%;border-radius:6px}
+figure svg.vec{width:100%;height:auto;display:block}
 figcaption{font-size:7.6pt;color:var(--mute);margin-top:2px;line-height:1.3;text-align:center}
 figcaption .cr{display:block;font-size:6.8pt;color:#9aa0a6}
 .credits{clear:both;margin-top:14px;border-top:1px solid var(--line);padding-top:6px;font-size:7pt;color:var(--mute)}
@@ -109,8 +111,24 @@ def esc(s):
 def figure(rel, caption, width, cred=""):
     cls = ' class="side"' if width <= FLOAT_MAX else ""
     cr = f'<span class="cr">{cred}</span>' if cred else ""
-    return (f'<figure{cls} style="width:{width}cm"><img src="{src_url(rel)}">'
+    return (f'<figure{cls} style="width:{width}cm">{media(rel)}'
             f'<figcaption>{caption}{cr}</figcaption></figure>')
+
+
+def own_svg(rel):
+    """fig/x.png -> svg/x.svg quando o diagrama vetorial existe."""
+    if not rel or not rel.startswith("fig/"):
+        return None
+    p = os.path.join(HERE, "svg", os.path.splitext(os.path.basename(rel))[0] + ".svg")
+    return p if os.path.exists(p) else None
+
+
+def media(rel):
+    p = own_svg(rel)
+    if not p:
+        return f'<img src="{src_url(rel)}">'
+    svg = re.sub(r"<metadata>.*?</metadata>", "", open(p, encoding="utf-8").read(), flags=re.S)
+    return re.sub(r'<svg ([^>]*?)width="[\d.]+" height="[\d.]+"', r'<svg \1class="vec"', svg, count=1)
 
 
 def ul(items):
@@ -140,7 +158,7 @@ def block(b, publico, used_web):
         return f"<table><colgroup>{cols}</colgroup><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>"
     if kind == "fig":
         _, own, book, caption, width = b
-        rel = own if publico else (book or own)
+        rel = own if (publico or own_svg(own)) else (book or own)
         if not rel:
             return ""
         cred = f"Fonte: {book_source(rel)}." if is_book(rel) else ""
@@ -157,7 +175,7 @@ def block(b, publico, used_web):
 def fig_width(b, publico):
     if b[0] == "web":
         return b[2]
-    if b[0] == "fig" and (b[1] if publico else (b[2] or b[1])):
+    if b[0] == "fig" and (b[1] if (publico or own_svg(b[1])) else (b[2] or b[1])):
         return b[4]
     return None
 
