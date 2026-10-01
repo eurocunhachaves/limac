@@ -19,6 +19,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 | **D** | [Biofísica da circulação](temas/d-biofisica-da-circulacao/README.md) | Fisiologia | Pressão, fluxo e resistência, Poiseuille, viscosidade, complacência, pulso arterial, medida da PA | [PDF](temas/d-biofisica-da-circulacao/resumao.pdf) · [Anki](temas/d-biofisica-da-circulacao/flashcards.apkg) |
 | **E** | [Vasos, pulso e microcirculação](temas/e-vasos-e-microcirculacao/README.md) | Fisiologia | Capilares, forças de Starling, interstício, edema, sistema linfático | [PDF](temas/e-vasos-e-microcirculacao/resumao.pdf) · [Anki](temas/e-vasos-e-microcirculacao/flashcards.apkg) |
 | **F** | [Controle local, humoral e nervoso da circulação](temas/f-controle-da-circulacao/README.md) | Fisiologia | Autorregulação, metabólitos, NO, angiogênese, hormônios vasoativos, barorreceptores, quimiorreceptores, reflexos | [PDF](temas/f-controle-da-circulacao/resumao.pdf) · [Anki](temas/f-controle-da-circulacao/flashcards.apkg) |
+| **G** | [Débito cardíaco e retorno venoso](temas/g-debito-cardiaco-e-retorno-venoso/README.md) | Fisiologia | Débito cardíaco = retorno venoso, curvas de débito e de retorno, pressão média de enchimento, métodos de medida | [PDF](temas/g-debito-cardiaco-e-retorno-venoso/resumao.pdf) · [Anki](temas/g-debito-cardiaco-e-retorno-venoso/flashcards.apkg) |
 
 ## Flashcards (Anki)
 
