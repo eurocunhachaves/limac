@@ -20,7 +20,7 @@ REPO = FONTE.parent
 SAIDA_PROJETO = Path("/mnt/project-files/liga-cardio-v2")
 EXTRAIDAS = Path(os.environ.get("LIMAC_FIG", "/tmp/claude-0/work/fig"))
 PREVIA = Path(os.environ.get("LIMAC_PREVIA", "/tmp/claude-0/work/previa"))
-ORDEM = ["a", "b", "c", "d", "e", "f", "g", "h", "s"]
+ORDEM = ["a", "b", "c", "d", "e", "f", "g", "h", "s", "t", "u"]
 
 
 # ---------------------------------------------------------------- utilidades
@@ -507,7 +507,9 @@ DESCRICAO = {
     "f": "Autorregulação, metabólitos, NO, angiogênese, hormônios vasoativos, barorreceptores, quimiorreceptores, reflexos",
     "g": "Débito cardíaco = retorno venoso, curvas de débito e de retorno, pressão média de enchimento, métodos de medida",
     "h": "Diurese e natriurese de pressão, curva de débito renal, sistema renina-angiotensina-aldosterona, sal e hipertensão",
-    "s": "Anamnese, sinais e sintomas, inspeção e palpação, ausculta (bulhas, sopros), pulsos, pulso venoso, medida da PA",
+    "s": "Anamnese, dor torácica, palpitações, dispneia, síncope, cianose, edema, arritmias ao exame clínico",
+    "t": "Inspeção e palpação do precórdio, focos de ausculta, bulhas, ritmo de galope, estalidos, sopros, atrito",
+    "u": "Pulso radial, tipos de pulso, pulso venoso jugular, medida da PA, Korotkoff, classificação da PA",
 }
 
 
