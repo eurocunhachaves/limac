@@ -17,6 +17,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 | **B** | [Excitação rítmica do coração](temas/b-excitacao-ritmica/README.md) | Fisiologia | Nó sinusal e automatismo, nó AV e retardo, sistema de Purkinje, marca-passos ectópicos, controle autonômico | [PDF](temas/b-excitacao-ritmica/resumao.pdf) · [Anki](temas/b-excitacao-ritmica/flashcards.apkg) |
 | **C** | [Eletrocardiograma normal](temas/c-ecg-normal/README.md) | Fisiologia | Ondas, intervalos e segmentos, papel milimetrado, derivações (Einthoven, aumentadas, precordiais), eixo | [PDF](temas/c-ecg-normal/resumao.pdf) · [Anki](temas/c-ecg-normal/flashcards.apkg) |
 | **D** | [Biofísica da circulação](temas/d-biofisica-da-circulacao/README.md) | Fisiologia | Pressão, fluxo e resistência, Poiseuille, viscosidade, complacência, pulso arterial, medida da PA | [PDF](temas/d-biofisica-da-circulacao/resumao.pdf) · [Anki](temas/d-biofisica-da-circulacao/flashcards.apkg) |
+| **E** | [Vasos, pulso e microcirculação](temas/e-vasos-e-microcirculacao/README.md) | Fisiologia | Capilares, forças de Starling, interstício, edema, sistema linfático | [PDF](temas/e-vasos-e-microcirculacao/resumao.pdf) · [Anki](temas/e-vasos-e-microcirculacao/flashcards.apkg) |
 
 ## Flashcards (Anki)
 
