@@ -18,6 +18,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 | **C** | [Eletrocardiograma normal](temas/c-ecg-normal/README.md) | Fisiologia | Ondas, intervalos e segmentos, papel milimetrado, derivações (Einthoven, aumentadas, precordiais), eixo | [PDF](temas/c-ecg-normal/resumao.pdf) · [Anki](temas/c-ecg-normal/flashcards.apkg) |
 | **D** | [Biofísica da circulação](temas/d-biofisica-da-circulacao/README.md) | Fisiologia | Pressão, fluxo e resistência, Poiseuille, viscosidade, complacência, pulso arterial, medida da PA | [PDF](temas/d-biofisica-da-circulacao/resumao.pdf) · [Anki](temas/d-biofisica-da-circulacao/flashcards.apkg) |
 | **E** | [Vasos, pulso e microcirculação](temas/e-vasos-e-microcirculacao/README.md) | Fisiologia | Capilares, forças de Starling, interstício, edema, sistema linfático | [PDF](temas/e-vasos-e-microcirculacao/resumao.pdf) · [Anki](temas/e-vasos-e-microcirculacao/flashcards.apkg) |
+| **F** | [Controle local, humoral e nervoso da circulação](temas/f-controle-da-circulacao/README.md) | Fisiologia | Autorregulação, metabólitos, NO, angiogênese, hormônios vasoativos, barorreceptores, quimiorreceptores, reflexos | [PDF](temas/f-controle-da-circulacao/resumao.pdf) · [Anki](temas/f-controle-da-circulacao/flashcards.apkg) |
 
 ## Flashcards (Anki)
 
