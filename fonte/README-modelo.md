@@ -13,7 +13,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 
 | | Tema | Área | O que cobre | Arquivos |
 |---|---|---|---|---|
-| **A** | [O músculo cardíaco e as valvas cardíacas](temas/a-musculo-cardiaco-e-valvas/README.md) | Fisiologia | Sincício, potencial de ação com platô, acoplamento excitação-contração, ciclo cardíaco (Wiggers), valvas, alça pressão-volume, Frank-Starling | [PDF](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) · [Anki](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) |
+{{TABELA}}
 
 ## Flashcards (Anki)
 
