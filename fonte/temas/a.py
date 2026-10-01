@@ -29,11 +29,11 @@ São *dois sincícios*, o atrial e o ventricular, separados pelo *tecido fibroso
 
 = Potencial de ação do músculo ventricular
 
-O potencial de repouso é de *−85 a −90 mV*. No pico chega a *+20 mV* e permanece despolarizado por *0,2 s no átrio e 0,3 s no ventrículo*. Esse *platô* não existe no músculo esquelético. As fases e as correntes de cada uma estão em #vf("g9_05") e na #vf("t-fases-pa").
+O potencial de repouso é de *−85 a −90 mV*. No pico chega a *+20 mV* e permanece despolarizado por *0,2 s no átrio e 0,3 s no ventrículo*. Esse *platô* não existe no músculo esquelético. As fases e as correntes de cada uma estão na #vf("g9_05") e na #vf("t-fases-pa").
 
 #fig("g9_05", [Fases 0–4 do potencial de ação ventricular (em cima) e as correntes iônicas de cada fase (embaixo).])
 
-#tabela(rotulo: "t-fases-pa", flutua: none, titulo: [O que acontece em cada fase do potencial de ação ventricular.], (auto, 1fr), ([Fase], [O que acontece]),
+#tabela(rotulo: "t-fases-pa", titulo: [O que acontece em cada fase do potencial de ação ventricular.], (auto, 1fr), ([Fase], [O que acontece]),
   [*0*], [Despolarização: abrem os *canais rápidos de Na⁺*.],
   [*1*], [Repolarização inicial: fecham os canais de Na⁺ e sai um pouco de K⁺.],
   [*2*], [*Platô*: abrem os *canais lentos de Ca²⁺ (tipo L)* e cai a permeabilidade ao K⁺.],
@@ -78,6 +78,15 @@ A *72 bpm* o ciclo dura *0,833 s* e a sístole ocupa cerca de *0,4 do ciclo*. Qu
 
 #fig("g9_08", [Eventos do ciclo cardíaco no lado esquerdo (diagrama de Wiggers): pressões aórtica, ventricular e atrial, volume ventricular, ECG e fonocardiograma.])
 
+== Pressões atrial e aórtica
+
+- *Onda a:* contração atrial (AD sobe 4–6 mmHg; AE, 7–8 mmHg).
+- *Onda c:* início da contração ventricular; as valvas AV abaulam para dentro dos átrios.
+- *Onda v:* fim da sístole; o átrio se enche com as AV fechadas. Desaparece quando elas abrem.
+- *Aorta:* sobe com a ejeção até *≈120 mmHg*. O fechamento da valva aórtica produz a *incisura* (refluxo breve). Na diástole a pressão cai devagar, porque as artérias elásticas devolvem o sangue armazenado, até *≈80 mmHg*. Na artéria pulmonar as pressões são cerca de *1/6* das aórticas.
+
+As ondas a, c e v são as mesmas do *pulso venoso jugular* da Semiologia.
+
 == As fases, uma a uma
 
 A #vf("t-fases-ciclo") resume cada fase, com a posição das valvas. Repare que nas duas fases *isovolumétricas* as quatro valvas estão fechadas.
@@ -103,15 +112,6 @@ No fim da diástole o VE tem cerca de 120 mL; ejeta ≈70 mL e sobram ≈50 mL. 
   [Volume sistólico final (VSF)], [*40–50 mL*], [10–20 mL com contração forte],
   [Fração de ejeção (VS/VDF)], [*≈60%*], [É o índice clínico mais usado da função sistólica (ecocardiograma)],
 )
-
-== Pressões atrial e aórtica
-
-- *Onda a:* contração atrial (AD sobe 4–6 mmHg; AE, 7–8 mmHg).
-- *Onda c:* início da contração ventricular; as valvas AV abaulam para dentro dos átrios.
-- *Onda v:* fim da sístole; o átrio se enche com as AV fechadas. Desaparece quando elas abrem.
-- *Aorta:* sobe com a ejeção até *≈120 mmHg*. O fechamento da valva aórtica produz a *incisura* (refluxo breve). Na diástole a pressão cai devagar, porque as artérias elásticas devolvem o sangue armazenado, até *≈80 mmHg*. Na artéria pulmonar as pressões são cerca de *1/6* das aórticas.
-
-As ondas a, c e v são as mesmas do *pulso venoso jugular* da Semiologia.
 
 = Valvas cardíacas
 
@@ -148,9 +148,9 @@ O coração em repouso bombeia *4–6 L/min* e, no exercício intenso, *4 a 7 ve
 
 *Quanto mais o músculo é estirado no enchimento, maior a força de contração e maior o volume ejetado.* O estiramento aproxima actina e miosina do grau ótimo de sobreposição. Na prática, o coração *bombeia todo o sangue que chega* das veias, dentro dos limites fisiológicos. O estiramento do átrio direito ainda *aumenta a FC em 10–20%*. As curvas de função ventricular mostram isso (#vf("g9_13")).
 
-#fig("g9_13", [Curvas de função ventricular: o débito de cada ventrículo cresce com a pressão atrial (pré-carga).], flutua: none)
+#fig("g9_13", [Curvas de função ventricular: o débito de cada ventrículo cresce com a pressão atrial (pré-carga).])
 
-#tabela(rotulo: "t-autonomico", flutua: none, titulo: [Efeitos do simpático e do vago sobre o coração.], (auto, 1fr, 1fr), ([], [Simpático], [Parassimpático (vago)]),
+#tabela(rotulo: "t-autonomico", titulo: [Efeitos do simpático e do vago sobre o coração.], (auto, 1fr, 1fr), ([], [Simpático], [Parassimpático (vago)]),
   [*Frequência*], [70 → *180–200 bpm* (raro 250)], [Pode parar por segundos; o coração *escapa* a *20–40 bpm*],
   [*Força*], [*Dobra* a força de contração], [Reduz só *20–30%* (as fibras vagais vão mais aos *átrios*)],
   [*Débito*], [Aumenta *2–3 vezes* além do Frank-Starling], [Pode cair *50% ou mais*],

@@ -19,7 +19,7 @@ ESSENCIAL = [
 CORPO = r'''
 = O sistema excitatório e condutor
 
-O coração bate cerca de 100.000 vezes por dia graças a um sistema especializado que *gera* o impulso e o *conduz* rapidamente. Esse sistema faz os átrios contraírem cerca de *1/6 de segundo antes* dos ventrículos e faz todas as partes dos ventrículos contraírem quase ao mesmo tempo. O caminho do impulso está em #vf("g10_01"):
+O coração bate cerca de 100.000 vezes por dia graças a um sistema especializado que *gera* o impulso e o *conduz* rapidamente. Esse sistema faz os átrios contraírem cerca de *1/6 de segundo antes* dos ventrículos e faz todas as partes dos ventrículos contraírem quase ao mesmo tempo. O caminho do impulso aparece na #vf("g10_01") e segue esta ordem:
 
 + *Nó sinusal (sinoatrial):* faixa de ≈3 × 15 × 1 mm na parede posterolateral superior do *átrio direito*, logo abaixo da desembocadura da *veia cava superior*. Suas fibras quase não têm filamentos contráteis e se ligam direto às fibras atriais.
 + *Vias internodais* (anterior, média e posterior) e *feixe interatrial anterior* (de Bachmann), que leva o impulso ao átrio esquerdo.
@@ -37,7 +37,7 @@ A fibra do nó sinusal não tem um repouso estável. Entre um batimento e outro,
 - Nesse nível os *canais rápidos de Na⁺ estão inativados*. Só os canais lentos de Ca²⁺ conseguem gerar o potencial de ação, que por isso sobe e desce mais devagar.
 - Existe uma entrada contínua de Na⁺ pelos canais da *corrente funny* (I#sub[f]).
 
-#fig("g10_02", [Descarga rítmica de uma fibra do nó sinusal comparada com uma fibra ventricular. Note o repouso mais alto e a subida lenta até o limiar.], flutua: none)
+#fig("g10_02", [Descarga rítmica de uma fibra do nó sinusal comparada com uma fibra ventricular. Note o repouso mais alto e a subida lenta até o limiar.])
 
 == O ciclo de uma célula marca-passo
 
@@ -54,7 +54,7 @@ A fibra do nó sinusal não tem um repouso estável. Entre um batimento e outro,
 
 No músculo atrial o impulso anda a *0,3 m/s*; nas vias internodais e no feixe de Bachmann, a *≈1 m/s*. Ele chega ao nó AV *0,03 s* depois de sair do nó sinusal.
 
-O nó AV existe para *retardar* o impulso e dar tempo de os átrios esvaziarem nos ventrículos. Os tempos de cada trecho estão em #vf("g10_03") e na #vf("t-atrasos"). O atraso vem de as fibras nodais e de transição terem *poucas junções comunicantes*, o que cria alta resistência à passagem dos íons. Algumas fibras nodais conduzem 150 vezes mais devagar que as de Purkinje.
+O nó AV existe para *retardar* o impulso e dar tempo de os átrios esvaziarem nos ventrículos. Os tempos de cada trecho estão na #vf("g10_03") e na #vf("t-atrasos"). O atraso vem de as fibras nodais e de transição terem *poucas junções comunicantes*, o que cria alta resistência à passagem dos íons. Algumas fibras nodais conduzem 150 vezes mais devagar que as de Purkinje.
 
 #fig("g10_03", [Organização do nó AV. Os números são o tempo (s) desde a origem do impulso no nó sinusal.])
 
@@ -83,7 +83,7 @@ O nó AV existe para *retardar* o impulso e dar tempo de os átrios esvaziarem n
 
 O nó sinusal comanda porque *dispara primeiro*: cada impulso sinusal descarrega o nó AV e o Purkinje antes que eles atinjam o próprio limiar (#vf("t-freq")). *Marca-passo ectópico* é qualquer marca-passo fora do nó sinusal. Aparece quando outro tecido fica mais rápido que o nó sinusal ou quando o impulso sinusal é bloqueado.
 
-#tabela(rotulo: "t-freq", titulo: [Frequência de disparo próprio de cada tecido.], flutua: none, (1fr, 1fr), ([Tecido], [Frequência intrínseca]),
+#tabela(rotulo: "t-freq", titulo: [Frequência de disparo próprio de cada tecido.], (1fr, 1fr), ([Tecido], [Frequência intrínseca]),
   [*Nó sinusal*], [*70–80/min*],
   [Nó AV], [40–60/min],
   [Fibras de Purkinje], [15–40/min],
@@ -104,7 +104,7 @@ Por isso o vago age sobretudo na *frequência* e na *condução AV*, enquanto o 
 
 #fig("g9_14", [Inervação simpática e parassimpática (vagos) do coração.])
 
-#tabela(rotulo: "t-auto", flutua: none, titulo: [Como o vago e o simpático agem no coração.], (auto, 1fr, 1fr), ([], [Vago (parassimpático)], [Simpático]),
+#tabela(rotulo: "t-auto", titulo: [Como o vago e o simpático agem no coração.], (auto, 1fr, 1fr), ([], [Vago (parassimpático)], [Simpático]),
   [*Mediador*], [Acetilcolina (receptor muscarínico)], [Noradrenalina (receptor *β1*)],
   [*Mecanismo*], [*↑ permeabilidade ao K⁺* → hiperpolarização: o nó sinusal vai a *−65 a −75 mV* e demora mais para chegar ao limiar], [*↑ permeabilidade ao Na⁺ e Ca²⁺* → repouso mais positivo e fase 4 mais rápida],
   [*Nó sinusal*], [↓ FC (pode cair à metade)], [↑ FC (pode quase *triplicar*)],

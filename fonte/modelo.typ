@@ -82,26 +82,32 @@
   w
 }
 
-// Figura do livro. Por padrão flutua para o topo ou o pé da página em que é
-// citada (ou da seguinte), como em livro impresso; `flutua: none` a fixa no lugar.
+// Paginação. Figuras e tabelas numeradas entram SEMPRE no fluxo do texto
+// (nunca flutuam). O build ajusta a página: quando um bloco não cabe e deixaria
+// sobra no pé, ele reduz a figura (até 80%) ou adia o bloco por um ou mais
+// parágrafos, dentro da mesma seção. As escalas chegam por sys.inputs.
+#let largura-texto = 21cm - 4.6cm
+#let escalas = json(bytes(sys.inputs.at("escalas", default: "{}")))
+#let bloco-movel(chave, conteudo) = block(width: 100%, breakable: false, above: espaco, below: espaco)[
+  #context [#metadata((tipo: "ini", chave: chave, pagina: here().page(), y: here().position().y.pt()))<marca>]
+  #conteudo
+  #context [#metadata((tipo: "fim", chave: chave, pagina: here().page(), y: here().position().y.pt()))<marca>]
+]
+
+// Figura do livro, na escala única, logo após o parágrafo que a cita.
 #let fig(chave, legenda, largura: auto, flutua: auto) = {
-  let corpo = layout(area => {
-    let w = if largura == auto { calc.min(largura-padrao(chave).cm(), area.width.cm()) * 1cm } else if type(largura) == ratio { area.width * largura } else { largura }
-    let w-leg = calc.max(w.cm(), 9) * 1cm
-    align(center, block(width: calc.min(w-leg.cm(), area.width.cm()) * 1cm)[
-      #figure(
-        image(caminho(chave), width: w),
-        caption: legenda-fig(legenda, (chave,)),
-        gap: 7pt,
-      ) #label(chave)
-      #context [#metadata((tipo: "fig", chave: chave, pagina: here().page()))<marca>]
-    ])
-  })
-  if flutua == none {
-    block(width: 100%, breakable: false, above: espaco, below: espaco, corpo)
-  } else {
-    place(flutua, float: true, clearance: 1.5em, block(width: 100%, breakable: false, corpo))
-  }
+  let esc = escalas.at(chave, default: 1.0)
+  let w0 = if largura == auto { calc.min(largura-padrao(chave).cm(), largura-texto.cm()) * 1cm } else if type(largura) == ratio { largura-texto * largura } else { largura }
+  let w = w0 * esc
+  let w-leg = calc.min(calc.max(w.cm(), 9), largura-texto.cm()) * 1cm
+  bloco-movel(chave, align(center, block(width: w-leg)[
+    #figure(
+      image(caminho(chave), width: w),
+      caption: legenda-fig(legenda, (chave,)),
+      gap: 7pt,
+    ) #label(chave)
+    #context [#metadata((tipo: "fig", chave: chave, pagina: here().page()))<marca>]
+  ]))
 }
 
 // Duas figuras lado a lado com a MESMA altura e uma legenda única.
@@ -150,12 +156,10 @@
     block(breakable: false, above: espaco, below: espaco, width: 100%, t)
   } else {
     // tabela numerada que flutua como as figuras (citar com #vf(rotulo))
-    let corpo = block(width: 100%, breakable: false)[
+    bloco-movel(rotulo)[
       #figure(t, caption: titulo, kind: table, supplement: "Tabela", gap: 6pt) #label(rotulo)
       #context [#metadata((tipo: "fig", chave: rotulo, pagina: here().page()))<marca>]
     ]
-    if flutua == none { block(above: espaco, below: espaco, corpo) }
-    else { place(flutua, float: true, clearance: 1.5em, corpo) }
   }
 }
 
@@ -238,6 +242,7 @@
 // Revisão rápida: começa em página nova e não é numerada.
 #let revisao(corpo) = {
   pagebreak(weak: true)
+  context [#metadata((tipo: "revisao", chave: "", pagina: here().page()))<marca>]
   heading(numbering: none, level: 1)[Revisão rápida]
   corpo
 }

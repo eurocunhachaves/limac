@@ -141,12 +141,11 @@ def gera_typst(t) -> str:
     # Em 30 segundos
     itens = "\n".join("- " + md2typ(e) for e in t.ESSENCIAL)
     L.append(f'#essencial(titulo: "Em 30 segundos")[\n{itens}\n]')
-    L.append(t.CORPO)
+    L.append(monta_corpo(t.CORPO, getattr(t, '_adiar', {})))
     R = []
     if t.VALORES:
-        R.append("== Valores para decorar")
         linhas = [", ".join("[" + md2typ(c) + "]" for c in v) for v in t.VALORES]
-        R.append('#tabela((1.3fr, 1.15fr, 1.45fr), ([Parâmetro], [Valor], [Observação]),\n  '
+        R.append("== Valores para decorar\n\n" + '#tabela((1.3fr, 1.15fr, 1.45fr), ([Parâmetro], [Valor], [Observação]),\n  '
                  + ",\n  ".join(linhas) + ", tamanho: 8.9pt, pad: 3.9pt)")
     if t.PEGADINHAS:
         itens = "\n".join("- " + md2typ(p) for p in t.PEGADINHAS)
@@ -155,67 +154,77 @@ def gera_typst(t) -> str:
         itens = "\n".join(f"- #strong[{esc(tit)}.] {md2typ(txt)}" for tit, txt in t.CLINICA)
         R.append(f'#clinica(titulo: "Correlações clínicas")[\n{itens}\n]')
     if getattr(t, "GLOSSARIO", None):
-        R.append("== Glossário")
         linhas = [f"[*{md2typ(a)}*], [{md2typ(b)}]" for a, b in t.GLOSSARIO]
-        R.append('#tabela((1fr, 2.6fr), ([Termo], [Significado]),\n  '
+        R.append("== Glossário\n\n" + '#tabela((1fr, 2.6fr), ([Termo], [Significado]),\n  '
                  + ",\n  ".join(linhas) + ", tamanho: 8.9pt, pad: 3.9pt)")
     if t.LEITURA:
-        R.append("== Onde ler nas fontes")
         linhas = [", ".join("[" + md2typ(c) + "]" for c in r) for r in t.LEITURA]
-        R.append('#tabela((1fr, 1.25fr, 2.2fr), ([Livro], [Onde], [O que ler]),\n  '
+        R.append("== Onde ler nas fontes\n\n" + '#tabela((1fr, 1.25fr, 2.2fr), ([Livro], [Onde], [O que ler]),\n  '
                  + ",\n  ".join(linhas) + ", tamanho: 8.9pt)")
+    ordem = getattr(t, "_ordem_rev", None)
+    if ordem:   # Valores sempre primeiro e Onde ler sempre por último
+        R = [R[0]] + [R[1:-1][i] for i in ordem] + [R[-1]]
     L.append("#revisao[\n" + "\n\n".join(R) + "\n]")
     return "\n\n".join(L) + "\n"
 
 
-def compila(t, destinos):
-    build = FONTE / "_build"
-    build.mkdir(exist_ok=True)
-    src = build / f"{t.CODIGO}.typ"
-    src.write_text(gera_typst(t), encoding="utf-8")
-    pdf = build / f"{t.CODIGO}.pdf"
-    typst.compile(str(src), output=str(pdf), root=str(FONTE),
-                  font_paths=[str(FONTE / "fontes")], ignore_system_fonts=True)
-    for d in destinos:
-        d.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy(pdf, d)
-    # prévias para conferência visual
-    prev = PREVIA / t.CODIGO
-    if prev.exists():
-        shutil.rmtree(prev)
-    prev.mkdir(parents=True)
-    doc = pymupdf.open(pdf)
-    for i, pg in enumerate(doc):
-        pg.get_pixmap(dpi=80).save(prev / f"p{i+1:02d}.png")
-    verifica_preenchimento(doc)
-    verifica_figuras(src)
-    return pdf, doc.page_count
+# ---------------------------------------------------------------- paginação
+MOVEL = re.compile(r'#(?:fig|par-figs)\("([^"]+)"|#tabela\(rotulo: "([^"]+)"')
 
 
-def verifica_figuras(src):
-    """Cada figura precisa ser citada (#vf) e ficar na mesma página da primeira
-    citação ou, no máximo, na seguinte."""
-    import json
-    marcas = json.loads(typst.query(str(src), "<marca>", field="value", root=str(FONTE),
-                                    font_paths=[str(FONTE / "fontes")], ignore_system_fonts=True))
-    figs = {m["chave"]: m["pagina"] for m in marcas if m["tipo"] == "fig"}
-    refs = {}
-    for m in marcas:
-        if m["tipo"] == "ref":
-            refs.setdefault(m["chave"], m["pagina"])
-    for k, pg in figs.items():
-        if k not in refs:
-            print(f"  ! figura {k} (p. {pg}) não é citada no texto")
-        elif not 0 <= pg - refs[k] <= 1:
-            print(f"  ! figura {k} está na p. {pg}, mas é citada na p. {refs[k]}")
+def blocos(corpo):
+    return [b for b in re.split(r"\n\s*\n", corpo.strip("\n"))]
 
 
-def verifica_preenchimento(doc):
-    """Avisa quando uma página (exceto a última) termina com sobra no pé ou tem
-    um buraco no meio (espaço vertical vazio grande entre dois blocos)."""
-    for i, pg in enumerate(doc):
+def chave_movel(bloco):
+    m = MOVEL.match(bloco.strip())
+    return (m.group(1) or m.group(2)) if m else None
+
+
+def _barreira(bloco):
+    b = bloco.lstrip()
+    return b.startswith("=") or chave_movel(bloco) is not None
+
+
+def monta_corpo(corpo, adiar):
+    """Reposiciona figuras/tabelas: n > 0 desce n blocos, n < 0 sobe |n| blocos,
+    sem atravessar título (= ou ==) nem outra figura/tabela."""
+    bs = blocos(corpo)
+    for k, n in adiar.items():
+        i = next((j for j, b in enumerate(bs) if chave_movel(b) == k), None)
+        if i is None or n == 0:
+            continue
+        b = bs.pop(i)
+        j = i
+        if n > 0:
+            for _ in range(n):
+                if j >= len(bs) or _barreira(bs[j]):
+                    break
+                j += 1
+        else:
+            for _ in range(-n):
+                if j == 0 or _barreira(bs[j - 1]):
+                    break
+                j -= 1
+        bs.insert(j, b)
+    return "\n\n".join(bs)
+
+
+def pode_mover(corpo, adiar, k, passo):
+    antes = monta_corpo(corpo, adiar)
+    depois = monta_corpo(corpo, {**adiar, k: adiar.get(k, 0) + passo})
+    return antes != depois
+
+
+AREA_TOPO, AREA_PE = 62, 72   # pt: cabeçalho e rodapé
+
+
+def sobras(doc):
+    """Para cada página: (pt livres no pé, lista de buracos internos em pt)."""
+    res = []
+    for pg in doc:
         r = pg.rect
-        area = pymupdf.Rect(0, 62, r.width, r.height - 72)  # sem cabeçalho/rodapé
+        area = pymupdf.Rect(0, AREA_TOPO, r.width, r.height - AREA_PE)
         faixas = []
         for b in pg.get_text("blocks"):
             rb = pymupdf.Rect(b[:4])
@@ -230,16 +239,179 @@ def verifica_preenchimento(doc):
             if rb.intersects(area) and rb.height < area.height * 0.9:
                 faixas.append((rb.y0, rb.y1))
         if not faixas:
+            res.append((area.height, []))
             continue
         faixas.sort()
-        fim = faixas[0][1]
+        fim, buracos = faixas[0][1], []
         for y0, y1 in faixas[1:]:
-            if y0 - fim > 60:  # ≈ 2,1 cm sem nada
-                print(f"  ! página {i+1}: buraco de {(y0 - fim) / 28.35:.1f} cm no meio")
+            if y0 - fim > 60:
+                buracos.append(y0 - fim)
             fim = max(fim, y1)
-        livre = (area.y1 - fim) / area.height
-        if i < doc.page_count - 1 and livre > 0.10:
-            print(f"  ! página {i+1}: {livre:.0%} vazia no fim")
+        res.append((area.y1 - fim, buracos))
+    return res
+
+
+def _compila(src, pdf, escalas):
+    entradas = {"escalas": json.dumps(escalas)}
+    opts = dict(root=str(FONTE), font_paths=[str(FONTE / "fontes")], ignore_system_fonts=True,
+                sys_inputs=entradas)
+    typst.compile(str(src), output=str(pdf), **opts)
+    marcas = json.loads(typst.query(str(src), "<marca>", field="value", **opts))
+    return pymupdf.open(pdf), marcas
+
+
+def _fim_do_texto(marcas):
+    """Índice (0-based) da última página do texto, antes da Revisão rápida."""
+    r = [m["pagina"] for m in marcas if m["tipo"] == "revisao"]
+    return r[0] - 2 if r else None
+
+
+def _custo(doc, marcas):
+    """Sobra total (pt) no pé das páginas (exceto a última página do texto e a
+    última do documento) e buracos internos."""
+    sob = sobras(doc)
+    fim_texto = _fim_do_texto(marcas)
+    c = 0
+    for i, (livre, buracos) in enumerate(sob):
+        area = doc[i].rect.height - AREA_TOPO - AREA_PE
+        if i < len(sob) - 1 and i != fim_texto and livre / area > 0.04:
+            c += livre
+        c += sum(buracos)
+    return c + 400 * len(sob)   # página a mais custa caro
+
+
+def _candidatos(t, doc, marcas, escalas):
+    """Mudanças possíveis para cada página com sobra no pé causada por uma
+    figura/tabela que abriu a página seguinte."""
+    ini = {m["chave"]: m for m in marcas if m["tipo"] == "ini"}
+    fim = {m["chave"]: m for m in marcas if m["tipo"] == "fim"}
+    fim_texto = _fim_do_texto(marcas)
+    for i, (livre, _) in enumerate(sobras(doc)[:-1]):
+        area = doc[i].rect.height - AREA_TOPO - AREA_PE
+        if livre / area <= 0.06 or i == fim_texto:
+            continue
+        nxt = [m for m in ini.values() if m["pagina"] == i + 2]
+        if not nxt:
+            continue
+        m = min(nxt, key=lambda m: m["y"])
+        if m["y"] > AREA_TOPO + 45:
+            continue
+        k = m["chave"]
+        alt = fim[k]["y"] - m["y"]
+        folga = livre - 22
+        if k[0] in "gpw" and alt * 0.8 <= folga:
+            yield ("escala", {k: round(max(0.8, escalas.get(k, 1.0) * (folga / alt) * 0.97), 3)})
+        aqui = [x["chave"] for x in ini.values() if x["pagina"] == i + 1 and x["chave"][0] in "gpw"
+                and escalas.get(x["chave"], 1.0) > 0.8]
+        for f in (0.9, 0.8):
+            if aqui:
+                yield ("escala", {x: f for x in aqui})
+        for passo in (1, 2, 3, -1, -2):
+            if pode_mover(t.CORPO, t._adiar, k, passo):
+                yield ("move", {k: t._adiar.get(k, 0) + passo})
+                if k[0] in "gpw":
+                    for f in (0.9, 0.8):
+                        yield ("ambos", ({k: t._adiar.get(k, 0) + passo}, {k: f}))
+
+
+def pagina(t, src, pdf, max_voltas=80):
+    """Paginação automática por busca local: tenta reduzir figuras (até 80%) ou
+    mover figuras/tabelas alguns parágrafos (sem atravessar títulos) e fica com
+    a mudança só se a sobra total nas páginas diminuir."""
+    t._adiar, escalas = {}, {}
+
+    def roda():
+        src.write_text(gera_typst(t), encoding="utf-8")
+        return _compila(src, pdf, escalas)
+
+    doc, marcas = roda()
+    custo = _custo(doc, marcas)
+    voltas = 0
+    melhorou = True
+    while melhorou and voltas < max_voltas:
+        melhorou = False
+        for tipo, mud in list(_candidatos(t, doc, marcas, escalas)):
+            voltas += 1
+            antes_a, antes_e = dict(t._adiar), dict(escalas)
+            if tipo == "ambos":
+                t._adiar.update(mud[0]); escalas.update(mud[1])
+            else:
+                (t._adiar if tipo == "move" else escalas).update(mud)
+            d2, m2 = roda()
+            c2 = _custo(d2, m2)
+            if c2 < custo - 5:
+                doc, marcas, custo = d2, m2, c2
+                melhorou = True
+                break
+            t._adiar, escalas = antes_a, antes_e
+            if voltas >= max_voltas:
+                break
+    # ordem dos blocos da Revisão rápida (Valores sempre primeiro)
+    import itertools
+    n = len([x for x in (t.VALORES, t.PEGADINHAS, t.CLINICA, getattr(t, "GLOSSARIO", None), t.LEITURA) if x]) - 2
+    melhor = (custo, None)
+    for perm in itertools.permutations(range(n)):
+        t._ordem_rev = list(perm)
+        d2, m2 = roda()
+        c2 = _custo(d2, m2)
+        if c2 < melhor[0] - 5:
+            melhor = (c2, list(perm))
+    t._ordem_rev = melhor[1]
+    doc, marcas = roda()
+    return doc, escalas
+
+
+def compila(t, destinos):
+    build = FONTE / "_build"
+    build.mkdir(exist_ok=True)
+    src = build / f"{t.CODIGO}.typ"
+    pdf = build / f"{t.CODIGO}.pdf"
+    doc, escalas = pagina(t, src, pdf)
+    if t._adiar or escalas:
+        print(f"  paginação: adiados {t._adiar or '-'}; reduzidas {escalas or '-'}")
+    for d in destinos:
+        d.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(pdf, d)
+    # prévias para conferência visual
+    prev = PREVIA / t.CODIGO
+    if prev.exists():
+        shutil.rmtree(prev)
+    prev.mkdir(parents=True)
+    for i, pg in enumerate(doc):
+        pg.get_pixmap(dpi=80).save(prev / f"p{i+1:02d}.png")
+    verifica_preenchimento(doc, _fim_do_texto(json.loads(typst.query(str(src), '<marca>', field='value', root=str(FONTE), font_paths=[str(FONTE / 'fontes')], ignore_system_fonts=True, sys_inputs={'escalas': json.dumps(escalas)}))))
+    verifica_figuras(src, escalas)
+    return pdf, doc.page_count
+
+
+def verifica_figuras(src, escalas):
+    """Cada figura precisa ser citada (#vf) e ficar na mesma página da primeira
+    citação ou, no máximo, na seguinte."""
+    import json
+    marcas = json.loads(typst.query(str(src), "<marca>", field="value", root=str(FONTE),
+                                    font_paths=[str(FONTE / "fontes")], ignore_system_fonts=True,
+                                    sys_inputs={"escalas": json.dumps(escalas)}))
+    figs = {m["chave"]: m["pagina"] for m in marcas if m["tipo"] == "fig"}
+    refs = {}
+    for m in marcas:
+        if m["tipo"] == "ref":
+            refs.setdefault(m["chave"], m["pagina"])
+    for k, pg in figs.items():
+        if k not in refs:
+            print(f"  ! figura {k} (p. {pg}) não é citada no texto")
+        elif not 0 <= pg - refs[k] <= 1:
+            print(f"  ! figura {k} está na p. {pg}, mas é citada na p. {refs[k]}")
+
+
+def verifica_preenchimento(doc, fim_texto=None):
+    """Avisa sobre sobra no pé (exceto a última página e a última do texto,
+    antes da Revisão rápida) e buracos no meio."""
+    for i, (livre, buracos) in enumerate(sobras(doc)):
+        area = doc[i].rect.height - AREA_TOPO - AREA_PE
+        for bu in buracos:
+            print(f"  ! página {i+1}: buraco de {bu / 28.35:.1f} cm no meio")
+        if i < doc.page_count - 1 and i != fim_texto and livre / area > 0.09:
+            print(f"  ! página {i+1}: {livre / area:.0%} vazia no fim")
 
 
 # ---------------------------------------------------------------- README
