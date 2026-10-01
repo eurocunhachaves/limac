@@ -15,6 +15,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 |---|---|---|---|---|
 | **A** | [O músculo cardíaco e as valvas cardíacas](temas/a-musculo-cardiaco-e-valvas/README.md) | Fisiologia | Sincício, potencial de ação com platô, acoplamento excitação-contração, ciclo cardíaco (Wiggers), valvas, alça pressão-volume, Frank-Starling | [PDF](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) · [Anki](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) |
 | **B** | [Excitação rítmica do coração](temas/b-excitacao-ritmica/README.md) | Fisiologia | Nó sinusal e automatismo, nó AV e retardo, sistema de Purkinje, marca-passos ectópicos, controle autonômico | [PDF](temas/b-excitacao-ritmica/resumao.pdf) · [Anki](temas/b-excitacao-ritmica/flashcards.apkg) |
+| **C** | [Eletrocardiograma normal](temas/c-ecg-normal/README.md) | Fisiologia | Ondas, intervalos e segmentos, papel milimetrado, derivações (Einthoven, aumentadas, precordiais), eixo | [PDF](temas/c-ecg-normal/resumao.pdf) · [Anki](temas/c-ecg-normal/flashcards.apkg) |
 
 ## Flashcards (Anki)
 
