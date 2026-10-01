@@ -20,6 +20,7 @@ Material de estudo para a prova de entrada da **Liga Acadêmica de Cardiologia**
 | **E** | [Vasos, pulso e microcirculação](temas/e-vasos-e-microcirculacao/README.md) | Fisiologia | Capilares, forças de Starling, interstício, edema, sistema linfático | [PDF](temas/e-vasos-e-microcirculacao/resumao.pdf) · [Anki](temas/e-vasos-e-microcirculacao/flashcards.apkg) |
 | **F** | [Controle local, humoral e nervoso da circulação](temas/f-controle-da-circulacao/README.md) | Fisiologia | Autorregulação, metabólitos, NO, angiogênese, hormônios vasoativos, barorreceptores, quimiorreceptores, reflexos | [PDF](temas/f-controle-da-circulacao/resumao.pdf) · [Anki](temas/f-controle-da-circulacao/flashcards.apkg) |
 | **G** | [Débito cardíaco e retorno venoso](temas/g-debito-cardiaco-e-retorno-venoso/README.md) | Fisiologia | Débito cardíaco = retorno venoso, curvas de débito e de retorno, pressão média de enchimento, métodos de medida | [PDF](temas/g-debito-cardiaco-e-retorno-venoso/resumao.pdf) · [Anki](temas/g-debito-cardiaco-e-retorno-venoso/flashcards.apkg) |
+| **H** | [Regulação renal da pressão arterial](temas/h-regulacao-renal-da-pa/README.md) | Fisiologia | Diurese e natriurese de pressão, curva de débito renal, sistema renina-angiotensina-aldosterona, sal e hipertensão | [PDF](temas/h-regulacao-renal-da-pa/resumao.pdf) · [Anki](temas/h-regulacao-renal-da-pa/flashcards.apkg) |
 
 ## Flashcards (Anki)
 
