@@ -101,6 +101,17 @@ def copia_figuras(chaves):
         origem = EXTRAIDAS / pasta / f"{k}.png"
         destino.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(origem, destino)
+    atualiza_tamanhos()
+
+
+def atualiza_tamanhos():
+    """figuras/tamanhos.json: chave -> [largura, altura] em pixels (lido pelo modelo)."""
+    from PIL import Image
+    tam = {}
+    for f in sorted((FONTE / "figuras").glob("*/*.png")):
+        with Image.open(f) as im:
+            tam[f.stem] = list(im.size)
+    (FONTE / "figuras" / "tamanhos.json").write_text(json.dumps(tam, indent=0), encoding="utf-8")
 
 
 def legenda_livro(k: str) -> str:
@@ -131,25 +142,29 @@ def gera_typst(t) -> str:
     itens = "\n".join("- " + md2typ(e) for e in t.ESSENCIAL)
     L.append(f'#essencial(titulo: "Em 30 segundos")[\n{itens}\n]')
     L.append(t.CORPO)
-    # Valores
+    R = []
     if t.VALORES:
-        L.append("= Valores para decorar")
-        linhas = []
-        for v in t.VALORES:
-            linhas.append(", ".join("[" + md2typ(c) + "]" for c in v))
-        L.append('#tabela((1.25fr, 1.1fr, 1.5fr), ([Parâmetro], [Valor], [Observação]),\n  '
-                 + ",\n  ".join(linhas) + ", tamanho: 8.3pt, pad: 3.6pt)")
-    if t.CLINICA:
-        itens = "\n".join(f"- #strong[{esc(tit)}.] {md2typ(txt)}" for tit, txt in t.CLINICA)
-        L.append(f'#clinica(titulo: "Correlações clínicas")[\n{itens}\n]')
+        R.append("== Valores para decorar")
+        linhas = [", ".join("[" + md2typ(c) + "]" for c in v) for v in t.VALORES]
+        R.append('#tabela((1.3fr, 1.15fr, 1.45fr), ([Parâmetro], [Valor], [Observação]),\n  '
+                 + ",\n  ".join(linhas) + ", tamanho: 8.9pt, pad: 3.9pt)")
     if t.PEGADINHAS:
         itens = "\n".join("- " + md2typ(p) for p in t.PEGADINHAS)
-        L.append(f'#atencao(titulo: "Pegadinhas de prova")[\n{itens}\n]')
+        R.append(f'#atencao(titulo: "Pegadinhas de prova")[\n{itens}\n]')
+    if t.CLINICA:
+        itens = "\n".join(f"- #strong[{esc(tit)}.] {md2typ(txt)}" for tit, txt in t.CLINICA)
+        R.append(f'#clinica(titulo: "Correlações clínicas")[\n{itens}\n]')
+    if getattr(t, "GLOSSARIO", None):
+        R.append("== Glossário")
+        linhas = [f"[*{md2typ(a)}*], [{md2typ(b)}]" for a, b in t.GLOSSARIO]
+        R.append('#tabela((1fr, 2.6fr), ([Termo], [Significado]),\n  '
+                 + ",\n  ".join(linhas) + ", tamanho: 8.9pt, pad: 3.9pt)")
     if t.LEITURA:
-        L.append("= Onde ler nas fontes")
+        R.append("== Onde ler nas fontes")
         linhas = [", ".join("[" + md2typ(c) + "]" for c in r) for r in t.LEITURA]
-        L.append('#tabela((1.1fr, 1.2fr, 2fr), ([Livro], [Onde], [O que ler]),\n  '
-                 + ",\n  ".join(linhas) + ", tamanho: 8.4pt)")
+        R.append('#tabela((1fr, 1.25fr, 2.2fr), ([Livro], [Onde], [O que ler]),\n  '
+                 + ",\n  ".join(linhas) + ", tamanho: 8.9pt)")
+    L.append("#revisao[\n" + "\n\n".join(R) + "\n]")
     return "\n\n".join(L) + "\n"
 
 
@@ -173,28 +188,57 @@ def compila(t, destinos):
     for i, pg in enumerate(doc):
         pg.get_pixmap(dpi=80).save(prev / f"p{i+1:02d}.png")
     verifica_preenchimento(doc)
+    verifica_figuras(src)
     return pdf, doc.page_count
 
 
+def verifica_figuras(src):
+    """Cada figura precisa ser citada (#vf) e ficar na mesma página da primeira
+    citação ou, no máximo, na seguinte."""
+    import json
+    marcas = json.loads(typst.query(str(src), "<marca>", field="value", root=str(FONTE),
+                                    font_paths=[str(FONTE / "fontes")], ignore_system_fonts=True))
+    figs = {m["chave"]: m["pagina"] for m in marcas if m["tipo"] == "fig"}
+    refs = {}
+    for m in marcas:
+        if m["tipo"] == "ref":
+            refs.setdefault(m["chave"], m["pagina"])
+    for k, pg in figs.items():
+        if k not in refs:
+            print(f"  ! figura {k} (p. {pg}) não é citada no texto")
+        elif not 0 <= pg - refs[k] <= 1:
+            print(f"  ! figura {k} está na p. {pg}, mas é citada na p. {refs[k]}")
+
+
 def verifica_preenchimento(doc):
-    """Avisa quando uma página (exceto a última) termina com muito espaço vazio."""
+    """Avisa quando uma página (exceto a última) termina com sobra no pé ou tem
+    um buraco no meio (espaço vertical vazio grande entre dois blocos)."""
     for i, pg in enumerate(doc):
-        if i == doc.page_count - 1:
-            continue
         r = pg.rect
-        area = pymupdf.Rect(0, 60, r.width, r.height - 58)  # sem cabeçalho/rodapé
-        fundo = 0
+        area = pymupdf.Rect(0, 62, r.width, r.height - 72)  # sem cabeçalho/rodapé
+        faixas = []
         for b in pg.get_text("blocks"):
-            if pymupdf.Rect(b[:4]).intersects(area):
-                fundo = max(fundo, b[3])
+            rb = pymupdf.Rect(b[:4])
+            if rb.intersects(area):
+                faixas.append((rb.y0, rb.y1))
         for img in pg.get_image_info():
-            if pymupdf.Rect(img["bbox"]).intersects(area):
-                fundo = max(fundo, img["bbox"][3])
+            rb = pymupdf.Rect(img["bbox"])
+            if rb.intersects(area):
+                faixas.append((rb.y0, rb.y1))
         for d in pg.get_drawings():
-            if d["rect"].intersects(area) and d["rect"].height < area.height:
-                fundo = max(fundo, d["rect"].y1)
-        livre = (area.y1 - fundo) / area.height
-        if livre > 0.07:
+            rb = d["rect"]
+            if rb.intersects(area) and rb.height < area.height * 0.9:
+                faixas.append((rb.y0, rb.y1))
+        if not faixas:
+            continue
+        faixas.sort()
+        fim = faixas[0][1]
+        for y0, y1 in faixas[1:]:
+            if y0 - fim > 60:  # ≈ 2,1 cm sem nada
+                print(f"  ! página {i+1}: buraco de {(y0 - fim) / 28.35:.1f} cm no meio")
+            fim = max(fim, y1)
+        livre = (area.y1 - fim) / area.height
+        if i < doc.page_count - 1 and livre > 0.10:
             print(f"  ! página {i+1}: {livre:.0%} vazia no fim")
 
 

@@ -19,106 +19,74 @@ ESSENCIAL = [
 CORPO = r'''
 = O sistema excitatório e condutor
 
-O coração bate cerca de 100.000 vezes por dia graças a um sistema especializado que *gera* o impulso e o *conduz* rapidamente. Ele faz os átrios contraírem cerca de *1/6 de segundo antes* dos ventrículos e faz todas as partes dos ventrículos contraírem quase ao mesmo tempo.
+O coração bate cerca de 100.000 vezes por dia graças a um sistema especializado que *gera* o impulso e o *conduz* rapidamente. Esse sistema faz os átrios contraírem cerca de *1/6 de segundo antes* dos ventrículos e faz todas as partes dos ventrículos contraírem quase ao mesmo tempo. O caminho do impulso está em #vf("g10_01"):
 
-#ao-lado(
-  fig("g10_01", [O nó sinusal, as vias internodais, o nó AV, o feixe AV e seus ramos.]),
-  [
-    + *Nó sinusal (sinoatrial):* faixa de ≈3 × 15 × 1 mm na parede posterolateral superior do *átrio direito*, logo abaixo da desembocadura da *veia cava superior*. Suas fibras quase não têm filamentos contráteis e se ligam direto às fibras atriais.
-    + *Vias internodais* (anterior, média e posterior) e o *feixe interatrial anterior* (de Bachmann), que leva o impulso ao átrio esquerdo.
-    + *Nó AV:* na parede posterior do átrio direito, *atrás da valva tricúspide*.
-    + *Feixe AV (de His):* atravessa o tecido fibroso que separa átrios e ventrículos e desce 5–15 mm no septo.
-    + *Ramos direito e esquerdo* e *fibras de Purkinje*, sob o endocárdio, até o ápice e de volta à base.
-  ],
-  prop: 44%,
-)
++ *Nó sinusal (sinoatrial):* faixa de ≈3 × 15 × 1 mm na parede posterolateral superior do *átrio direito*, logo abaixo da desembocadura da *veia cava superior*. Suas fibras quase não têm filamentos contráteis e se ligam direto às fibras atriais.
++ *Vias internodais* (anterior, média e posterior) e *feixe interatrial anterior* (de Bachmann), que leva o impulso ao átrio esquerdo.
++ *Nó AV:* na parede posterior do átrio direito, *atrás da valva tricúspide*.
++ *Feixe AV (de His):* atravessa o tecido fibroso entre átrios e ventrículos e desce 5–15 mm no septo.
++ *Ramos direito e esquerdo* e *fibras de Purkinje*, sob o endocárdio, até o ápice e de volta à base.
+
+#fig("g10_01", [O nó sinusal, as vias internodais, o nó AV, o feixe AV e seus ramos.])
 
 = Automatismo do nó sinusal
 
-A fibra do nó sinusal não tem um repouso estável. Entre um batimento e outro, o potencial sobe devagar até o limiar e dispara sozinho. Esse é o *automatismo* (autoexcitação).
+A fibra do nó sinusal não tem um repouso estável. Entre um batimento e outro, o potencial sobe devagar até o limiar e dispara sozinho (#vf("g10_02")). Esse é o *automatismo* (autoexcitação). Três diferenças em relação à fibra ventricular explicam isso:
 
-#ao-lado(
-  fig("g10_02", [Descarga rítmica de uma fibra do nó sinusal comparada com uma fibra ventricular.]),
-  [
-    Três diferenças em relação à fibra ventricular explicam o automatismo:
-    - Repouso menos negativo, *−55 a −60 mV*, porque a membrana é permeável a Na⁺ e Ca²⁺.
-    - Nesse nível os *canais rápidos de Na⁺ estão inativados*. Só os canais lentos de Ca²⁺ conseguem gerar o potencial de ação, que por isso sobe e desce mais devagar.
-    - Existe uma entrada contínua de Na⁺ pelos canais da *corrente funny* (I#sub[f]).
-  ],
-  prop: 46%,
-  lado: "esq",
-)
+- Repouso menos negativo, *−55 a −60 mV*, porque a membrana é permeável a Na⁺ e Ca²⁺.
+- Nesse nível os *canais rápidos de Na⁺ estão inativados*. Só os canais lentos de Ca²⁺ conseguem gerar o potencial de ação, que por isso sobe e desce mais devagar.
+- Existe uma entrada contínua de Na⁺ pelos canais da *corrente funny* (I#sub[f]).
+
+#fig("g10_02", [Descarga rítmica de uma fibra do nó sinusal comparada com uma fibra ventricular. Note o repouso mais alto e a subida lenta até o limiar.], flutua: none)
 
 == O ciclo de uma célula marca-passo
 
 #tabela((auto, 1fr), ([Etapa], [O que acontece]),
   [*1. Despolarização lenta (fase 4)*], [Entrada de Na⁺ pela corrente funny (e de Ca²⁺). O potencial sobe de −55/−60 mV até o *limiar de ≈−40 mV*.],
-  [*2. Potencial de ação*], [No limiar abrem os *canais de Ca²⁺ do tipo L*. A subida é lenta (não há canal rápido de Na⁺ disponível).],
+  [*2. Potencial de ação*], [No limiar abrem os *canais de Ca²⁺ do tipo L*. A subida é lenta, porque não há canal rápido de Na⁺ disponível.],
   [*3. Repolarização*], [Os canais de Ca²⁺ se inativam em *100–150 ms* e abrem muitos *canais de K⁺*.],
   [*4. Hiperpolarização*], [O K⁺ continua saindo por alguns décimos de segundo e leva a membrana a −55/−60 mV. Depois os canais de K⁺ fecham e o ciclo recomeça.],
-  tamanho: 8.7pt,
 )
 
 = Condução pelo coração
 
 == Átrios e nó AV
 
-No músculo atrial o impulso anda a *0,3 m/s*; nas vias internodais e no feixe de Bachmann, a *≈1 m/s*. O impulso chega ao nó AV *0,03 s* depois de sair do nó sinusal.
+No músculo atrial o impulso anda a *0,3 m/s*; nas vias internodais e no feixe de Bachmann, a *≈1 m/s*. Ele chega ao nó AV *0,03 s* depois de sair do nó sinusal.
 
-#ao-lado(
-  fig("g10_03", [Organização do nó AV. Os números são o tempo (s) desde a origem do impulso no nó sinusal.]),
-  [
-    O nó AV é feito para *retardar* o impulso e dar tempo de os átrios esvaziarem nos ventrículos:
+O nó AV existe para *retardar* o impulso e dar tempo de os átrios esvaziarem nos ventrículos. Os tempos de cada trecho estão em #vf("g10_03") e na #vf("t-atrasos"). O atraso vem de as fibras nodais e de transição terem *poucas junções comunicantes*, o que cria alta resistência à passagem dos íons. Algumas fibras nodais conduzem 150 vezes mais devagar que as de Purkinje.
 
-    #tabela((1fr, auto), ([Trecho], [Atraso]),
-      [Nó sinusal → nó AV], [0,03 s],
-      [Dentro do nó AV], [*0,09 s*],
-      [Porção penetrante do feixe AV], [0,04 s],
-      [*Total no sistema AV*], [*0,13 s*],
-      [*Total até o ventrículo*], [*0,16 s*],
-      tamanho: 8.7pt,
-    )
+#fig("g10_03", [Organização do nó AV. Os números são o tempo (s) desde a origem do impulso no nó sinusal.])
 
-    *Por que é lento?* As fibras nodais e de transição têm *poucas junções comunicantes*, e a resistência à passagem dos íons é alta. Algumas fibras nodais conduzem 150 vezes mais devagar que as de Purkinje.
-  ],
-  prop: 42%,
+#tabela(rotulo: "t-atrasos", titulo: [Tempo que o impulso leva em cada trecho até o ventrículo.], (1fr, auto), ([Trecho], [Tempo]),
+  [Nó sinusal → nó AV], [0,03 s],
+  [Dentro do nó AV], [*0,09 s*],
+  [Porção penetrante do feixe AV], [0,04 s],
+  [*Total no sistema AV*], [*0,13 s*],
+  [*Total do nó sinusal ao ventrículo*], [*0,16 s*],
 )
 
 == Feixe AV, ramos e Purkinje
 
-#ao-lado(
-  fig("g10_04", [Tempo de chegada do impulso (s após o disparo do nó sinusal). Note o atraso no nó AV e a ativação quase simultânea dos ventrículos.]),
-  [
-    - As fibras de *Purkinje* são muito grandes e têm junções comunicantes muito permeáveis: conduzem a *1,5–4,0 m/s*, cerca de *6 vezes* o músculo ventricular. Quase não têm miofibrilas, então contraem pouco.
-    - O *feixe AV é unidirecional*: normalmente não conduz do ventrículo para o átrio, o que evita a reentrada.
-    - Fora do feixe AV, átrios e ventrículos são separados por uma *barreira fibrosa contínua* que funciona como isolante. Uma ponte muscular anormal (*via acessória*) permite a reentrada e causa arritmias graves.
-    - Do septo até as terminações de Purkinje passam só *0,03 s*. No músculo ventricular o impulso volta a 0,3–0,5 m/s e leva mais *0,03 s* do endocárdio ao epicárdio. Total do início dos ramos à última fibra ventricular: *≈0,06 s*.
-  ],
-  prop: 40%,
-)
+- As fibras de *Purkinje* são muito grandes e têm junções comunicantes muito permeáveis. Conduzem a *1,5–4,0 m/s*, cerca de *6 vezes* o músculo ventricular. Quase não têm miofibrilas, então contraem pouco.
+- O *feixe AV é unidirecional*: normalmente não conduz do ventrículo para o átrio, o que evita a reentrada.
+- Fora do feixe AV, átrios e ventrículos são separados por uma *barreira fibrosa contínua* que funciona como isolante. Uma ponte muscular anormal (*via acessória*) permite a reentrada e causa arritmias graves.
+- Do septo até as terminações de Purkinje passam só *0,03 s*. No músculo ventricular o impulso volta a 0,3–0,5 m/s e leva mais *0,03 s* do endocárdio ao epicárdio. Do início dos ramos à última fibra ventricular são *≈0,06 s* (#vf("g10_04")).
+
+#fig("g10_04", [Tempo de chegada do impulso (s após o disparo do nó sinusal) em cada região. Note o atraso no nó AV e a ativação quase simultânea dos ventrículos.])
 
 #essencial(titulo: "Por que a contração precisa ser síncrona")[
-  Como a primeira e a última fibra ventricular se excitam com apenas *0,03–0,06 s* de diferença, os dois ventrículos contraem juntos e geram pressão de forma eficiente. Quando a condução fica lenta (por exemplo, bloqueio de ramo), a eficácia do bombeamento cai *20–30%*. Os *ressincronizadores* (marca-passos biventriculares) corrigem isso na insuficiência cardíaca.
+  Como a primeira e a última fibra ventricular se excitam com apenas *0,03–0,06 s* de diferença, os dois ventrículos contraem juntos e geram pressão de forma eficiente. Quando a condução fica lenta, como no bloqueio de ramo, a eficácia do bombeamento cai *20–30%*. Os *ressincronizadores* (marca-passos biventriculares) corrigem isso na insuficiência cardíaca.
 ]
 
 = Hierarquia dos marca-passos
 
-#ao-lado(
-  [
-    #tabela((1fr, auto), ([Tecido], [Frequência intrínseca]),
-      [*Nó sinusal*], [*70–80/min*],
-      [Nó AV], [40–60/min],
-      [Fibras de Purkinje], [15–40/min],
-      tamanho: 8.9pt,
-    )
-  ],
-  [
-    O nó sinusal comanda porque *dispara primeiro*: cada impulso sinusal descarrega o nó AV e o Purkinje antes que eles atinjam o próprio limiar.
+O nó sinusal comanda porque *dispara primeiro*: cada impulso sinusal descarrega o nó AV e o Purkinje antes que eles atinjam o próprio limiar (#vf("t-freq")). *Marca-passo ectópico* é qualquer marca-passo fora do nó sinusal. Aparece quando outro tecido fica mais rápido que o nó sinusal ou quando o impulso sinusal é bloqueado.
 
-    *Marca-passo ectópico* é qualquer marca-passo fora do nó sinusal. Aparece quando outro tecido fica mais rápido que o nó sinusal ou quando o impulso sinusal é bloqueado.
-  ],
-  prop: 42%,
-  lado: "esq",
+#tabela(rotulo: "t-freq", titulo: [Frequência de disparo próprio de cada tecido.], flutua: none, (1fr, 1fr), ([Tecido], [Frequência intrínseca]),
+  [*Nó sinusal*], [*70–80/min*],
+  [Nó AV], [40–60/min],
+  [Fibras de Purkinje], [15–40/min],
 )
 
 == Bloqueio AV e síndrome de Stokes-Adams
@@ -127,25 +95,22 @@ No *bloqueio AV total*, os átrios seguem no ritmo sinusal e um novo marca-passo
 
 = Controle autonômico
 
-#ao-lado(
-  fig("g9_14", [Inervação simpática e parassimpática (vagos) do coração.]),
-  [
-    - *Parassimpático (vago):* vai principalmente aos *nós SA e AV*, menos ao músculo atrial e muito pouco ao ventricular.
-    - *Simpático:* vai a *todas as partes* do coração, com forte presença no músculo ventricular.
+Os dois sistemas chegam ao coração por caminhos diferentes (#vf("g9_14")):
 
-    Por isso o vago age sobretudo na *frequência* e na *condução AV*, enquanto o simpático muda também a *força de contração*. Em repouso predomina o tônus vagal.
-  ],
-  prop: 36%,
-)
+- *Parassimpático (vago):* vai principalmente aos *nós SA e AV*, menos ao músculo atrial e muito pouco ao ventricular.
+- *Simpático:* vai a *todas as partes* do coração, com forte presença no músculo ventricular.
 
-#tabela((auto, 1fr, 1fr), ([], [Vago (parassimpático)], [Simpático]),
+Por isso o vago age sobretudo na *frequência* e na *condução AV*, enquanto o simpático muda também a *força de contração*. Em repouso predomina o tônus vagal. Os mecanismos estão na #vf("t-auto").
+
+#fig("g9_14", [Inervação simpática e parassimpática (vagos) do coração.])
+
+#tabela(rotulo: "t-auto", flutua: none, titulo: [Como o vago e o simpático agem no coração.], (auto, 1fr, 1fr), ([], [Vago (parassimpático)], [Simpático]),
   [*Mediador*], [Acetilcolina (receptor muscarínico)], [Noradrenalina (receptor *β1*)],
-  [*Mecanismo*], [*↑ permeabilidade ao K⁺* → hiperpolarização: o nó sinusal vai a *−65 a −75 mV* e demora mais para chegar ao limiar], [*↑ permeabilidade ao Na⁺ e Ca²⁺* → repouso mais positivo e despolarização da fase 4 mais rápida],
-  [*Nó sinusal*], [↓ FC (pode cair à metade; estímulo forte para o nó)], [↑ FC (pode quase *triplicar*)],
+  [*Mecanismo*], [*↑ permeabilidade ao K⁺* → hiperpolarização: o nó sinusal vai a *−65 a −75 mV* e demora mais para chegar ao limiar], [*↑ permeabilidade ao Na⁺ e Ca²⁺* → repouso mais positivo e fase 4 mais rápida],
+  [*Nó sinusal*], [↓ FC (pode cair à metade)], [↑ FC (pode quase *triplicar*)],
   [*Nó AV*], [↓ condução; estímulo forte *bloqueia*], [↑ condução, encurta o tempo AV],
   [*Força*], [Pouco efeito (poucas fibras no ventrículo)], [Até *2 vezes* mais força (mais Ca²⁺)],
   [*Estímulo forte*], [Ventrículos param 5–20 s e surge *escape ventricular* a 15–40 bpm], [Taquicardia e contração vigorosa],
-  tamanho: 8.6pt,
 )
 '''
 

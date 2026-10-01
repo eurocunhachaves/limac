@@ -1,6 +1,6 @@
 # Tema B · Excitação rítmica do coração
 
-**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (5 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (43 cartões)
+**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (7 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (43 cartões)
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 10 (PDF p. 406–426) · Porto, Semiologia Médica, 8ª ed., cap. 46 (sistema excitocondutor, Fig. 46.5)
 

@@ -1,6 +1,6 @@
 # Tema A · O músculo cardíaco e as valvas cardíacas
 
-**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (7 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (53 cartões)
+**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (9 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (53 cartões)
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 9 (PDF p. 363–405) · Porto, Semiologia Médica, 8ª ed., cap. 46 (ciclo cardíaco e bulhas)
 
@@ -68,10 +68,6 @@
 **Guyton & Hall, Fig. 9.13** — Curvas aproximadas do volume ventricular direito e esquerdo normais para o coração humano em repouso, extrapoladas a partir de dados obtidos em cães e dados de pacientes humanos.
 
 <img src="../../fonte/figuras/guyton/g9_13.png" width="420">
-
-**Guyton & Hall, Fig. 9.15** — Efeito sobre a curva de débito cardíaco de diferentes graus de estimulação simpática ou parassimpática.
-
-<img src="../../fonte/figuras/guyton/g9_15.png" width="420">
 
 ## Glossário
 

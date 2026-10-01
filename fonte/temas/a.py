@@ -19,178 +19,148 @@ ESSENCIAL = [
 CORPO = r'''
 = O miocárdio como sincício
 
-O coração tem três tipos de músculo: *atrial*, *ventricular* e as *fibras excitatórias e condutoras* (nó sinusal, feixe AV, Purkinje), que contraem pouco e servem para gerar e conduzir o impulso. As fibras atriais e ventriculares contraem como o músculo esquelético (estriadas, actina e miosina), mas por mais tempo.
+O coração tem três tipos de músculo: *atrial*, *ventricular* e as *fibras excitatórias e condutoras* (nó sinusal, feixe AV, Purkinje), que contraem pouco e servem para gerar e conduzir o impulso. As fibras atriais e ventriculares são estriadas e contraem como o músculo esquelético, mas por mais tempo.
 
-#ao-lado(
-  fig("g9_02", [Fibras do miocárdio unidas por discos intercalados.]),
-  [
-    Os *discos intercalados* são membranas entre células vizinhas com *junções comunicantes* (gap) de baixíssima resistência: os íons passam livremente e o potencial de ação se espalha de célula a célula. Por isso o miocárdio funciona como um *sincício*: estimular uma célula excita todas.
+As células são separadas por *discos intercalados* (#vf("g9_02")), membranas com *junções comunicantes* (gap) de baixíssima resistência. Os íons passam livremente e o potencial de ação se espalha de célula a célula. Por isso o miocárdio funciona como um *sincício*: estimular uma célula excita todas.
 
-    São *dois sincícios*, o atrial e o ventricular, separados pelo *tecido fibroso* que circunda os anéis valvares. O impulso só passa dos átrios aos ventrículos pelo *feixe AV*. Assim, os átrios contraem um pouco antes dos ventrículos, o que melhora o enchimento.
-  ],
-  prop: 46%,
-)
+#fig("g9_02", [Fibras do miocárdio unidas por discos intercalados.])
+
+São *dois sincícios*, o atrial e o ventricular, separados pelo *tecido fibroso* que circunda os anéis valvares. O impulso só passa dos átrios aos ventrículos pelo *feixe AV*. Assim, os átrios contraem um pouco antes dos ventrículos, o que melhora o enchimento.
 
 = Potencial de ação do músculo ventricular
 
-O potencial de repouso é de cerca de −85 a −90 mV. No pico chega a +20 mV e permanece despolarizado por *0,2 s no átrio e 0,3 s no ventrículo*: é o *platô*, que não existe no músculo esquelético.
+O potencial de repouso é de *−85 a −90 mV*. No pico chega a *+20 mV* e permanece despolarizado por *0,2 s no átrio e 0,3 s no ventrículo*. Esse *platô* não existe no músculo esquelético. As fases e as correntes de cada uma estão em #vf("g9_05") e na #vf("t-fases-pa").
+
+#fig("g9_05", [Fases 0–4 do potencial de ação ventricular (em cima) e as correntes iônicas de cada fase (embaixo).])
+
+#tabela(rotulo: "t-fases-pa", flutua: none, titulo: [O que acontece em cada fase do potencial de ação ventricular.], (auto, 1fr), ([Fase], [O que acontece]),
+  [*0*], [Despolarização: abrem os *canais rápidos de Na⁺*.],
+  [*1*], [Repolarização inicial: fecham os canais de Na⁺ e sai um pouco de K⁺.],
+  [*2*], [*Platô*: abrem os *canais lentos de Ca²⁺ (tipo L)* e cai a permeabilidade ao K⁺.],
+  [*3*], [Repolarização rápida: fecham os canais de Ca²⁺ e abrem os de K⁺.],
+  [*4*], [Repouso, em cerca de −90 mV.],
+)
 
 == Por que existe o platô
 
-Dois fatores explicam o platô. Primeiro, os canais lentos de Ca²⁺ abrem devagar e ficam abertos por décimos de segundo, deixando entrar Ca²⁺ (e Na⁺). Segundo, logo após a despolarização a *permeabilidade ao K⁺ cai cerca de cinco vezes*, o que segura a repolarização. Quando os canais de Ca²⁺ fecham e o K⁺ volta a sair, a membrana repolariza.
+- Os *canais lentos de Ca²⁺* abrem devagar e ficam abertos por décimos de segundo, deixando entrar Ca²⁺ (e Na⁺).
+- Logo após a despolarização, a *permeabilidade ao K⁺ cai cerca de cinco vezes*, o que segura a repolarização.
 
-#ao-lado(
-  fig("g9_05", [Fases 0–4 do potencial de ação ventricular e as correntes iônicas de cada fase.]),
-  [
-    #tabela((auto, 1fr), ([Fase], [O que acontece]),
-      [*0*], [Despolarização: abrem os *canais rápidos de Na⁺*],
-      [*1*], [Repolarização inicial: fecham os canais de Na⁺, sai um pouco de K⁺],
-      [*2*], [*Platô*: abrem os *canais lentos de Ca²⁺ (tipo L)* e cai a permeabilidade ao K⁺],
-      [*3*], [Repolarização rápida: fecham os canais de Ca²⁺ e abrem os de K⁺],
-      [*4*], [Repouso: cerca de −90 mV],
-      tamanho: 8.6pt,
-    )
-  ],
-  prop: 40%,
-  lado: "esq",
-  flutua: auto,
-)
+Quando os canais de Ca²⁺ fecham e o K⁺ volta a sair, a membrana repolariza.
 
 == Período refratário
 
-Durante o platô a célula não responde a novo estímulo. O *período refratário absoluto* do ventrículo dura *0,25–0,30 s* (quase toda a contração) e o *relativo*, mais *0,05 s*. No átrio o refratário é menor, cerca de *0,15 s*. Consequência prática: o coração *não entra em tétano*, porque relaxa antes de poder contrair de novo.
+Durante o platô a célula não responde a novo estímulo. O *período refratário absoluto* do ventrículo dura *0,25–0,30 s*, quase toda a contração, e o *relativo* mais *0,05 s*. No átrio o refratário é menor, cerca de *0,15 s*. Consequência prática: o coração *não entra em tétano*, porque relaxa antes de poder contrair de novo (#vf("g9_06")).
 
-#fig("g9_06", [Força de contração e períodos refratários: uma contração prematura só é possível depois do período refratário absoluto.], largura: 46%)
+#fig("g9_06", [Força de contração e períodos refratários: uma contração prematura só é possível depois do período refratário absoluto.])
 
 == Velocidade de condução
 
-No músculo atrial e ventricular o impulso caminha a *0,3–0,5 m/s*. Nas fibras de Purkinje, até *4 m/s*, o que permite que os ventrículos se contraiam quase ao mesmo tempo.
+No músculo atrial e ventricular o impulso caminha a *0,3–0,5 m/s*. Nas fibras de Purkinje chega a *4 m/s*, o que faz os ventrículos contraírem quase ao mesmo tempo.
 
 = Acoplamento excitação-contração
 
-O potencial de ação percorre o sarcolema e entra pelos *túbulos T*. Ali ele abre os *canais de Ca²⁺ do tipo L* (receptores di-hidropiridínicos). O Ca²⁺ que entra ativa os *receptores de rianodina* do retículo sarcoplasmático, que liberam muito mais Ca²⁺: é a *liberação de cálcio induzida por cálcio*. O Ca²⁺ se liga à troponina C e a actina e a miosina deslizam.
+O potencial de ação percorre o sarcolema e entra pelos *túbulos T*, onde abre os *canais de Ca²⁺ do tipo L* (receptores di-hidropiridínicos). O Ca²⁺ que entra ativa os *receptores de rianodina* do retículo sarcoplasmático, que liberam muito mais Ca²⁺. É a *liberação de cálcio induzida por cálcio*. O Ca²⁺ se liga à troponina C e a actina e a miosina deslizam (#vf("g9_07"), à esquerda).
 
-#fig("g9_07", [Acoplamento excitação-contração e relaxamento no músculo cardíaco. À esquerda, a entrada de Ca²⁺ pelos canais tipo L dispara a liberação pelo RyR; à direita, a recaptação pela SERCA2 e a saída pelo trocador Na⁺/Ca²⁺.], largura: 64%, flutua: auto)
+#fig("g9_07", [Acoplamento excitação-contração e relaxamento. À esquerda, a entrada de Ca²⁺ pelos canais tipo L dispara a liberação pelo RyR; à direita, a recaptação pela SERCA2 e a saída pelo trocador Na⁺/Ca²⁺.])
 
-O *relaxamento* começa quando o Ca²⁺ é bombeado de volta ao retículo (*SERCA2*, gasta ATP) e expulso da célula pelo *trocador Na⁺/Ca²⁺* e pela bomba de Ca²⁺ da membrana. O Na⁺ que entra pelo trocador sai pela Na⁺/K⁺-ATPase.
+O *relaxamento* começa quando o Ca²⁺ é bombeado de volta ao retículo pela *SERCA2* (gasta ATP) e expulso da célula pelo *trocador Na⁺/Ca²⁺* e pela bomba de Ca²⁺ da membrana. O Na⁺ que entra pelo trocador sai pela Na⁺/K⁺-ATPase.
 
 #atencao[
-  Diferente do músculo esquelético, o retículo sarcoplasmático cardíaco é pouco desenvolvido. A *força depende muito do Ca²⁺ extracelular* que entra pelos túbulos T (eles são cinco vezes mais largos e cheios de mucopolissacarídeos que guardam Ca²⁺). Por isso a concentração de Ca²⁺ no sangue mexe na força do coração; no músculo esquelético, quase nada.
+  O retículo sarcoplasmático cardíaco é pouco desenvolvido, então a *força depende muito do Ca²⁺ extracelular* que entra pelos túbulos T. Esses túbulos são cinco vezes mais largos que os do músculo esquelético e cheios de mucopolissacarídeos que guardam Ca²⁺. Por isso o Ca²⁺ do sangue mexe na força do coração e quase nada na do músculo esquelético.
 ]
 
 = Ciclo cardíaco
 
-O *ciclo cardíaco* vai do início de um batimento ao início do seguinte. Começa com um potencial de ação no *nó sinusal*. Há um atraso de mais de *0,1 s* na passagem pelo nó AV, o que deixa os átrios contraírem antes dos ventrículos. A *diástole* é o relaxamento e o enchimento; a *sístole*, a contração e a ejeção.
+O *ciclo cardíaco* vai do início de um batimento ao início do seguinte e começa com um potencial de ação no *nó sinusal*. O atraso de mais de *0,1 s* no nó AV deixa os átrios contraírem antes dos ventrículos. A *diástole* é o relaxamento e o enchimento; a *sístole*, a contração e a ejeção.
 
-A *72 bpm* o ciclo dura *0,833 s*, e a sístole ocupa cerca de *0,4 do ciclo*. Quando a FC sobe, a *diástole encurta mais que a sístole*: em FC muito alta o ventrículo não tem tempo de se encher.
+A *72 bpm* o ciclo dura *0,833 s* e a sístole ocupa cerca de *0,4 do ciclo*. Quando a FC sobe, a *diástole encurta mais que a sístole*: em FC muito alta o ventrículo não tem tempo de se encher. Todos os eventos do ciclo aparecem juntos no diagrama de Wiggers (#vf("g9_08")), a figura mais cobrada do tema.
 
-#fig("g9_08", [Eventos do ciclo cardíaco no lado esquerdo (diagrama de Wiggers): pressões aórtica, ventricular e atrial, volume ventricular, ECG e fonocardiograma. É a figura mais cobrada do tema.], largura: 90%, flutua: auto)
-
-== Ondas de pressão atrial: a, c, v
-
-- *a:* contração atrial (AD sobe 4–6 mmHg; AE, 7–8 mmHg).
-- *c:* início da contração ventricular; as valvas AV abaulam para dentro dos átrios.
-- *v:* fim da sístole; o átrio se enche com as valvas AV fechadas. Desaparece quando as AV abrem.
-
-São as mesmas ondas do *pulso venoso jugular* da Semiologia.
-
-== Curva da pressão aórtica
-
-A pressão aórtica sobe com a ejeção até *≈120 mmHg* (sistólica). Quando a valva aórtica fecha aparece a *incisura* (refluxo breve). Na diástole a pressão cai devagar, porque as artérias elásticas devolvem o sangue armazenado, até *≈80 mmHg* (diastólica). Na artéria pulmonar as pressões são cerca de *1/6* das aórticas.
-
-== Volumes e fração de ejeção
-
-#ao-lado(
-  [
-    #tabela((1fr, auto), ([Volume (VE, repouso)], [Valor]),
-      [Volume diastólico final (VDF)], [*110–120 mL*],
-      [Débito sistólico (VS)], [*≈70 mL*],
-      [Volume sistólico final (VSF)], [*40–50 mL*],
-      [Fração de ejeção (VS/VDF)], [*≈60%*],
-      tamanho: 8.8pt,
-    )
-  ],
-  [
-    Com contração forte o VSF pode cair a *10–20 mL*; com grande enchimento o VDF chega a *150–180 mL*. Mexendo nos dois lados o coração consegue *mais que dobrar* o volume sistólico.
-
-    A *fração de ejeção* é o índice clínico mais usado da função sistólica (no ecocardiograma).
-  ],
-  prop: 46%,
-  lado: "esq",
-)
+#fig("g9_08", [Eventos do ciclo cardíaco no lado esquerdo (diagrama de Wiggers): pressões aórtica, ventricular e atrial, volume ventricular, ECG e fonocardiograma.])
 
 == As fases, uma a uma
 
-#tabela((1.25fr, auto, auto, 2.1fr), ([Fase], [Valvas AV], [Semilunares], [O que acontece]),
+A #vf("t-fases-ciclo") resume cada fase, com a posição das valvas. Repare que nas duas fases *isovolumétricas* as quatro valvas estão fechadas.
+
+#tabela(rotulo: "t-fases-ciclo", titulo: [As fases do ciclo cardíaco e a posição das valvas.], (1.3fr, auto, auto, 2.2fr), ([Fase], [Valvas AV], [Semilunares], [O que acontece]),
   [*Enchimento rápido*], [abertas], [fechadas], [Primeiro terço da diástole. O sangue acumulado nos átrios durante a sístole entra rápido no ventrículo.],
-  [*Enchimento lento (diástase)*], [abertas], [fechadas], [Terço médio. Passa apenas o sangue que continua chegando das veias.],
-  [*Sístole atrial*], [abertas], [fechadas], [Último terço da diástole. Completa *cerca de 20%* do enchimento (onda P precede).],
-  [*Contração isovolumétrica*], [*fechadas*], [*fechadas*], [*0,02–0,03 s.* Pressão sobe sem mudar o volume. Começa com o fechamento das AV (B1).],
-  [*Ejeção rápida*], [fechadas], [abertas], [Abre a aórtica quando o VE passa de *≈80 mmHg* (o VD, de ≈8 mmHg). Sai *70%* do volume no primeiro terço da ejeção.],
+  [*Enchimento lento (diástase)*], [abertas], [fechadas], [Terço médio. Passa só o sangue que continua chegando das veias.],
+  [*Sístole atrial*], [abertas], [fechadas], [Último terço da diástole. Completa *cerca de 20%* do enchimento.],
+  [*Contração isovolumétrica*], [*fechadas*], [*fechadas*], [*0,02–0,03 s.* A pressão sobe sem mudar o volume. Começa com o fechamento das AV (B1).],
+  [*Ejeção rápida*], [fechadas], [abertas], [A aórtica abre quando o VE passa de *≈80 mmHg* (o VD, de ≈8 mmHg). Sai *70%* do volume no primeiro terço da ejeção.],
   [*Ejeção lenta*], [fechadas], [abertas], [Sai o restante (30%) nos dois terços finais.],
   [*Relaxamento isovolumétrico*], [*fechadas*], [*fechadas*], [*0,03–0,06 s.* Começa com o fechamento das semilunares (B2) e termina quando as AV abrem.],
-  tamanho: 8.5pt,
+  tamanho: 9pt,
 )
+
+== Volumes e fração de ejeção
+
+No fim da diástole o VE tem cerca de 120 mL; ejeta ≈70 mL e sobram ≈50 mL. A razão entre o que sai e o que havia é a *fração de ejeção*, ≈60% (#vf("t-volumes")).
+
+#tabela(rotulo: "t-volumes", titulo: [Volumes do ventrículo esquerdo.], (1fr, auto, 1.3fr), ([Volume do VE em repouso], [Valor], [Pode chegar a]),
+  [Volume diastólico final (VDF)], [*110–120 mL*], [150–180 mL com grande enchimento],
+  [Débito sistólico (VS)], [*≈70 mL*], [Mais que o dobro, mexendo nos dois lados],
+  [Volume sistólico final (VSF)], [*40–50 mL*], [10–20 mL com contração forte],
+  [Fração de ejeção (VS/VDF)], [*≈60%*], [É o índice clínico mais usado da função sistólica (ecocardiograma)],
+)
+
+== Pressões atrial e aórtica
+
+- *Onda a:* contração atrial (AD sobe 4–6 mmHg; AE, 7–8 mmHg).
+- *Onda c:* início da contração ventricular; as valvas AV abaulam para dentro dos átrios.
+- *Onda v:* fim da sístole; o átrio se enche com as AV fechadas. Desaparece quando elas abrem.
+- *Aorta:* sobe com a ejeção até *≈120 mmHg*. O fechamento da valva aórtica produz a *incisura* (refluxo breve). Na diástole a pressão cai devagar, porque as artérias elásticas devolvem o sangue armazenado, até *≈80 mmHg*. Na artéria pulmonar as pressões são cerca de *1/6* das aórticas.
+
+As ondas a, c e v são as mesmas do *pulso venoso jugular* da Semiologia.
 
 = Valvas cardíacas
 
-#fig("g9_09", [Valvas mitral e aórtica: cúspides, cordas tendíneas e músculos papilares.], largura: 46%, flutua: auto)
+As valvas AV têm cúspides presas por *cordas tendíneas* aos *músculos papilares*; as semilunares não têm cordas (#vf("g9_09")).
+
+#fig("g9_09", [Valvas mitral e aórtica: cúspides, cordas tendíneas e músculos papilares.])
 
 - *Atrioventriculares (tricúspide e mitral):* impedem o refluxo do ventrículo para o átrio na sístole. São finas e quase não precisam de refluxo para fechar.
-- *Músculos papilares e cordas tendíneas:* contraem junto com o ventrículo, mas *não ajudam a fechar a valva*. Eles puxam as cúspides para baixo e *impedem que abaulem demais* para o átrio. Ruptura de corda ou papilar → abaulamento e *insuficiência mitral* grave.
-- *Semilunares (aórtica e pulmonar):* trabalham sob pressão alta, fecham de forma *abrupta*, deixam passar o sangue em *alta velocidade* e não têm cordas. Têm mais desgaste mecânico.
+- *Músculos papilares e cordas tendíneas:* contraem junto com o ventrículo, mas *não ajudam a fechar a valva*. Eles puxam as cúspides para baixo e *impedem que abaulem demais* para o átrio. Ruptura de corda ou de papilar causa *insuficiência mitral* grave.
+- *Semilunares (aórtica e pulmonar):* trabalham sob pressão alta, fecham de forma *abrupta* e deixam passar o sangue em *alta velocidade*. Sofrem mais desgaste mecânico.
 
 #essencial(titulo: "Bulhas: a ponte com a Semiologia")[
-  *B1* = fechamento das valvas AV (início da sístole, coincide com o ictus e o pulso carotídeo). *B2* = fechamento das semilunares (fim da sístole). A abertura das valvas normais não faz som. *B3* = enchimento rápido; *B4* = sístole atrial contra um ventrículo rígido.
+  *B1* é o fechamento das valvas AV: início da sístole, coincide com o ictus e o pulso carotídeo. *B2* é o fechamento das semilunares, no fim da sístole. A abertura das valvas normais não faz som. *B3* é o enchimento rápido; *B4*, a sístole atrial contra um ventrículo rígido.
 ]
 
 = Alça pressão-volume
 
-#ao-lado(
-  fig("g9_11", [Alça pressão-volume do VE. A área interna é o trabalho sistólico externo.]),
-  [
-    A alça resume o ciclo em quatro lados:
-    + *Enchimento* (A→B): volume sobe de ≈50 para ≈120 mL com pouca pressão.
-    + *Contração isovolumétrica* (B→C): pressão sobe a ≈80 mmHg, volume constante.
-    + *Ejeção* (C→D): volume cai ≈70 mL; pressão chega a ≈120 mmHg.
-    + *Relaxamento isovolumétrico* (D→A): pressão cai, volume constante.
+A alça pressão-volume (#vf("g9_11")) resume o ciclo do VE em quatro lados:
 
-    *Pré-carga* = tensão no fim da diástole (VDF ou pressão diastólica final). *Pós-carga* = pressão contra a qual o ventrículo ejeta (pressão arterial). A área da alça é o *trabalho sistólico externo*.
-  ],
-  prop: 46%,
-  lado: "esq",
-)
++ *Enchimento* (A→B): o volume sobe de ≈50 para ≈120 mL com pouca pressão.
++ *Contração isovolumétrica* (B→C): a pressão sobe a ≈80 mmHg com volume constante.
++ *Ejeção* (C→D): o volume cai ≈70 mL e a pressão chega a ≈120 mmHg.
++ *Relaxamento isovolumétrico* (D→A): a pressão cai com volume constante.
+
+#fig("g9_11", [Alça pressão-volume do VE. A área interna é o trabalho sistólico externo.])
+
+*Pré-carga* é a tensão no fim da diástole (VDF ou pressão diastólica final). *Pós-carga* é a pressão contra a qual o ventrículo ejeta (pressão arterial). A área da alça é o *trabalho sistólico externo*.
 
 = Regulação do bombeamento
 
-O coração em repouso bombeia *4–6 L/min* e, no exercício intenso, *4 a 7 vezes* mais. Dois mecanismos regulam isso: a regulação *intrínseca* (Frank-Starling) e o *sistema nervoso autônomo*.
+O coração em repouso bombeia *4–6 L/min* e, no exercício intenso, *4 a 7 vezes* mais. Dois mecanismos regulam isso: a regulação *intrínseca* (Frank-Starling) e o *sistema nervoso autônomo* (#vf("t-autonomico")).
 
 == Mecanismo de Frank-Starling
 
-*Quanto mais o músculo é estirado no enchimento, maior a força de contração e maior o volume ejetado.* O estiramento aproxima actina e miosina do grau ótimo de sobreposição. Na prática, o coração *bombeia todo o sangue que chega* das veias, dentro dos limites fisiológicos. Além disso, o estiramento da parede do átrio direito *aumenta a FC em 10–20%*.
+*Quanto mais o músculo é estirado no enchimento, maior a força de contração e maior o volume ejetado.* O estiramento aproxima actina e miosina do grau ótimo de sobreposição. Na prática, o coração *bombeia todo o sangue que chega* das veias, dentro dos limites fisiológicos. O estiramento do átrio direito ainda *aumenta a FC em 10–20%*. As curvas de função ventricular mostram isso (#vf("g9_13")).
 
-#ao-lado(
-  fig("g9_13", [Curvas de função ventricular: o débito ventricular cresce com a pressão atrial (pré-carga).], altura: 6cm),
-  fig("g9_15", [Curvas de débito cardíaco com diferentes graus de estímulo simpático ou parassimpático.], altura: 6cm),
-  prop: 50%,
-)
+#fig("g9_13", [Curvas de função ventricular: o débito de cada ventrículo cresce com a pressão atrial (pré-carga).], flutua: none)
 
-== Controle autonômico
-
-#tabela((auto, 1fr, 1fr), ([], [Simpático], [Parassimpático (vago)]),
+#tabela(rotulo: "t-autonomico", flutua: none, titulo: [Efeitos do simpático e do vago sobre o coração.], (auto, 1fr, 1fr), ([], [Simpático], [Parassimpático (vago)]),
   [*Frequência*], [70 → *180–200 bpm* (raro 250)], [Pode parar por segundos; o coração *escapa* a *20–40 bpm*],
-  [*Força*], [*Dobra* a força de contração], [Reduz só *20–30%* (fibras vagais vão mais aos *átrios*)],
+  [*Força*], [*Dobra* a força de contração], [Reduz só *20–30%* (as fibras vagais vão mais aos *átrios*)],
   [*Débito*], [Aumenta *2–3 vezes* além do Frank-Starling], [Pode cair *50% ou mais*],
   [*Tônus basal*], [Mantém o bombeamento ≈30% acima do que seria sem ele], [Predomina em repouso no nó sinusal],
-  tamanho: 8.7pt,
 )
 
 == Íons e temperatura
 
-- *Hiperpotassemia:* coração *dilatado e flácido*, FC menor, bloqueio AV; K⁺ de *8–12 mEq/L* (2–3 vezes o normal) pode matar. O K⁺ alto despolariza parcialmente a membrana e enfraquece o potencial de ação.
-- *Hipercalcemia:* tendência à *contração espástica*. *Hipocalcemia:* fraqueza, como no K⁺ alto.
-- *Febre:* aumenta muito a FC (até o dobro). *Hipotermia:* FC muito baixa.
-- *Pós-carga:* o débito cardíaco *não cai* até a pressão arterial média passar de *≈160 mmHg* (Guyton, Fig. 9.16).
+- *Hiperpotassemia:* coração *dilatado e flácido*, FC menor e bloqueio AV. K⁺ de *8–12 mEq/L* (2–3 vezes o normal) pode matar. O K⁺ alto despolariza parcialmente a membrana e enfraquece o potencial de ação.
+- *Ca²⁺ e temperatura:* hipercalcemia leva à *contração espástica*; febre aumenta a FC até o dobro e hipotermia a reduz muito.
 '''
 
 VALORES = [
