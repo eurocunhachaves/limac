@@ -19,35 +19,32 @@ ESSENCIAL = [
 CORPO = r'''
 = As ondas do ECG
 
-Quando o impulso percorre o coração, uma pequena parte da corrente chega à pele. Eletrodos em lados opostos do coração registram essa diferença de potencial: é o *eletrocardiograma*.
+Quando o impulso percorre o coração, uma pequena parte da corrente chega à pele. Eletrodos em lados opostos do coração registram essa diferença de potencial: é o *eletrocardiograma*. Um ECG normal tem as ondas e os intervalos da #vf("g11_01"). O que cada elemento representa está na #vf("t-ondas").
 
-#fig("g11_01", [ECG normal de dois batimentos, com as ondas, os intervalos P-R, Q-T e R-R e o segmento S-T.], largura: 82%)
+#fig("g11_01", [ECG normal de dois batimentos, com as ondas, os intervalos P-R, Q-T e R-R e o segmento S-T.])
 
-#tabela((auto, 1fr, auto), ([Elemento], [O que representa], [Duração / voltagem]),
+
+#tabela(rotulo: "t-ondas", titulo: [O que cada elemento do ECG representa e seus valores normais.], (auto, 1fr, auto), ([Elemento], [O que representa], [Duração / voltagem]),
   [*Onda P*], [Despolarização dos *átrios*. Ocorre no início da contração atrial.], [0,1–0,3 mV],
   [*Complexo QRS*], [Despolarização dos *ventrículos*. Ocorre no início da contração ventricular. Q é a primeira deflexão negativa, R a positiva e S a negativa depois de R.], [0,06–0,08 s · 1,0–1,5 mV],
   [*Onda T*], [Repolarização dos *ventrículos* (0,25–0,35 s após a despolarização). É longa e mais baixa que o QRS.], [0,2–0,3 mV],
   [*T atrial*], [Repolarização dos átrios, 0,15–0,20 s após a P. Fica *escondida no QRS* e quase nunca aparece.], [],
-  [*Intervalo P-R (P-Q)*], [Do início da P ao início do QRS: tempo do início da excitação atrial ao início da excitação ventricular (inclui o atraso no nó AV).], [≈ 0,16 s],
+  [*Intervalo P-R (P-Q)*], [Do início da P ao início do QRS: do início da excitação atrial ao início da ventricular (inclui o atraso no nó AV).], [≈ 0,16 s],
   [*Intervalo Q-T*], [Do início do QRS ao fim da T: dura quase toda a contração ventricular.], [≈ 0,35 s],
   [*Segmento S-T*], [Do fim do QRS ao início da T. Os ventrículos estão todos despolarizados, por isso é isoelétrico.], [],
   [*Intervalo R-R*], [Tempo entre dois batimentos.], [≈ 0,83 s],
-  tamanho: 8.6pt,
+  tamanho: 8.8pt,
 )
 
 == Despolarização, repolarização e potencial de ação
 
-#ao-lado(
-  fig("g11_03", [Potencial de ação de uma fibra ventricular (em cima) e o ECG registrado ao mesmo tempo (embaixo).]),
-  [
-    O ECG não é o potencial de ação. Ele registra a *diferença de potencial entre áreas* do coração.
+O ECG não é o potencial de ação. Ele registra a *diferença de potencial entre áreas* do coração. A #vf("g11_03") mostra os dois registros lado a lado:
 
-    - Quando *todo* o ventrículo está em repouso (polarizado) ou *todo* despolarizado (platô), não há diferença entre as áreas e o traçado fica na *linha de base*. Por isso o segmento S-T é isoelétrico.
-    - O *QRS* aparece no *início* do potencial de ação e a *onda T* no *fim*.
-    - O potencial de ação dura *0,25–0,35 s* e tem *≈110 mV*. No ECG dos membros o QRS tem só 1,0–1,5 mV; com o eletrodo sobre o coração, até 3–4 mV.
-  ],
-  prop: 46%,
-)
+- Quando *todo* o ventrículo está em repouso (polarizado) ou *todo* despolarizado (platô), não há diferença entre as áreas e o traçado fica na *linha de base*. Por isso o segmento S-T é isoelétrico.
+- O *QRS* aparece no *início* do potencial de ação e a *onda T* no *fim*.
+- O potencial de ação dura *0,25–0,35 s* e tem *≈110 mV*. No ECG dos membros o QRS tem só 1,0–1,5 mV; com o eletrodo sobre o coração, até 3–4 mV.
+
+#fig("g11_03", [Potencial de ação de uma fibra ventricular (em cima) e o ECG registrado ao mesmo tempo (embaixo).])
 
 == Por que a onda T é positiva?
 
@@ -55,29 +52,22 @@ A repolarização dos ventrículos começa ≈0,15 s após a despolarização e 
 
 = Calibração e leitura do papel
 
-#ao-lado(
-  [
-    #tabela((1fr, auto), ([Medida no papel], [Valor]),
-      [Velocidade padrão], [*25 mm/s*],
-      [1 quadradinho (1 mm) na horizontal], [*0,04 s*],
-      [1 quadrado grande (5 mm)], [*0,20 s*],
-      [5 quadrados grandes (25 mm)], [*1 s*],
-      [10 quadradinhos na vertical], [*1 mV*],
-      tamanho: 8.9pt,
-    )
-  ],
-  [
-    *Frequência cardíaca:* é o inverso do intervalo R-R. RR de 1 s dá 60 bpm. O RR normal de 0,83 s dá 60/0,83 = *72 bpm*.
+O papel corre a *25 mm/s* e as linhas da grade servem de régua de tempo e de voltagem (#vf("t-papel")).
 
-    Na prática, com o papel a 25 mm/s:
-    - FC = *1.500 ÷ nº de quadradinhos* entre dois R;
-    - FC = *300 ÷ nº de quadrados grandes* entre dois R (300, 150, 100, 75, 60, 50).
-
-    O *P-R encurta* quando a FC sobe (mais simpático, menos vago, condução AV mais rápida) e *alonga* quando a FC cai.
-  ],
-  prop: 46%,
-  lado: "esq",
+#tabela(rotulo: "t-papel", titulo: [Equivalências do papel de ECG na calibração padrão.], (1fr, auto), ([Medida no papel], [Valor]),
+  [Velocidade padrão], [*25 mm/s*],
+  [1 quadradinho (1 mm) na horizontal], [*0,04 s*],
+  [1 quadrado grande (5 mm)], [*0,20 s*],
+  [5 quadrados grandes (25 mm)], [*1 s*],
+  [10 quadradinhos na vertical], [*1 mV*],
 )
+
+*Frequência cardíaca:* é o inverso do intervalo R-R. RR de 1 s dá 60 bpm. O RR normal de 0,83 s dá 60/0,83 = *72 bpm*. Na prática, com o papel a 25 mm/s:
+
+- FC = *1.500 ÷ nº de quadradinhos* entre dois R;
+- FC = *300 ÷ nº de quadrados grandes* entre dois R (300, 150, 100, 75, 60, 50).
+
+O *P-R encurta* quando a FC sobe (mais simpático, menos vago, condução AV mais rápida) e *alonga* quando a FC cai.
 
 = Por onde a corrente flui no tórax
 
@@ -87,84 +77,65 @@ O coração está mergulhado em um meio condutor (pulmões e líquidos). O impul
 
 == Derivações bipolares dos membros
 
-#ao-lado(
-  fig("g11_06", [Eletrodos das derivações bipolares e triângulo de Einthoven. No exemplo, D1 = +0,5 mV, D3 = +0,7 mV e D2 = +1,2 mV.]),
-  [
-    #tabela((auto, 1fr, 1fr), ([Derivação], [Polo −], [Polo +]),
-      [*D1 (I)*], [Braço direito], [Braço esquerdo],
-      [*D2 (II)*], [Braço direito], [Perna esquerda],
-      [*D3 (III)*], [Braço esquerdo], [Perna esquerda],
-      tamanho: 8.7pt,
-    )
+Os dois braços e a perna esquerda são os vértices do *triângulo de Einthoven*, em torno do coração. Cada derivação bipolar liga dois desses membros (#vf("t-bipolares")).
 
-    *Triângulo de Einthoven:* os dois braços e a perna esquerda são os vértices de um triângulo em torno do coração.
-
-    *Lei de Einthoven:* em qualquer instante, *D1 + D3 = D2*, respeitando os sinais.
-
-    As três derivações são parecidas (P, QRS e T positivos). Para arritmias, qualquer uma serve, porque o diagnóstico depende do *tempo* entre as ondas. Para lesões do músculo ou do sistema de Purkinje, a derivação escolhida importa muito.
-  ],
-  prop: 40%,
+#tabela(rotulo: "t-bipolares", titulo: [Polos das derivações bipolares dos membros.], (auto, 1fr, 1fr), ([Derivação], [Polo −], [Polo +]),
+  [*D1 (I)*], [Braço direito], [Braço esquerdo],
+  [*D2 (II)*], [Braço direito], [Perna esquerda],
+  [*D3 (III)*], [Braço esquerdo], [Perna esquerda],
 )
+
+As três derivações são parecidas (P, QRS e T positivos). Para arritmias, qualquer uma serve, porque o diagnóstico depende do *tempo* entre as ondas. Para lesões do músculo ou do sistema de Purkinje, a derivação escolhida importa muito.
+
+*Lei de Einthoven:* em qualquer instante, *D1 + D3 = D2*, respeitando os sinais. Na #vf("g11_06"), por exemplo, 0,5 + 0,7 = 1,2 mV.
+
+#fig("g11_06", [Eletrodos das derivações bipolares e triângulo de Einthoven. No exemplo, D1 = +0,5 mV, D3 = +0,7 mV e D2 = +1,2 mV.])
 
 == Derivações aumentadas e precordiais
 
 - *Aumentadas dos membros:* um membro vai ao polo positivo e os outros dois, unidos por resistências, ao negativo. Positivo no braço direito é *aVR*; no braço esquerdo, *aVL*; na perna esquerda, *aVF*. São parecidas com as bipolares, mas *aVR é invertida*: o polo positivo fica do lado oposto ao vetor do coração.
-- *Precordiais (V1–V6):* eletrodo explorador na parede anterior do tórax (polo positivo) e *terminal central de Wilson* (os três membros unidos) como polo negativo. Cada eletrodo "vê" principalmente o músculo logo abaixo dele. Por isso pequenas lesões da parede anterior mudam bastante essas derivações.
+- *Precordiais (V1–V6):* eletrodo explorador na parede anterior do tórax (polo positivo) e *terminal central de Wilson* (os três membros unidos) como polo negativo (#vf("g11_08")). Cada eletrodo "vê" principalmente o músculo logo abaixo dele. Por isso pequenas lesões da parede anterior mudam bastante essas derivações.
 
-#ao-lado(
-  fig("g11_08", [Conexões para as derivações precordiais (V1 a V6) com o terminal central de Wilson. BD, braço direito; BE, braço esquerdo.]),
-  [
-    *Onde ficam os eletrodos* (posição padrão da prática clínica):
-    #tabela((auto, 1fr), ([], [Posição]),
-      [*V1*], [4º espaço intercostal, borda esternal direita],
-      [*V2*], [4º espaço intercostal, borda esternal esquerda],
-      [*V3*], [Entre V2 e V4],
-      [*V4*], [5º espaço intercostal, linha hemiclavicular esquerda],
-      [*V5*], [Mesmo nível de V4, linha axilar anterior],
-      [*V6*], [Mesmo nível de V4, linha axilar média],
-      tamanho: 8.5pt,
-    )
+#fig("g11_08", [Conexões para as derivações precordiais (V1 a V6) com o terminal central de Wilson. BD, braço direito; BE, braço esquerdo.])
 
-    *V1 e V2:* QRS principalmente *negativo*, porque estão mais perto da *base*, o lado negativo durante a despolarização.
+A posição de cada eletrodo precordial, padrão da prática clínica, está na #vf("t-precordiais").
 
-    *V4 a V6:* QRS principalmente *positivo*, porque estão mais perto do *ápice*.
-  ],
-  prop: 40%,
+#tabela(rotulo: "t-precordiais", titulo: [Posição dos eletrodos precordiais.], (auto, 1fr), ([], [Posição]),
+  [*V1*], [4º espaço intercostal, borda esternal direita],
+  [*V2*], [4º espaço intercostal, borda esternal esquerda],
+  [*V3*], [Entre V2 e V4],
+  [*V4*], [5º espaço intercostal, linha hemiclavicular esquerda],
+  [*V5*], [Mesmo nível de V4, linha axilar anterior],
+  [*V6*], [Mesmo nível de V4, linha axilar média],
 )
 
-#fig("g11_11", [ECG normal de 12 derivações: bipolares (I, II, III), aumentadas (aVR, aVL, aVF) e precordiais (V1 a V6). Note o QRS negativo em aVR e a transição de negativo (V1) para positivo (V6).], largura: 100%)
+Em *V1 e V2* o QRS é principalmente *negativo*, porque esses eletrodos estão mais perto da *base*, o lado negativo durante a despolarização. Em *V4 a V6* é principalmente *positivo*, porque estão mais perto do *ápice*. O traçado completo das 12 derivações está na #vf("g11_11").
+
+#fig("g11_11", [ECG normal de 12 derivações: bipolares (I, II, III), aumentadas (aVR, aVL, aVF) e precordiais (V1 a V6). Note o QRS negativo em aVR e a transição de negativo (V1) para positivo (V6).])
 
 = Eixos das derivações e eixo elétrico médio
 
-#ao-lado(
-  fig("g12_03", [Sistema de referência hexagonal: eixos das derivações bipolares e aumentadas.]),
-  [
-    O *eixo* de uma derivação é a direção do polo negativo para o positivo. Juntos, os seis eixos dos membros formam o *sistema hexagonal*:
+O *eixo* de uma derivação é a direção do polo negativo para o positivo. Juntos, os seis eixos dos membros formam o *sistema hexagonal* da #vf("g12_03").
 
-    #tabela((1fr, auto, 1fr, auto), ([Derivação], [Eixo], [Derivação], [Eixo]),
-      [*D1*], [0°], [*aVL*], [−30°],
-      [*D2*], [+60°], [*aVF*], [+90°],
-      [*D3*], [+120°], [*aVR*], [+210°],
-      tamanho: 8.7pt,
-    )
+#fig("g12_03", [Sistema de referência hexagonal: eixos das derivações bipolares e aumentadas.])
 
-    Um vetor que aponta para o polo positivo de uma derivação dá deflexão *positiva* nela; para o negativo, deflexão *negativa*.
+Um vetor que aponta para o polo positivo de uma derivação dá deflexão *positiva* nela; para o negativo, deflexão *negativa*. O ângulo de cada eixo está na #vf("t-eixos").
 
-    O *eixo elétrico médio dos ventrículos* (direção média do vetor do QRS) é ≈ *+59°*, e varia normalmente de *≈ 20° a 100°*.
-  ],
-  prop: 42%,
+#tabela(rotulo: "t-eixos", titulo: [Ângulo do eixo de cada derivação dos membros.], (1fr, auto, 1fr, auto), ([Derivação], [Eixo], [Derivação], [Eixo]),
+  [*D1*], [0°], [*aVL*], [−30°],
+  [*D2*], [+60°], [*aVF*], [+90°],
+  [*D3*], [+120°], [*aVR*], [+210°],
 )
 
-#tabela((1fr, 1fr), ([Eixo desvia para a *esquerda*], [Eixo desvia para a *direita*]),
+O *eixo elétrico médio dos ventrículos* (direção média do vetor do QRS) é ≈ *+59°*, e varia normalmente de *≈ 20° a 100°*. O eixo desvia *para o lado do ventrículo hipertrofiado* (mais músculo e despolarização mais demorada desse lado) e *para o lado do ramo bloqueado* (aquele ventrículo despolariza por último). As causas comuns estão na #vf("t-desvios").
+
+#tabela(rotulo: "t-desvios", titulo: [Causas de desvio do eixo elétrico médio.], (1fr, 1fr), ([Eixo desvia para a *esquerda*], [Eixo desvia para a *direita*]),
   [Fim da expiração profunda], [Fim da inspiração profunda],
   [Deitar (vísceras empurram o diafragma)], [Ficar de pé],
   [Obesos], [Pessoas altas e magras (coração "pendurado")],
   [*Hipertrofia do VE* (hipertensão, estenose aórtica)], [*Hipertrofia do VD* (estenose pulmonar)],
   [*Bloqueio de ramo esquerdo*], [*Bloqueio de ramo direito*],
-  tamanho: 8.7pt,
 )
-
-O eixo desvia *para o lado do ventrículo hipertrofiado* (mais músculo e despolarização mais demorada desse lado) e *para o lado do ramo bloqueado* (aquele ventrículo despolariza por último).
 '''
 
 VALORES = [

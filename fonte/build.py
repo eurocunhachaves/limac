@@ -277,6 +277,19 @@ def _custo(doc, marcas):
         if i < len(sob) - 1 and i != fim_texto and livre / area > 0.04:
             c += livre
         c += sum(buracos)
+    # figura em página anterior à citação, ou duas páginas depois: proibido
+    # e figura acima do texto que a cita, na mesma página
+    ini = {m["chave"]: m for m in marcas if m["tipo"] == "ini"}
+    refs = {}
+    for m in marcas:
+        if m["tipo"] == "ref":
+            refs.setdefault(m["chave"], m)
+    for k, f in ini.items():
+        r = refs.get(k)
+        if r is None:
+            continue
+        if not 0 <= f["pagina"] - r["pagina"] <= 1 or (f["pagina"] == r["pagina"] and f["y"] < r["y"]):
+            c += 5000
     return c + 400 * len(sob)   # página a mais custa caro
 
 
@@ -401,6 +414,15 @@ def verifica_figuras(src, escalas):
             print(f"  ! figura {k} (p. {pg}) não é citada no texto")
         elif not 0 <= pg - refs[k] <= 1:
             print(f"  ! figura {k} está na p. {pg}, mas é citada na p. {refs[k]}")
+    ini = {m["chave"]: m for m in marcas if m["tipo"] == "ini"}
+    prim = {}
+    for m in marcas:
+        if m["tipo"] == "ref":
+            prim.setdefault(m["chave"], m)
+    for k, f in ini.items():
+        r = prim.get(k)
+        if r and f["pagina"] == r["pagina"] and f["y"] < r["y"]:
+            print(f"  ! {k} aparece acima do texto que a cita (p. {f['pagina']})")
 
 
 def verifica_preenchimento(doc, fim_texto=None):

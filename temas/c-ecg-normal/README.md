@@ -1,6 +1,6 @@
 # Tema C · Eletrocardiograma normal
 
-**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (6 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (49 cartões)
+**Área:** Fisiologia · **Resumão:** [resumao.pdf](resumao.pdf) (8 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (49 cartões)
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 11 (PDF p. 427–450) · Guyton & Hall, 14ª ed., cap. 12 (eixos e eixo elétrico médio, PDF p. 451–470)
 

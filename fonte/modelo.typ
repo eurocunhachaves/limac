@@ -130,7 +130,7 @@
 
 // Citação de figura no texto: #vf("g9_08") -> "Fig. 5" (com verificação de página)
 #let vf(chave) = {
-  context [#metadata((tipo: "ref", chave: chave, pagina: here().page()))<marca>]
+  context [#metadata((tipo: "ref", chave: chave, pagina: here().page(), y: here().position().y.pt()))<marca>]
   ref(label(chave))
 }
 
