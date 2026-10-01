@@ -158,7 +158,8 @@ def imagens_oclusao(fig: Path, caixa, destino: Path, nome: str):
 
 
 # ------------------------------------------------------------ baralho
-def gera_baralho(t, saida: Path, fonte_dir: Path) -> int:
+def monta_deck(t, fonte_dir: Path):
+    """Deck do tema, lista de arquivos de mídia e número de cartões."""
     tema = f"Tema {t.CODIGO.upper()} · {t.TITULO}"
     deck = genanki.Deck(_id("limac-deck-" + t.CODIGO), f"LIMAC Cardiologia::{t.CODIGO.upper()} · {t.TITULO}")
     midia = []
@@ -203,8 +204,26 @@ def gera_baralho(t, saida: Path, fonte_dir: Path) -> int:
                                                     f'<img src="{pr.name}">', md2html(resposta), ref_livro(k)],
                             guid=genanki.guid_for("o", t.CODIGO, k, str(alvo)), tags=[f"tema_{t.CODIGO}", "oclusao"])
         deck.add_note(nota); n += 1
+    return deck, midia, n
+
+
+def gera_baralho(t, saida: Path, fonte_dir: Path) -> int:
+    deck, midia, n = monta_deck(t, fonte_dir)
     saida.parent.mkdir(parents=True, exist_ok=True)
     pacote = genanki.Package(deck)
     pacote.media_files = midia
     pacote.write_to_file(str(saida))
     return n
+
+
+def gera_completo(temas, saida: Path, fonte_dir: Path) -> int:
+    """Um único .apkg com todos os temas como subbaralhos de LIMAC Cardiologia."""
+    decks, midia, total = [], [], 0
+    for t in temas:
+        d, m, n = monta_deck(t, fonte_dir)
+        decks.append(d); midia += [x for x in m if x not in midia]; total += n
+    saida.parent.mkdir(parents=True, exist_ok=True)
+    pacote = genanki.Package(decks)
+    pacote.media_files = midia
+    pacote.write_to_file(str(saida))
+    return total

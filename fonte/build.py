@@ -513,6 +513,15 @@ DESCRICAO = {
 }
 
 
+def gera_baralho_completo():
+    import anki
+    temas = [carrega(c) for c in ORDEM if (FONTE / "temas" / f"{c}.py").exists()]
+    destino = REPO / "anki" / "LIMAC-Cardiologia-completo.apkg"
+    n = anki.gera_completo(temas, destino, FONTE)
+    shutil.copy(destino, SAIDA_PROJETO / "Anki completo - LIMAC Cardiologia (todos os temas).apkg")
+    print(f"baralho completo: {len(temas)} temas, {n} cartões")
+
+
 def gera_indice():
     linhas = []
     for c in ORDEM:
@@ -528,8 +537,13 @@ def gera_indice():
 if __name__ == "__main__":
     sys.path.insert(0, str(FONTE))
     alvos = sys.argv[1:] or ["todos"]
+    if alvos == ["completo"]:
+        gera_baralho_completo()
+        sys.exit()
     if alvos == ["todos"]:
         alvos = [c for c in ORDEM if (FONTE / "temas" / f"{c}.py").exists()]
     for c in alvos:
         constroi(c)
     gera_indice()
+    if alvos in (["completo"],) or sys.argv[1:] in ([], ["todos"]):
+        gera_baralho_completo()
