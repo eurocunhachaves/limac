@@ -1,54 +1,57 @@
 # LIMAC · Estudos para a Liga Acadêmica de Cardiologia
 
-Material de estudo que montei para a prova de seleção da Liga Acadêmica de Cardiologia: resumões em PDF,
-listas de questões com gabarito comentado, baralhos do Anki e um quiz on-line, organizados por tema.
-
-**▶ Quiz on-line: [https://eurocunhachaves.github.io/limac/](https://eurocunhachaves.github.io/limac/)** (correção na hora, modo prova com cronômetro e simulados)
+Material para a prova de seleção da Liga Acadêmica de Cardiologia: um **resumão em PDF** e um **baralho do Anki**
+por tema, com as figuras do Guyton (e do Porto, na Semiologia). Cada tema tem também uma página aqui no GitHub com
+o resumo completo, as figuras, os números para decorar, um glossário, correlações clínicas e onde ler na fonte.
 
 ## Temas
 
-| | Tema | Base | Resumão | Questões | Anki |
+| | Tema (página de estudo) | Base | Resumão | Anki | Figuras |
 |---|---|---|---|---|---|
-| a | O músculo cardíaco e as valvas cardíacas | Guyton cap. 9 (e 23) | [resumão](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) | [27 objetivas + 9 abertas](temas/a-musculo-cardiaco-e-valvas/questoes.pdf) | [baralho](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) |
-| b | Excitação rítmica do coração | Guyton cap. 10 | [resumão](temas/b-excitacao-ritmica/resumao.pdf) | [23 objetivas + 8 abertas](temas/b-excitacao-ritmica/questoes.pdf) | [baralho](temas/b-excitacao-ritmica/flashcards.apkg) |
-| c | O eletrocardiograma normal | Guyton caps. 11 e 12 | [resumão](temas/c-ecg-normal/resumao.pdf) | [25 objetivas + 9 abertas](temas/c-ecg-normal/questoes.pdf) | [baralho](temas/c-ecg-normal/flashcards.apkg) |
-| d | Biofísica da circulação | Guyton caps. 14 e 15 | [resumão](temas/d-biofisica-circulacao/resumao.pdf) | [28 objetivas + 9 abertas](temas/d-biofisica-circulacao/questoes.pdf) | [baralho](temas/d-biofisica-circulacao/flashcards.apkg) |
-| e | Fisiologia vascular e da microcirculação | Guyton cap. 16 | [resumão](temas/e-microcirculacao-linfatico/resumao.pdf) | [26 objetivas + 9 abertas](temas/e-microcirculacao-linfatico/questoes.pdf) | [baralho](temas/e-microcirculacao-linfatico/flashcards.apkg) |
-| f | Controle local, humoral e nervoso da circulação | Guyton caps. 17 e 18 | [resumão](temas/f-controle-circulacao/resumao.pdf) | [30 objetivas + 9 abertas](temas/f-controle-circulacao/questoes.pdf) | [baralho](temas/f-controle-circulacao/flashcards.apkg) |
-| g | Débito cardíaco e retorno venoso | Guyton cap. 20 | em preparação | | |
-| h | Regulação da pressão arterial pelo sistema renal | Guyton cap. 19 | em preparação | | |
-| s | Semiologia cardiovascular | Porto, Semiologia Médica | em preparação | | |
+| A | [Músculo cardíaco e valvas cardíacas](temas/a-musculo-cardiaco-e-valvas/README.md) | Guyton cap. 9 (e 23) | [PDF](temas/a-musculo-cardiaco-e-valvas/resumao.pdf) | [76 cartões](temas/a-musculo-cardiaco-e-valvas/flashcards.apkg) | 7 |
+| B | [Excitação rítmica do coração](temas/b-excitacao-ritmica/README.md) | Guyton cap. 10 | [PDF](temas/b-excitacao-ritmica/resumao.pdf) | [48 cartões](temas/b-excitacao-ritmica/flashcards.apkg) | 4 |
+| C | [O eletrocardiograma normal](temas/c-ecg-normal/README.md) | Guyton caps. 11 e 12 | [PDF](temas/c-ecg-normal/resumao.pdf) | [48 cartões](temas/c-ecg-normal/flashcards.apkg) | 7 |
+| D | [Biofísica da circulação](temas/d-biofisica-circulacao/README.md) | Guyton caps. 14 e 15 | [PDF](temas/d-biofisica-circulacao/resumao.pdf) | [73 cartões](temas/d-biofisica-circulacao/flashcards.apkg) | 11 |
+| E | [Microcirculação e sistema linfático](temas/e-microcirculacao-linfatico/README.md) | Guyton cap. 16 | [PDF](temas/e-microcirculacao-linfatico/resumao.pdf) | [50 cartões](temas/e-microcirculacao-linfatico/flashcards.apkg) | 8 |
+| F | [Controle local, humoral e nervoso da circulação](temas/f-controle-circulacao/README.md) | Guyton caps. 17 e 18 | [PDF](temas/f-controle-circulacao/resumao.pdf) | [70 cartões](temas/f-controle-circulacao/flashcards.apkg) | 11 |
+| G | Débito cardíaco e retorno venoso | Guyton cap. 20 | em preparação | | |
+| H | Regulação da pressão arterial pelo sistema renal | Guyton cap. 19 | em preparação | | |
+| S | Semiologia cardiovascular | Porto, Semiologia Médica | em preparação | | |
 
-## Como usar
+## Como estudar
 
-- **Resumão**: leitura rápida do tema, com esquemas e uma tabela final de números para decorar.
-- **Quiz on-line**: as mesmas questões objetivas no navegador, com correção e comentário na hora (modo estudo)
-  ou com cronômetro e correção no fim (modo prova). Guarda o seu melhor resultado por tema no próprio navegador.
-- **Questões**: múltipla escolha no formato da prova e casos clínicos abertos. O gabarito comentado fica no final do PDF.
-- **Anki**: no Anki, `Arquivo → Importar` e escolha o `.apkg`. Cada tema entra como subbaralho de
-  *Liga de Cardiologia*, com cartões de pergunta e resposta, de lacuna (cloze) e de oclusão de imagem.
-  Reimportar uma versão nova atualiza os cartões sem duplicar.
+1. **Leia a página do tema** (link na tabela) ou o resumão em PDF. Comece pelo *O essencial*: é o que a prova mais cobra.
+2. **Faça os flashcards no mesmo dia.** No Anki: `Arquivo → Importar` e escolha o `.apkg`. Cada tema entra como
+   subbaralho de *Liga de Cardiologia*. Há cartões de pergunta e resposta, de lacuna (cloze) e de **oclusão de imagem**
+   sobre as figuras do livro (um rótulo coberto por um **?** laranja). Reimportar uma versão nova atualiza os cartões
+   sem duplicar e sem perder o seu progresso.
+3. **Revise os *Valores para decorar*** de cada tema na véspera da prova.
+4. Para as **questões abertas** (casos clínicos), use as *Correlações clínicas*: elas ligam a fisiologia ao quadro
+   do paciente, que é o que as perguntas abertas costumam pedir.
+
+## Ordem sugerida
+
+A → B → C (o coração como bomba e como sistema elétrico) → D → E → F → G → H (a circulação e o controle da pressão)
+→ S (a semiologia, que usa tudo o que veio antes).
 
 ## Estrutura
 
 ```
-temas/<tema>/resumao.pdf      resumo do tema
-temas/<tema>/questoes.pdf     questões + gabarito comentado
+temas/<tema>/README.md        página de estudo do tema (abre direto no GitHub)
+temas/<tema>/resumao.pdf      resumão diagramado para imprimir ou ler no celular
 temas/<tema>/flashcards.apkg  baralho do Anki
-docs/                         quiz on-line (GitHub Pages)
-fonte/                        scripts que geram tudo (Python + HTML/CSS)
+temas/<tema>/figuras/         figuras do livro usadas no tema
+fonte/                        scripts que geram tudo (Python + HTML/CSS) e as figuras extraídas dos livros
 ```
 
-Para regerar um tema: `pip install -r fonte/requirements.txt`, `npm install playwright` (o resumão é diagramado em
-HTML/CSS e impresso em PDF pelo Chromium) e `python3 fonte/build.py tema_a` (os arquivos saem na pasta acima de `fonte/`).
+Para regerar um tema: `pip install -r fonte/requirements.txt`, `npm install playwright` e
+`python3 fonte/build.py tema_a` (os arquivos saem na pasta acima de `fonte/`). As oclusões de imagem acham o
+rótulo na figura por OCR (tesseract, em português); o resultado fica em `fonte/fig_livro/ocr_cache.json`.
 
 ## Referências
 
 - Hall JE, Hall ME. *Guyton & Hall · Tratado de Fisiologia Médica*. 14ª ed. Rio de Janeiro: GEN Guanabara Koogan.
 - Porto CC, Porto AL. *Semiologia Médica*. 8ª ed. Rio de Janeiro: Guanabara Koogan; 2019.
+- Moore KL, Dalley AF, Agur AMR. *Anatomia Orientada para a Clínica*. Rio de Janeiro: Guanabara Koogan.
 
-Os livros não estão neste repositório, e esta versão pública não inclui figuras deles: os esquemas foram
-desenhados a partir dos valores descritos no texto, e as demais imagens são de licença aberta (Wikimedia Commons),
-com autor e licença indicados na legenda e em `fonte/fig_web/*/creditos.json`. A fonte Inter é distribuída sob a
-SIL Open Font License. (Os scripts referenciam uma pasta `fig_livro/` que só existe na
-minha cópia pessoal.) Material de estudo pessoal, sem fins comerciais.
+Repositório privado, para estudo pessoal. As figuras pertencem aos respectivos livros.

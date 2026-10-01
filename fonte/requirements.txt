@@ -1,4 +1,2 @@
 genanki
-reportlab
-matplotlib
-numpy
+pillow

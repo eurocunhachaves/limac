@@ -97,6 +97,8 @@ figure{margin:4px 0 8px;break-inside:avoid;text-align:center}
 .pair figure{flex:0 0 auto;margin-top:2px}
 figure img{max-width:100%;border-radius:6px}
 figure svg.vec{width:100%;height:auto;display:block}
+.row{display:flex;gap:.7cm;justify-content:center;align-items:flex-end;break-inside:avoid;margin:4px 0 8px}
+.row figure{float:none;margin:0}
 figcaption{font-size:7.6pt;color:var(--mute);margin-top:2px;line-height:1.3;text-align:center}
 figcaption .cr{display:block;font-size:6.8pt;color:#9aa0a6}
 .credits{clear:both;margin-top:14px;border-top:1px solid var(--line);padding-top:6px;font-size:7pt;color:var(--mute)}
@@ -115,20 +117,26 @@ def figure(rel, caption, width, cred=""):
             f'<figcaption>{caption}{cr}</figcaption></figure>')
 
 
-def own_svg(rel):
-    """fig/x.png -> svg/x.svg quando o diagrama vetorial existe."""
-    if not rel or not rel.startswith("fig/"):
-        return None
-    p = os.path.join(HERE, "svg", os.path.splitext(os.path.basename(rel))[0] + ".svg")
-    return p if os.path.exists(p) else None
+def pick(own, book):
+    """Figura do livro sempre que houver; senão, só imagem da internet já revisada (nada de esquema próprio)."""
+    if book:
+        return book
+    return own if is_web(own) else None
+
+
+def book_ref(rel):
+    """fig_livro/g17_05.png -> 'Guyton & Hall, Fig. 17.5'; fig_livro/p_xx.png -> 'Porto, Semiologia Médica'."""
+    m = re.match(r"g(\d+)_(\d+)", os.path.basename(rel))
+    if m:
+        return f"Guyton & Hall, Fig. {int(m.group(1))}.{int(m.group(2))}"
+    m = re.match(r"p(\d+)_(\d+)", os.path.basename(rel))
+    if m:
+        return f"Porto, Semiologia Médica, Fig. {int(m.group(1))}.{int(m.group(2))}"
+    return book_source(rel)
 
 
 def media(rel):
-    p = own_svg(rel)
-    if not p:
-        return f'<img src="{src_url(rel)}">'
-    svg = re.sub(r"<metadata>.*?</metadata>", "", open(p, encoding="utf-8").read(), flags=re.S)
-    return re.sub(r'<svg ([^>]*?)width="[\d.]+" height="[\d.]+"', r'<svg \1class="vec"', svg, count=1)
+    return f'<img src="{src_url(rel)}">'
 
 
 def ul(items):
@@ -140,6 +148,8 @@ def block(b, publico, used_web):
     if kind == "pair":
         return (f'<div class="pair"><div class="txt">{block(b[2], publico, used_web)}</div>'
                 f'{block(b[1], publico, used_web)}</div>')
+    if kind == "row":
+        return f'<div class="row">{block(b[1], publico, used_web)}{block(b[2], publico, used_web)}</div>'
     if kind == "p":
         return f"<p>{b[1]}</p>"
     if kind == "h2":
@@ -158,10 +168,10 @@ def block(b, publico, used_web):
         return f"<table><colgroup>{cols}</colgroup><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>"
     if kind == "fig":
         _, own, book, caption, width = b
-        rel = own if (publico or own_svg(own)) else (book or own)
+        rel = pick(own, book)
         if not rel:
             return ""
-        cred = f"Fonte: {book_source(rel)}." if is_book(rel) else ""
+        cred = f"Fonte: {book_ref(rel)}." if is_book(rel) else ""
         if is_web(rel):
             used_web.append(rel)
             cred = f"Imagem: {esc(credit_text(rel))}."
@@ -178,7 +188,7 @@ def block(b, publico, used_web):
 def fig_width(b, publico):
     if b[0] == "web":
         return b[2]
-    if b[0] == "fig" and (b[1] if (publico or own_svg(b[1])) else (b[2] or b[1])):
+    if b[0] == "fig" and pick(b[1], b[2]):
         return b[4]
     return None
 
@@ -193,7 +203,10 @@ def arrange(blocks, publico):
             if i + 1 < len(out) and out[i + 1][0] == "table":
                 out[i], out[i + 1] = out[i + 1], out[i]
                 i += 1
-            if i + 1 < len(out) and out[i + 1][0] in ("ul", "p", "box", "tip"):
+            w2 = fig_width(out[i + 1], publico) if i + 1 < len(out) else None
+            if w2 is not None and w + w2 <= 17.5:  # duas figuras estreitas seguidas: lado a lado
+                out[i:i + 2] = [("row", out[i], out[i + 1])]
+            elif i + 1 < len(out) and out[i + 1][0] in ("ul", "p", "box", "tip"):
                 out[i:i + 2] = [("pair", out[i], out[i + 1])]
         i += 1
     return out
@@ -234,12 +247,3 @@ def build_resumao_pdf(T, publico, out_pdf):
     os.remove(html_path)
     return out_pdf
 
-
-def quiz_json(T):
-    """Questões objetivas no formato do quiz web (versão pública)."""
-    return {
-        "code": T["code"], "title": T["title"], "source": T["source"],
-        "mcq": [{"q": q["q"], "opts": q["opts"], "a": q["a"], "c": q["c"]} for q in T["mcq"]],
-        "open": [{"q": q["q"], "a": q["a"] if isinstance(q["a"], list) else [q["a"]]} for q in T["open"]]
-               + [{"q": q, "a": [a]} for q, a in T.get("open_extra", [])],
-    }
