@@ -52,6 +52,9 @@ def md2typ(s: str) -> str:
             out.append("#emph[" + esc(p[1:-1]) + "]")
         elif p.startswith("^") and p.endswith("^") and len(p) > 2:
             out.append("#super[" + esc(p[1:-1]) + "]")
+        elif out and p[:1] in ";":
+            # ";" logo após #strong[...] encerraria a expressão e sumiria
+            out.append("\\" + p[0] + esc(p[1:]))
         else:
             out.append(esc(p))
     return "".join(out)
