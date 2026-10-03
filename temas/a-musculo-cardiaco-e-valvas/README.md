@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 9 (PDF p. 363–405) · Porto, Semiologia Médica, 8ª ed., cap. 46 (ciclo cardíaco e bulhas)
 
-[← voltar ao índice](../../README.md)
+[Índice](../../README.md) · [Tema B →](../b-excitacao-ritmica/README.md)
 
 ## O essencial
 
@@ -114,5 +114,7 @@
 | Porto | Cap. 46 · PDF p. 520–536 | Revisão clínica do ciclo e correlação com bulhas (Fig. 46.6 e 46.7) |
 
 ---
+
+[Índice](../../README.md) · [Tema B →](../b-excitacao-ritmica/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

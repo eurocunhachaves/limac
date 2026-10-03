@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 11 (PDF p. 427–450) · Guyton & Hall, 14ª ed., cap. 12 (eixos e eixo elétrico médio, PDF p. 451–470)
 
-[← voltar ao índice](../../README.md)
+[← Tema B](../b-excitacao-ritmica/README.md) · [Índice](../../README.md) · [Tema D →](../d-biofisica-da-circulacao/README.md)
 
 ## O essencial
 
@@ -104,5 +104,7 @@
 | Guyton & Hall | Cap. 12 · PDF p. 459–470 | Vetores do QRS e da T, eixo médio e desvios |
 
 ---
+
+[← Tema B](../b-excitacao-ritmica/README.md) · [Índice](../../README.md) · [Tema D →](../d-biofisica-da-circulacao/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

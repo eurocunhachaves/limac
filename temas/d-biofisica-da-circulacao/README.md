@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 14 (PDF p. 535–568)
 
-[← voltar ao índice](../../README.md)
+[← Tema C](../c-ecg-normal/README.md) · [Índice](../../README.md) · [Tema E →](../e-vasos-e-microcirculacao/README.md)
 
 ## O essencial
 
@@ -119,5 +119,7 @@
 | Guyton & Hall | Cap. 14 · PDF p. 559–568 | Hematócrito, viscosidade, autorregulação, Laplace (Fig. 14.10 a 14.14) |
 
 ---
+
+[← Tema C](../c-ecg-normal/README.md) · [Índice](../../README.md) · [Tema E →](../e-vasos-e-microcirculacao/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

@@ -1,10 +1,10 @@
 # Tema S · Semiologia: anamnese, sintomas e arritmias
 
-**Área:** Semiologia · **Resumão:** [resumao.pdf](resumao.pdf) (8 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (56 cartões)
+**Área:** Semiologia · **Resumão:** [resumao.pdf](resumao.pdf) (8 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (56 cartões) · **Vídeos:** [por subtema](#vídeos-recomendados)
 
 **Fontes:** Porto, Semiologia Médica, 8ª ed., cap. 47 (PDF p. 537–550 e 556–560)
 
-[← voltar ao índice](../../README.md)
+[← Tema H](../h-regulacao-renal-da-pa/README.md) · [Índice](../../README.md) · [Tema T →](../t-semiologia-precordio-bulhas-sopros/README.md)
 
 ## O essencial
 
@@ -50,7 +50,7 @@
 
 <img src="../../fonte/figuras/porto/p47_07.png" width="420">
 
-**Porto, Fig. 47.8** — A. Extrassístole ventricular isolada (setas). Observa-se que a contração extrassistólica é prematura, somente se ausculta a 1
+**Porto, Fig. 47.8** — A. Extrassístole ventricular isolada (setas). Observa-se que a contração extrassistólica é prematura, somente se ausculta a 1ª bulha (TUM) e não se percebe onda de pulso correspondente a ela. Após a extrassístole, ocorre uma pausa compensadora e a onda de pulso que vem a seguir é mais ampla. B. Extrassístoles bigeminadas ou bigeminismo extrassistólico. Após cada batimento normal, ocorre uma sístole prematura (setas), seguida de pausa compensadora. A 2ª bulha da contração extrassistólica costuma ser desdobrada e a onda de pulso correspondente tem menor amplitude. C. Extrassístoles em salva. No momento da salva de extrassístoles (setas), ausculta-se uma rápida sucessão de bulhas cardíacas, sendo difícil diferenciar B1 e B2. Após as contrações extrassistólicas, observa-se uma pausa compensadora. No pulso radial, percebem-se ondas de pequena amplitude que se sucedem rapidamente.
 
 <img src="../../fonte/figuras/porto/p47_08.png" width="420">
 
@@ -58,7 +58,7 @@
 
 <img src="../../fonte/figuras/porto/p47_09.png" width="420">
 
-**Porto, Fig. 47.10** — Bloqueio atrioventricular total. A frequência cardíaca é lenta, as bulhas cardíacas se sucedem regularmente, com variação da intensidade de B1, ocorrendo de vez em quando uma 1
+**Porto, Fig. 47.10** — Bloqueio atrioventricular total. A frequência cardíaca é lenta, as bulhas cardíacas se sucedem regularmente, com variação da intensidade de B1, ocorrendo de vez em quando uma 1ª bulha de maior intensidade (seta), denominada bulha em canhão. O pulso é lento e regular.
 
 <img src="../../fonte/figuras/porto/p47_10.png" width="420">
 
@@ -119,6 +119,76 @@
 | Porto | Cap. 47 · PDF p. 548–550 | Cianose, edema, astenia e posição de cócoras |
 | Porto | Cap. 47 · PDF p. 556–560 | Ritmo, frequência e arritmias (Quadro 47.7, Fig. 47.6 a 47.10) |
 
+## Vídeos recomendados
+
+Vídeos gratuitos do YouTube em português (**PT**) e em inglês (**EN**), separados por subtema e do mais curto ao mais longo. Todos foram abertos e conferidos em 03/10/2026. Dica: assista ao vídeo do subtema **antes** de ler a parte correspondente do resumão.
+
+### Dor torácica
+
+- **PT · 18 min** · [Cardiologia: abordagem à dor torácica](https://www.youtube.com/watch?v=sn6cDa4v0lw) · *Jaleko Acadêmicos*  
+  Diferencia a dor da síndrome coronariana aguda, da dissecção de aorta, do TEP, da pericardite, do espasmo esofágico e da costocondrite.
+- **PT · 40 min** · [Dor torácica: diagnósticos diferenciais](https://www.youtube.com/watch?v=Oi5qW38b2j8) · *Medicina Resumida*  
+  As causas graves de dor no peito, uma por uma, e a abordagem inicial.
+- **EN · 9 min** · [Chest Pain History Taking - OSCE Guide](https://www.youtube.com/watch?v=eiRIm6BOzP4) · *Geeky Medics*  
+  A anamnese da dor torácica feita do início ao fim com o roteiro SOCRATES (local, início, caráter, irradiação, sintomas associados, tempo, fatores de piora e melhora, intensidade).
+
+### Dispneia, ortopneia e dispneia paroxística noturna
+
+- **PT · 2 min** · [Dispneia: ortopneia, platipneia, trepopneia?](https://www.youtube.com/watch?v=PCKXLBxmAJg) · *Gabriel Pereira*  
+  Conceito rápido dos tipos de dispneia ligados à posição do corpo.
+- **EN · 10 min** · [Understanding Heart Failure: Visual Explanation for Students](https://www.youtube.com/watch?v=q2t9sFITAIY) · *Zero To Finals*  
+  Insuficiência cardíaca ilustrada, com atenção especial à dispneia paroxística noturna.
+- **EN · 32 min** · [Dyspnea, PND & Orthopnea](https://www.youtube.com/watch?v=9Oubwtvu_TI) · *AETCM Emergency Medicine*  
+  Mecanismo da ortopneia e da DPN e como separar a dispneia cardíaca da respiratória.
+
+### Síncope
+
+- **PT · 9 min** · [Síncope cardíaca e suas características e procedimentos](https://www.youtube.com/watch?v=2uuSn6wYggU) · *Medcel*  
+  Resumo das causas cardíacas de síncope (estruturais e arrítmicas) e dos achados de alto risco.
+- **PT · 48 min** · [Síncope de etiologia cardíaca](https://www.youtube.com/watch?v=dv0jFSToKf8) · *Medicina Interna*  
+  Aula completa: classificação, avaliação inicial, critérios de alto risco e papel do ECG.
+- **EN · 16 min** · [An Approach to Syncope](https://www.youtube.com/watch?v=iJ6g5rsQKaM) · *Strong Medicine*  
+  Compara síncope reflexa (vasovagal), cardiogênica e ortostática, e síncope × crise convulsiva.
+- **EN · 32 min** · [Syncope | Clinical Medicine](https://www.youtube.com/watch?v=nTcI1cITnI0) · *Ninja Nerd*  
+  A fisiopatologia de cada tipo de síncope, passo a passo, e a diferença com crise convulsiva.
+
+### Cianose
+
+- **PT · 29 min** · [Inspeção geral: cianose](https://www.youtube.com/watch?v=o8IDbxnQklY) · *RABISCANDO*  
+  Definição clínica e fisiopatologia da cianose (aula do exame respiratório que vale também para o cardíaco).
+- **EN · 17 min** · [Cyanosis](https://www.youtube.com/watch?v=s5UQ_JpvFqc) · *Dr Matt & Dr Mike*  
+  Mecanismo da cianose central e da periférica, com a curva de dissociação da hemoglobina.
+
+### Arritmias no exame clínico
+
+- **PT · 2 min** · [O que esperar no exame físico do paciente com FA?](https://www.youtube.com/watch?v=CAXJmVU20-I) · *Plantão Médico Curso*  
+  Os achados de exame físico que sugerem fibrilação atrial.
+- **PT · 6 min** · [Pausa compensatória](https://www.youtube.com/watch?v=9ABVkqpdwQ8) · *Arritmia Na Prática*  
+  Como reconhecer a pausa compensatória da extrassístole (a “falha” que o paciente sente) e diferenciá-la de bloqueio AV.
+- **EN · 2 min** · [What is pulse deficit?](https://www.youtube.com/watch?v=EYZJXh9cups) · *Johnson's Cardiology*  
+  O que é déficit de pulso e por que ele aparece na fibrilação atrial.
+
+### Visão geral e aulas completas
+
+- **PT · 8 min** · [Semiologia cardiovascular](https://www.youtube.com/watch?v=2utpvJ6FCAM) · *Prática Enfermagem*  
+  Panorama curto da semiologia cardiovascular.
+- **PT · 34 min** · [Semiologia cardiovascular](https://www.youtube.com/watch?v=gJ_ugrpJGZU) · *MEDsimple*  
+  Aula de semiologia cardiovascular para a graduação.
+- **PT · 1 h 6 min** · [Aula 02: semiologia cardiovascular](https://www.youtube.com/watch?v=BdFdGr77Es0) · *Liga Acadêmica de Cardiologia de Paulo Afonso*  
+  Aula de semiologia dada por uma liga acadêmica de cardiologia.
+- **PT · 1 h 45 min** · [Semiologia cardiovascular](https://www.youtube.com/watch?v=5NTRLH2Rrvc) · *Fabricio Fortuna*  
+  Aula teórica completa de semiologia cardiocirculatória do curso de Medicina da Universidade de Caxias do Sul.
+- **PT · 1 h 49 min** · [Semiologia cardiovascular: aula teórica, parte 1](https://www.youtube.com/watch?v=zW24HGh4yWU) · *Semiologia Descomplicada*  
+  Aula teórica longa (parte 1) de semiologia cardiovascular.
+- **EN · 8 min** · [Cardiovascular Examination - OSCE Guide](https://www.youtube.com/watch?v=XU_xeUMJ3Zc) · *Geeky Medics*  
+  O exame cardiovascular inteiro em 8 minutos: mãos, pulsos, jugular, ictus, frêmitos, ausculta e manobras.
+- **EN · 49 min** · [The Cardiovascular Exam / Heart Sounds (Strong Exam)](https://www.youtube.com/watch?v=r9uo6Ljza6U) · *Strong Medicine*  
+  O exame cardiovascular essencial em profundidade: pulsos, edema, jugular, sopro carotídeo e ausculta.
+
+Para ouvir as arritmias (fibrilação atrial, taquicardias, bradicardia do atleta), use o [baralho de sons](../../anki/LIMAC-Sons-cardiacos.apkg).
+
 ---
+
+[← Tema H](../h-regulacao-renal-da-pa/README.md) · [Índice](../../README.md) · [Tema T →](../t-semiologia-precordio-bulhas-sopros/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

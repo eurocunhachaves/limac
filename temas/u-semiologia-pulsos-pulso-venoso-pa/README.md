@@ -1,10 +1,10 @@
 # Tema U · Semiologia: pulsos, pulso venoso e pressão arterial
 
-**Área:** Semiologia · **Resumão:** [resumao.pdf](resumao.pdf) (8 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (58 cartões)
+**Área:** Semiologia · **Resumão:** [resumao.pdf](resumao.pdf) (8 páginas) · **Anki:** [flashcards.apkg](flashcards.apkg) (58 cartões) · **Vídeos:** [por subtema](#vídeos-recomendados)
 
 **Fontes:** Porto, Semiologia Médica, 8ª ed., cap. 47 (PDF p. 569–584)
 
-[← voltar ao índice](../../README.md)
+[← Tema T](../t-semiologia-precordio-bulhas-sopros/README.md) · [Índice](../../README.md)
 
 ## O essencial
 
@@ -119,6 +119,63 @@
 | Porto | Cap. 47 · PDF p. 579–582 | Técnica, Korotkoff, hiato auscultatório e populações especiais (Fig. 47.27) |
 | Porto | Cap. 47 · PDF p. 582–584 | Fatores de variação, pressão diferencial e valores normais (Quadros 47.10 e 47.11) |
 
+## Vídeos recomendados
+
+Vídeos gratuitos do YouTube em português (**PT**) e em inglês (**EN**), separados por subtema e do mais curto ao mais longo. Todos foram abertos e conferidos em 03/10/2026. Dica: assista ao vídeo do subtema **antes** de ler a parte correspondente do resumão.
+
+Aulas longas que cobrem S, T e U estão no [tema S](../s-semiologia-anamnese-sintomas-arritmias/README.md#visão-geral-e-aulas-completas).
+
+### Pulso arterial
+
+- **PT · 3 min** · [Análise de pulso arterial, parte 1 | Semiologia do Zero](https://www.youtube.com/watch?v=mf3M2ZVnCEI) · *Estratégia MED*  
+  Início direto da análise do pulso arterial.
+- **PT · 9 min** · [Exame das pulsações arteriais](https://www.youtube.com/watch?v=agIi_n5mxUM) · *Semiotécnica UEA*  
+  Onde palpar cada pulso (radial, carotídeo, femoral, poplíteo, tibial posterior, pedioso) e a manobra de Allen.
+- **PT · 12 min** · [Semiologia do pulso arterial](https://www.youtube.com/watch?v=_CXH5NXMIMU) · *Dr. Wagner Pádua*  
+  Os principais tópicos da semiologia do pulso arterial para estudantes de Medicina.
+- **EN · 3 min** · [Pulsus Paradoxus Video](https://www.youtube.com/watch?v=jTsjCZ9QxW8) · *Stanford Medicine 25*  
+  Como medir o pulso paradoxal na suspeita de tamponamento cardíaco.
+- **EN · 4 min** · [Alternans, Anacrotic, parvus, tardus, dicrotic & normal Pulse](https://www.youtube.com/watch?v=o8VdWslTWfk) · *USMLE exam gym*  
+  Pulso alternante, anacrótico, parvus et tardus e dicrótico em 4 minutos.
+- **EN · 7 min** · [Peripheral Vascular Examination - OSCE Guide](https://www.youtube.com/watch?v=1kfg1mYRJ-g) · *Geeky Medics*  
+  Exame vascular periférico: pulsos dos membros, carotídeo e aórtico.
+- **EN · 8 min** · [Clinical Skills: Pulses assessment](https://www.youtube.com/watch?v=nhAz84srBvg) · *Osmosis from Elsevier*  
+  Como palpar os pulsos radial, apical e femoral.
+- **EN · 9 min** · [Types of arterial pulses](https://www.youtube.com/watch?v=zDPw13FMEBs) · *Medic Notes*  
+  Pulso anacrótico, bigeminado, dicrótico, alternante, bisferiens e parvus et tardus, com o mecanismo.
+
+### Pulso venoso jugular
+
+- **PT · 8 min** · [Exame cardiovascular (pulso venoso) | Semiologia do Zero](https://www.youtube.com/watch?v=O-KfgwnJqZo) · *Estratégia MED*  
+  O pulso venoso no exame cardiovascular, do zero.
+- **PT · 10 min** · [Ondas de pulso venoso anormais](https://www.youtube.com/watch?v=yVMjAe_7LRI) · *RABISCANDO*  
+  Descensos X e Y alterados, onda A gigante e onda A em canhão.
+- **PT · 11 min** · [Inspeção das veias do pescoço III: a onda do pulso venoso jugular](https://www.youtube.com/watch?v=bQ66G-1uOG0) · *RABISCANDO*  
+  O que é a onda do pulso jugular e como diferenciá-la do pulso carotídeo.
+- **EN · 3 min** · [Examination of the Jugular Venous Pressure (JVP)](https://www.youtube.com/watch?v=NU0-uD4REek) · *Dr James Gill*  
+  Demonstração rápida do exame da pressão venosa jugular.
+- **EN · 11 min** · [Understanding Jugular Venous Pressure (JVP)](https://www.youtube.com/watch?v=Z4yRBhlK0uY) · *Zero To Finals*  
+  O que a jugular mostra do coração direito e o significado de cada onda.
+
+### Pressão arterial e sons de Korotkoff
+
+- **PT · 4 min** · [Pressão arterial e sons de Korotkoff](https://www.youtube.com/watch?v=DzlXZrXgeJA) · *MedTV - DrJulioMassao*  
+  Os sons de Korotkoff para ouvir. Use fone de ouvido.
+- **PT · 7 min** · [Fases de Korotkoff (hiato auscultatório)](https://www.youtube.com/watch?v=0KQw7IQoZjk) · *PRAXYS*  
+  As fases de Korotkoff e o hiato auscultatório.
+- **PT · 8 min** · [Como medir a pressão](https://www.youtube.com/watch?v=lP0_6xRYfuA) · *Professor Emerson Marques*  
+  Medida da PA com esfigmomanômetro, passo a passo.
+- **PT · 8 min** · [Como medir a pressão arterial? Aprenda a aferir da forma certa](https://www.youtube.com/watch?v=JYcU8Uz65T8) · *Descomplica Enfermagem*  
+  A técnica correta de aferição na prática.
+- **PT · 9 min** · [Método palpatório para verificar a pressão arterial](https://www.youtube.com/watch?v=yNyXdjNl0JY) · *Prática Enfermagem*  
+  Método palpatório, sons de Korotkoff e o erro mais comum ao aferir a sistólica.
+- **EN · 5 min** · [Blood Pressure Measurement: How to Check Blood Pressure Manually](https://www.youtube.com/watch?v=UGOoeqSo_ws) · *RegisteredNurseRN*  
+  Medida manual da PA passo a passo, com a estimativa da sistólica antes de auscultar.
+
+Os sons de Korotkoff estão no vídeo da MedTV acima. O sopro carotídeo está no [baralho de sons](../../anki/LIMAC-Sons-cardiacos.apkg).
+
 ---
+
+[← Tema T](../t-semiologia-precordio-bulhas-sopros/README.md) · [Índice](../../README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

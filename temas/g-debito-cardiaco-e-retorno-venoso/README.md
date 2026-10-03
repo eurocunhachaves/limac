@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 20 (PDF p. 770–813)
 
-[← voltar ao índice](../../README.md)
+[← Tema F](../f-controle-da-circulacao/README.md) · [Índice](../../README.md) · [Tema H →](../h-regulacao-renal-da-pa/README.md)
 
 ## O essencial
 
@@ -45,7 +45,7 @@
 
 ## Figuras-chave
 
-**Guyton & Hall, Fig. 20.2** — O débito cardíaco é igual ao retorno venoso e representa a soma dos fluxos sanguíneos dos tecidos e órgãos. Exceto quando o coração está gravemente enfraquecido e incapaz de bombear o retorno venoso de forma adequada, o débito
+**Guyton & Hall, Fig. 20.2** — O débito cardíaco é igual ao retorno venoso e representa a soma dos fluxos sanguíneos dos tecidos e órgãos. Exceto quando o coração está gravemente enfraquecido e incapaz de bombear o retorno venoso de forma adequada, o débito cardíaco (fluxo sanguíneo total dos tecidos) é determinado, principalmente, pelas necessidades metabólicas dos tecidos e órgãos do corpo.
 
 <img src="../../fonte/figuras/guyton/g20_02.png" width="420">
 
@@ -53,7 +53,7 @@
 
 <img src="../../fonte/figuras/guyton/g20_05.png" width="420">
 
-**Guyton & Hall, Fig. 20.10** — Curva normal de retorno venoso. O platô é causado pelo colapso das grandes veias que entram no tórax quando a pressão do átrio direito fica abaixo da pressão atmosférica. Observe também que o retorno venoso é zero quando a
+**Guyton & Hall, Fig. 20.10** — Curva normal de retorno venoso. O platô é causado pelo colapso das grandes veias que entram no tórax quando a pressão do átrio direito fica abaixo da pressão atmosférica. Observe também que o retorno venoso é zero quando a pressão do átrio direito aumenta para se igualar à pressão média de enchimento sistêmico.
 
 <img src="../../fonte/figuras/guyton/g20_10.png" width="420">
 
@@ -126,5 +126,7 @@
 | Guyton & Hall | Cap. 20 · PDF p. 808–814 | Fick, diluição, eco e bioimpedância (Fig. 20.18 a 20.20) |
 
 ---
+
+[← Tema F](../f-controle-da-circulacao/README.md) · [Índice](../../README.md) · [Tema H →](../h-regulacao-renal-da-pa/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

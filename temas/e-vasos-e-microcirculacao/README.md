@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 15 (PDF p. 569–602) · Guyton & Hall, 14ª ed., cap. 16 (PDF p. 603–641)
 
-[← voltar ao índice](../../README.md)
+[← Tema D](../d-biofisica-da-circulacao/README.md) · [Índice](../../README.md) · [Tema F →](../f-controle-da-circulacao/README.md)
 
 ## O essencial
 
@@ -56,7 +56,7 @@
 
 <img src="../../fonte/figuras/guyton/g15_04.png" width="420">
 
-**Guyton & Hall, Fig. 15.7** — 
+**Guyton & Hall, Fig. 15.7** — Método auscultatório para a medida das pressões arteriais sistólica e diastólica.
 
 <img src="../../fonte/figuras/guyton/g15_07a.png" width="420">
 
@@ -126,5 +126,7 @@
 | Guyton & Hall | Cap. 16 · PDF p. 629–639 | Sistema linfático (Fig. 16.6 a 16.9) |
 
 ---
+
+[← Tema D](../d-biofisica-da-circulacao/README.md) · [Índice](../../README.md) · [Tema F →](../f-controle-da-circulacao/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

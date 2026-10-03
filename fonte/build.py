@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """Gera o resumão (PDF via Typst), o README do tema e o baralho Anki.
 
-Uso:  python3 fonte/build.py a [b c ...]   (ou "todos")
+Uso:  python3 fonte/build.py a [b c ...]      (ou "todos")
+      python3 fonte/build.py completo         (só o baralho único com todos os temas)
+      python3 fonte/build.py readme [a ...]   (só as páginas README e o índice;
+                                               não recompila o PDF nem refaz o baralho)
 
 Cada tema é um módulo em fonte/temas/<código>.py com:
   CODIGO, SLUG, TITULO, AREA, FONTES, ESSENCIAL, CORPO (Typst), VALORES,
   CLINICA, PEGADINHAS, GLOSSARIO, LEITURA, BASICOS, LACUNAS, OCLUSOES
 As figuras vêm de fonte/figuras/{guyton,porto}/ (extraídas dos PDFs dos livros
-por fonte/scripts/extrai_*.py) e são citadas pelo número no livro.
+por fonte/scripts/extract_*.py) e são citadas pelo número no livro; as legendas
+completas estão em fonte/figuras/legendas.json (fonte/scripts/legendas.py).
+Os vídeos recomendados de Semiologia estão em fonte/videos.py.
 """
 import importlib.util, json, os, re, shutil, sys
 from pathlib import Path
@@ -115,6 +120,13 @@ def atualiza_tamanhos():
 
 
 def legenda_livro(k: str) -> str:
+    """Legenda da figura no livro: primeiro a de fonte/figuras/legendas.json
+    (completa); senão, a do índice da extração."""
+    legendas = FONTE / "figuras" / "legendas.json"
+    if legendas.exists():
+        d = json.loads(legendas.read_text(encoding="utf-8"))
+        if k in d:
+            return d[k]
     pasta = {"g": "guyton", "p": "porto"}.get(k[0])
     idx = EXTRAIDAS / pasta / "index.json" if pasta else None
     if idx and idx.exists():
@@ -437,13 +449,77 @@ def verifica_preenchimento(doc, fim_texto=None):
 
 
 # ---------------------------------------------------------------- README
+def navegacao(t) -> str:
+    """Links para o tema anterior, o índice e o tema seguinte."""
+    codigos = [c for c in ORDEM if (FONTE / "temas" / f"{c}.py").exists()]
+    i = codigos.index(t.CODIGO)
+    partes = []
+    if i > 0:
+        a = carrega(codigos[i - 1])
+        partes.append(f"[← Tema {a.CODIGO.upper()}](../{a.SLUG}/README.md)")
+    partes.append("[Índice](../../README.md)")
+    if i + 1 < len(codigos):
+        p = carrega(codigos[i + 1])
+        partes.append(f"[Tema {p.CODIGO.upper()} →](../{p.SLUG}/README.md)")
+    return " · ".join(partes)
+
+
+def segundos(d: str) -> int:
+    """'1:44:46' -> 6286."""
+    seg = 0
+    for x in d.split(":"):
+        seg = seg * 60 + int(x)
+    return seg
+
+
+def duracao(d: str) -> str:
+    """'1:44:46' -> '1 h 45 min'; '8:41' -> '9 min'."""
+    m = max(1, round(segundos(d) / 60))
+    return f"{m // 60} h {m % 60} min" if m >= 60 else f"{m} min"
+
+
+def secao_videos(t) -> list:
+    """Vídeos recomendados por subtema (fonte/videos.py) e, no tema T, as
+    bibliotecas de sons cardíacos."""
+    import videos
+    grupos = videos.VIDEOS.get(t.CODIGO)
+    if not grupos:
+        return []
+    L = ["", "## Vídeos recomendados", "",
+         "Vídeos gratuitos do YouTube em português (**PT**) e em inglês (**EN**), separados por subtema e "
+         f"do mais curto ao mais longo. Todos foram abertos e conferidos em {videos.CONFERIDO}. "
+         "Dica: assista ao vídeo do subtema **antes** de ler a parte correspondente do resumão."]
+    cod, sub = videos.AULAS_COMPLETAS
+    if t.CODIGO != cod:
+        s = carrega(cod)
+        ancora = re.sub(r"[^\w\- ]", "", sub.lower()).replace(" ", "-")
+        L += ["", f"Aulas longas que cobrem S, T e U estão no [tema {cod.upper()}](../{s.SLUG}/README.md#{ancora})."]
+    for titulo, lista in grupos:
+        L += ["", f"### {titulo}", ""]
+        for idioma, vid, nome, canal, dur, porque in sorted(lista, key=lambda v: (v[0] != "PT", segundos(v[4]))):
+            L += [f"- **{idioma} · {duracao(dur)}** · [{nome}](https://www.youtube.com/watch?v={vid}) · *{canal}*  ",
+                  f"  {porque}"]
+    if t.CODIGO in videos.OUVIR:
+        L += ["", videos.OUVIR[t.CODIGO].format(baralho=videos.BARALHO_SONS)]
+    if t.CODIGO == "t":
+        L += ["", "## Sons cardíacos", "",
+              f"- **Baralho de sons do LIMAC** ([{videos.BARALHO_SONS.split('/')[-1]}](../../{videos.BARALHO_SONS})): "
+              "gravações reais de bulhas, B3, B4, clique, sopros e arritmias, com pergunta, resposta e a parte "
+              "*Para associar*, que liga cada som a outro tema. Use fone de ouvido."]
+        for nome, inst, url, oque in videos.BIBLIOTECAS:
+            L += [f"- **[{nome}]({url})** ({inst}): {oque}"]
+    return L
+
+
 def gera_readme(t, n_paginas, n_cards) -> str:
+    import videos
     L = [f"# Tema {t.CODIGO.upper()} · {t.TITULO}", ""]
     L.append(f"**Área:** {t.AREA} · **Resumão:** [resumao.pdf](resumao.pdf) ({n_paginas} páginas) · "
-             f"**Anki:** [flashcards.apkg](flashcards.apkg) ({n_cards} cartões)")
+             f"**Anki:** [flashcards.apkg](flashcards.apkg) ({n_cards} cartões)"
+             + (" · **Vídeos:** [por subtema](#vídeos-recomendados)" if t.CODIGO in videos.VIDEOS else ""))
     L.append("")
     L.append("**Fontes:** " + " · ".join(md2md(f) for f in t.FONTES))
-    L += ["", "[← voltar ao índice](../../README.md)", "", "## O essencial", ""]
+    L += ["", navegacao(t), "", "## O essencial", ""]
     L += ["- " + md2md(e) for e in t.ESSENCIAL]
     if t.VALORES:
         L += ["", "## Valores para decorar", "", "| Parâmetro | Valor | Observação |", "|---|---|---|"]
@@ -475,7 +551,8 @@ def gera_readme(t, n_paginas, n_cards) -> str:
     if t.LEITURA:
         L += ["", "## Onde ler nas fontes", "", "| Livro | Onde | O que ler |", "|---|---|---|"]
         L += [f"| {md2md(a)} | {md2md(b)} | {md2md(c)} |" for a, b, c in t.LEITURA]
-    L += ["", "---", "", "*Figuras reproduzidas dos livros-texto para uso pessoal de estudo; "
+    L += secao_videos(t)
+    L += ["", "---", "", navegacao(t), "", "*Figuras reproduzidas dos livros-texto para uso pessoal de estudo; "
           "o número de cada figura no livro está indicado na legenda.*", ""]
     return "\n".join(L)
 
@@ -523,15 +600,44 @@ def gera_baralho_completo():
 
 
 def gera_indice():
+    import videos
     linhas = []
     for c in ORDEM:
         if not (FONTE / "temas" / f"{c}.py").exists():
             continue
         t = carrega(c)
+        arquivos = f"[PDF](temas/{t.SLUG}/resumao.pdf) · [Anki](temas/{t.SLUG}/flashcards.apkg)"
+        if c in videos.VIDEOS:
+            arquivos += f" · [Vídeos](temas/{t.SLUG}/README.md#vídeos-recomendados)"
         linhas.append(f"| **{c.upper()}** | [{t.TITULO}](temas/{t.SLUG}/README.md) | {t.AREA} | {DESCRICAO.get(c, '')} | "
-                      f"[PDF](temas/{t.SLUG}/resumao.pdf) · [Anki](temas/{t.SLUG}/flashcards.apkg) |")
+                      f"{arquivos} |")
     modelo = (REPO / "fonte" / "README-modelo.md").read_text(encoding="utf-8")
     (REPO / "README.md").write_text(modelo.replace("{{TABELA}}", "\n".join(linhas)), encoding="utf-8")
+
+
+def conta_cartoes(apkg: Path) -> int:
+    """Número de cartões de um .apkg já gerado (tabela cards da coleção)."""
+    import sqlite3, tempfile, zipfile
+    with tempfile.TemporaryDirectory() as tmp:
+        with zipfile.ZipFile(apkg) as z:
+            z.extract("collection.anki2", tmp)
+        con = sqlite3.connect(Path(tmp) / "collection.anki2")
+        n = con.execute("select count(*) from cards").fetchone()[0]
+        con.close()
+    return n
+
+
+def gera_readmes(alvos):
+    """Regera só os README dos temas e o índice, contando páginas e cartões no
+    PDF e no .apkg já publicados, sem recompilar nem refazer o baralho."""
+    for c in alvos:
+        t = carrega(c)
+        pasta = REPO / "temas" / t.SLUG
+        n = pymupdf.open(pasta / "resumao.pdf").page_count
+        n_cards = conta_cartoes(pasta / "flashcards.apkg")
+        (pasta / "README.md").write_text(gera_readme(t, n, n_cards), encoding="utf-8")
+        print(f"README {c}: {n} páginas, {n_cards} cartões")
+    gera_indice()
 
 
 if __name__ == "__main__":
@@ -539,6 +645,9 @@ if __name__ == "__main__":
     alvos = sys.argv[1:] or ["todos"]
     if alvos == ["completo"]:
         gera_baralho_completo()
+        sys.exit()
+    if alvos[0] == "readme":
+        gera_readmes(alvos[1:] or [c for c in ORDEM if (FONTE / "temas" / f"{c}.py").exists()])
         sys.exit()
     if alvos == ["todos"]:
         alvos = [c for c in ORDEM if (FONTE / "temas" / f"{c}.py").exists()]

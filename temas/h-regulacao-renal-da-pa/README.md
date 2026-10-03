@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 19 (PDF p. 716–769)
 
-[← voltar ao índice](../../README.md)
+[← Tema G](../g-debito-cardiaco-e-retorno-venoso/README.md) · [Índice](../../README.md) · [Tema S →](../s-semiologia-anamnese-sintomas-arritmias/README.md)
 
 ## O essencial
 
@@ -55,7 +55,7 @@
 
 <img src="../../fonte/figuras/guyton/g19_03.png" width="420">
 
-**Guyton & Hall, Fig. 19.4** — Curvas de débito renal agudas e crônicas. Em condições estáveis, o débito renal de sal e água é igual à ingestão. A e B representam os pontos de equilíbrio para a regulação a longo prazo da pressão arterial, quando a ingestão
+**Guyton & Hall, Fig. 19.4** — Curvas de débito renal agudas e crônicas. Em condições estáveis, o débito renal de sal e água é igual à ingestão. A e B representam os pontos de equilíbrio para a regulação a longo prazo da pressão arterial, quando a ingestão de sal é normal ou seis vezes o normal, respectivamente. Por causa da inclinação da curva de débito renal crônico, o aumento da ingestão de sal normalmente causa apenas pequenas alterações na pressão arterial. Em pessoas com insuficiência renal, a inclinação da curva de débito renal pode diminuir, semelhante à curva aguda, resultando em aumento da sensibilidade da pressão arterial às alterações na ingestão de sal.
 
 <img src="../../fonte/figuras/guyton/g19_04.png" width="420">
 
@@ -67,7 +67,7 @@
 
 <img src="../../fonte/figuras/guyton/g19_09.png" width="420">
 
-**Guyton & Hall, Fig. 19.10** — Efeito compensador de pressão do sistema vasoconstritor renina- angiotensina após hemorragia grave. (Extraída de experimentos do Dr. Royce
+**Guyton & Hall, Fig. 19.10** — Efeito compensador de pressão do sistema vasoconstritor renina-angiotensina após hemorragia grave. (Extraída de experimentos do Dr. Royce Brough.)
 
 <img src="../../fonte/figuras/guyton/g19_10.png" width="420">
 
@@ -75,7 +75,7 @@
 
 <img src="../../fonte/figuras/guyton/g19_11.png" width="420">
 
-**Guyton & Hall, Fig. 19.14** — Efeito da colocação de um grampo de constrição na artéria renal de um rim após a remoção do outro. Observe as alterações na pressão arterial
+**Guyton & Hall, Fig. 19.14** — Efeito da colocação de um grampo de constrição na artéria renal de um rim após a remoção do outro. Observe as alterações na pressão arterial sistêmica, pressão arterial renal distal ao grampo e taxa de secreção de renina. A hipertensão resultante é chamada de hipertensão de rim único de Goldblatt.
 
 <img src="../../fonte/figuras/guyton/g19_14.png" width="420">
 
@@ -138,5 +138,7 @@
 | Guyton & Hall | Cap. 19 · PDF p. 764–768 | Integração dos sistemas de controle (Fig. 19.16) |
 
 ---
+
+[← Tema G](../g-debito-cardiaco-e-retorno-venoso/README.md) · [Índice](../../README.md) · [Tema S →](../s-semiologia-anamnese-sintomas-arritmias/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

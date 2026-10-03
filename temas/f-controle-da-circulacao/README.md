@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 17 (PDF p. 642–680) · Guyton & Hall, 14ª ed., cap. 18 (PDF p. 681–715)
 
-[← voltar ao índice](../../README.md)
+[← Tema E](../e-vasos-e-microcirculacao/README.md) · [Índice](../../README.md) · [Tema G →](../g-debito-cardiaco-e-retorno-venoso/README.md)
 
 ## O essencial
 
@@ -50,7 +50,7 @@
 
 <img src="../../fonte/figuras/guyton/g17_01.png" width="420">
 
-**Guyton & Hall, Fig. 17.4** — Hiperemia reativa em um tecido após a oclusão temporária da artéria que fornece o fluxo sanguíneo e hiperemia ativa após aumento da atividade
+**Guyton & Hall, Fig. 17.4** — Hiperemia reativa em um tecido após a oclusão temporária da artéria que fornece o fluxo sanguíneo e hiperemia ativa após aumento da atividade metabólica do tecido.
 
 <img src="../../fonte/figuras/guyton/g17_04.png" width="420">
 
@@ -62,7 +62,7 @@
 
 <img src="../../fonte/figuras/guyton/g17_06.png" width="420">
 
-**Guyton & Hall, Fig. 17.8** — Remodelagem vascular em resposta a um aumento crônico da pressão sanguínea ou do fluxo sanguíneo. Em pequenas artérias e arteríolas que se contraem em resposta ao aumento da pressão arterial, a remodelagem eutrófica concêntrica normalmente ocorre porque o diâmetro do lúmen é menor e
+**Guyton & Hall, Fig. 17.8** — Remodelagem vascular em resposta a um aumento crônico da pressão sanguínea ou do fluxo sanguíneo. Em pequenas artérias e arteríolas que se contraem em resposta ao aumento da pressão arterial, a remodelagem eutrófica concêntrica normalmente ocorre porque o diâmetro do lúmen é menor e a parede vascular é mais espessa, mas a área total da seção transversa da parede do vaso não é alterada. Em grandes vasos sanguíneos que não se contraem em resposta ao aumento da pressão arterial, pode haver remodelagem hipertrófica, com aumento da espessura e da área transversal total da parede vascular. Se os vasos sanguíneos são expostos a aumentos crônicos no fluxo sanguíneo, geralmente ocorre uma remodelagem eutrófica excêntrica, com aumentos no diâmetro do lúmen, pouca alteração na espessura da parede e aumento da área transversal total da parede vascular. Se o vaso sanguíneo for exposto a aumentos de longo prazo na pressão sanguínea e no fluxo sanguíneo, geralmente ocorre uma remodelagem hipertrófica excêntrica, com aumentos no diâmetro do lúmen, espessura da parede e área transversal total da parede vascular. Reduções crônicas na pressão arterial e no fluxo sanguíneo têm efeitos opostos, conforme descrito anteriormente.
 
 <img src="../../fonte/figuras/guyton/g17_08.png" width="420">
 
@@ -141,5 +141,7 @@
 | Guyton & Hall | Cap. 18 · PDF p. 710–713 | Compressão abdominal, ondas respiratórias e de Mayer (Fig. 18.11), leitura opcional |
 
 ---
+
+[← Tema E](../e-vasos-e-microcirculacao/README.md) · [Índice](../../README.md) · [Tema G →](../g-debito-cardiaco-e-retorno-venoso/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*

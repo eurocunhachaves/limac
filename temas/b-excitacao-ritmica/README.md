@@ -4,7 +4,7 @@
 
 **Fontes:** Guyton & Hall, 14ª ed., cap. 10 (PDF p. 406–426) · Porto, Semiologia Médica, 8ª ed., cap. 46 (sistema excitocondutor, Fig. 46.5)
 
-[← voltar ao índice](../../README.md)
+[← Tema A](../a-musculo-cardiaco-e-valvas/README.md) · [Índice](../../README.md) · [Tema C →](../c-ecg-normal/README.md)
 
 ## O essencial
 
@@ -96,5 +96,7 @@
 | Porto | Cap. 47 · PDF p. 557–560 | Repercussões clínicas das bradi e taquiarritmias (Fig. 47.6 e 47.7) |
 
 ---
+
+[← Tema A](../a-musculo-cardiaco-e-valvas/README.md) · [Índice](../../README.md) · [Tema C →](../c-ecg-normal/README.md)
 
 *Figuras reproduzidas dos livros-texto para uso pessoal de estudo; o número de cada figura no livro está indicado na legenda.*
